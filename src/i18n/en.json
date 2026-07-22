@@ -39,6 +39,9 @@
     "goldenHourLabel": "Golden Hour",
     "sunsetLabel": "Sunset",
     "blueHourLabel": "Blue Hour",
+    "sunsetIndexLabel": "Today's sunset index",
+    "sunsetIndexDefault": "Clear · ~85% chance of golden light",
+    "goldenChanceLabel": "golden-light chance",
     "crowdWarningLabel": "Travel Tip",
     "crowdAfter": "Arrive before 18:00 for the golden light and a parking spot",
     "lightCaption": "Times computed from Pai Canyon's real coordinates",
@@ -92,7 +95,7 @@
     },
     "microTitle": "1. How the canyon was made",
     "micro": [
-      { "title": "Laterite soil", "desc": "The reddish earth is laterite — iron-rich soil that hardens in the dry season and crumbles when wet, which is why the ridges are so sharply cut" },
+      { "title": "Laterite soil", "desc": "The reddish earth is laterite, rich in iron and aluminium oxides. Baked by the sun it 'ferricretes' and sets almost as hard as concrete, yet grows fragile with moisture — which is why the ridges feel rock-solid in the dry season but soap-slick in the rains, and why they are cut so sharply" },
       { "title": "Wind & rain erosion", "desc": "Centuries of monsoon rain and wind carved the soft earth into a maze of narrow fins and gullies" },
       { "title": "A living edge", "desc": "The rim keeps changing after each storm — a section that was wide last year may be a thin ledge today, so never assume the path is fixed" }
     ],
@@ -100,7 +103,7 @@
     "plants": [
       { "title": "Grasses & ferns on the rim", "desc": "Tough wild grasses and ferns root into the cracks and slow the erosion — the only thing keeping the narrow ridges from washing away", "items": [
         { "name": "Dry-season hardpan", "desc": "In the hot season the surface bakes solid and is firm underfoot; after rain it turns to slick clay" },
-        { "name": "Valley forest", "desc": "Below the rim, deciduous and bamboo forest shades the gullies and shelters birds" }
+        { "name": "Dry dipterocarp forest (valley floor)", "desc": "Below the rim grows Northern Thailand's mixed deciduous and dry dipterocarp forest. These trees shed their leaves seasonally to survive the parched red soil, shading the gullies and sheltering birds" }
       ]},
       { "title": "Trees at the viewpoints", "desc": "Scattered shrubs and small trees mark the safer, wider sections where visitors gather for photos", "items": [
         { "name": "Shade at the entrance", "desc": "A few trees near the parking give the only real shade — rest here before the open ridge" },
@@ -116,6 +119,7 @@
     ],
     "lntTitle": "4. Tread lightly: Leave No Trace",
     "lntIntro": "This is an open, unfenced natural site — small actions keep the ridge safe and beautiful for the next visitor",
+    "lntCheckHint": "✔ Tick these off before and after your walk — a small courtesy for the next visitor",
     "lnt": [
       "Stay on the obvious trail and use the rails and ladders — cutting new paths speeds erosion of the fragile ridges",
       "Carry out all trash; there are no bins on the ridge and plastic blows into the valley",
@@ -128,6 +132,7 @@
     "intro": "From ancient Shan valleys to a backpacker landmark — the land, the town and the name",
     "blocks": [
       { "title": "Millions of years — Earth shaped the ridges", "text": "The red laterite of Pai Canyon was laid down and then slowly sculpted by monsoon rain and wind into the narrow fins and gullies we walk today. Unlike limestone karst, this is soft earth — the canyon is constantly reshaped, a little, after every storm." },
+      { "title": "Older days — Muleteer caravans & the tea-horse trails", "text": "Long before Route 1095 was paved, this area lay on the caravan routes linking Chiang Mai, Pai and Myanmar's Shan State. The red-clay ridges were a striking natural landmark — old trading caravans used them to know they had reached the southern gateway into the Pai basin." },
       { "title": "The 1940s — Pai, a Shan-Burmese border town", "text": "Pai sits in a broad valley near the Myanmar border, long home to Tai Yai (Shan) and Karen communities. Its name is often traced to the Tai Yai word for the local river. During World War II the Japanese army built the now-famous Memorial Bridge (Saphan Watanan) across the Pai River as a supply line — today a beloved photo stop." },
       { "title": "1990s–2000s — Pai's backpacker boom", "text": "After the road from Chiang Mai improved, Pai blossomed into a laid-back haven for travelers, artists and yogis. Its relaxed vibe and surrounding nature — hot springs, waterfalls and this red canyon — turned it into one of Northern Thailand's most talked-about small towns." },
       { "title": "Today — A free community viewpoint", "text": "Pai Canyon (Kong Lan) is now a free, community-managed viewpoint. No ticket booth, just a small parking area, a few rails and ladders, and one of the best sunset seats in Mae Hong Son." }
@@ -139,6 +144,12 @@
     "didYouKnow": {
       "title": "Did you know?",
       "text": "Pai Canyon is free and open every day, and its red laterite glows copper at sunset. Because the earth is soft, the exact shape of the ridges shifts slightly year to year — no two visits look quite the same."
+    },
+    "folklore": {
+      "title": "📖 Folk legend: the hunter, his grandson and the maze",
+      "tale": "In old Tai Yai (Shan) stories, 'Kong Lan' (กองหลาน) means more than 'winding gully' — elders also called it the 'labyrinth valley'. Legend tells of an old hunter who followed a sacred white deer with his grandson (Lan) and lost his way in this maze of red-clay cliffs. Locals still use the tale as a warning: the ridges are steep and shift like a maze — never wander in carelessly.",
+      "shrineTitle": "The little shrine by the trail",
+      "shrine": "The small shrine at the foot of the ridge honours the local guardian spirit (Chao Pho). By Northern Thai custom, passing caravans and hunters would light incense here before the steep ridge, asking the mountain spirit for protection against a fatal slip."
     }
   },
   "guide": {
@@ -149,9 +160,10 @@
       "title": "Two ways to enjoy it",
       "intro": "Pai Canyon is small but offers two very different experiences depending on your nerves and your camera:",
       "suitsLabel": "Best for: ",
+      "difficultyLabel": "Difficulty: ",
       "items": [
-        { "name": "The Ridge Trail", "suits": "Photo lovers & thrill-seekers", "desc": "A narrow red-clay ridge with steep drops on both sides, short metal rails and a wooden ladder. Exciting, but not for vertigo or small children unsupervised" },
-        { "name": "The Main Viewpoint", "suits": "Families & casual visitors", "desc": "A short, easy walk to the rim overlook for sunset and valley panoramas — the classic Pai photo with far less exposure" }
+        { "name": "The Main Viewpoint", "suits": "Families & casual visitors", "difficulty": "★☆☆☆☆", "note": "Great for all ages", "desc": "A short, easy walk to the rim overlook for sunset and valley panoramas — the classic Pai photo with far less exposure" },
+        { "name": "The Deep-Ridge Trail", "suits": "Photo lovers & thrill-seekers", "difficulty": "★★★★☆", "note": "Grippy shoes needed · not for vertigo", "desc": "A narrow red-clay ridge with steep drops on both sides, short metal rails and a wooden ladder. Exciting, but not for vertigo or small children unsupervised" }
       ]
     },
     "hours": {
@@ -177,6 +189,7 @@
       "items": [
         { "title": "From Pai town", "desc": "About 8 km south on Route 1095 toward Mae Hong Son. Easily reached by motorbike, songthaew (shared pickup) or taxi in 15–20 minutes" },
         { "title": "From Chiang Mai", "desc": "Around 3–3.5 hours by minivan or car (762 curves on the famous road). Many travelers base in Pai and visit the canyon at sunset" },
+        { "title": "From the airport", "desc": "The nearest airport is Chiang Mai International (CNX), about 3–3.5 hours' drive from Pai (the 762-curve road). After landing, take a minivan or private car to Pai town, then a songthaew or motorbike 8 km south on Route 1095. Pai's own airport (PYY) has only a few, mostly seasonal flights — from there it is likewise about 8 km south" },
         { "title": "By motorbike", "desc": "The most popular option — rent in Pai and follow the signs to 'Pai Canyon / Kong Lan'. Watch the curves and the heat" },
         { "title": "Coordinates", "desc": "19.3533° N, 98.4428° E (Plus Code 8F43+F22) — paste into any map app" }
       ]
@@ -228,6 +241,19 @@
         { "title": "Steep, open drops", "desc": "Much of the ridge has no guardrail and falls away on both sides — keep children close and skip it if you fear heights" },
         { "title": "Slippery when wet", "desc": "Red laterite turns to slick clay after rain; wear proper shoes and avoid the narrow fin in wet weather" },
         { "title": "Heat & water", "desc": "Almost no shade on the ridge — bring water and avoid the midday sun" }
+      ]
+    },
+    "hazeSeason": {
+      "tag": "⚠️ Haze / burning season",
+      "text": "From late February to April, Northern Thailand enters the agricultural burning season. Haze settles in the valleys, PM2.5 levels rise and the setting sun can turn a dull red with reduced visibility. If you visit then, bring an anti-haze mask (N95) and check the live air quality (AQI) before you go."
+    },
+    "emergency": {
+      "title": "🚑 Emergency & rescue",
+      "intro": "The ridge has no guardrails — save these numbers on your phone just in case:",
+      "items": [
+        { "title": "Tourist Police hotline", "value": "1155" },
+        { "title": "National emergency", "value": "191 / 1669 (medical)" },
+        { "title": "Pai Hospital", "value": "+66 53 699 031" }
       ]
     },
     "accessibility": {

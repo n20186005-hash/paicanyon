@@ -20,8 +20,8 @@ export const siteConfig = {
   // 统一 Google Maps 链接（首屏 / 照片 / 评价 / 页脚 共 4 处 + JSON-LD sameAs）
   mapsUrl: 'https://maps.app.goo.gl/DiyqAjPXo86mCB5c9',
 
-  // 地图嵌入（MapSection iframe，使用 Pai Canyon 真实坐标）
-  googleMapsEmbed: 'https://maps.google.com/maps?q=19.3533,98.4428&z=14&output=embed',
+  // 地图嵌入（MapSection iframe，使用用户提供的 Pai Canyon Google Maps 嵌入代码）
+  googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.4530480024287!2d98.4525156!3d19.3061375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da80e8f3eba0f9%3A0x83dbe124b195aec2!2z5ouc5Y6_5aSn5bOh6LC3!5e0!3m2!1szh-CN!2sus!4v1784646680558!5m2!1szh-CN!2sus',
 
   // 结构化数据 sameAs（权威资料页）
   sameAs: [

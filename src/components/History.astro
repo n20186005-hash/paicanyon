@@ -32,5 +32,18 @@ const history = messages.history;
         <p class="text-sm text-ivory/80 leading-relaxed">{history.didYouKnow.text}</p>
       </div>
     </div>
+
+    {history.folklore && (
+      <div class="mt-6 grid md:grid-cols-2 gap-6 items-stretch">
+        <div class="rounded-2xl bg-gradient-to-br from-gold/15 to-teak/40 border border-gold/30 p-6 md:p-8">
+          <h3 class="font-display text-2xl text-goldBright mb-3">{history.folklore.title}</h3>
+          <p class="text-sm md:text-base text-ivory/85 leading-relaxed">{history.folklore.tale}</p>
+        </div>
+        <div class="rounded-2xl bg-teak/60 border border-gold/20 p-6 md:p-8">
+          <h3 class="font-display text-xl text-goldBright mb-3">{history.folklore.shrineTitle}</h3>
+          <p class="text-sm md:text-base text-ivory/80 leading-relaxed">{history.folklore.shrine}</p>
+        </div>
+      </div>
+    )}
   </div>
 </section>

@@ -5,9 +5,21 @@ interface Props {
   lang: any;
   messages: Record<string, any>;
 }
-const { messages } = Astro.props;
+const { lang, messages } = Astro.props;
 const map = messages.mapSection;
 const { lat, lng } = siteConfig.coords;
+
+// 按站点语言切换 Google Maps 嵌入界面语言（保留定位坐标不变）
+const mapLang: Record<string, [string, string]> = {
+  zh: ['zh-CN', 'us'],
+  en: ['en', 'us'],
+  th: ['th', 'th'],
+};
+const [mUi, mRegion] = mapLang[lang] || ['en', 'us'];
+const googleMapsEmbed = siteConfig.googleMapsEmbed.replace(
+  /!1s[a-zA-Z-]+!2s[a-zA-Z]+/g,
+  `!1s${mUi}!2s${mRegion}`
+);
 ---
 
 <section id="map" class="py-20 bg-ivory text-ink">
@@ -40,8 +52,8 @@ const { lat, lng } = siteConfig.coords;
         </div>
       </div>
 
-      <div class="rounded-2xl overflow-hidden border border-gold/30 h-[320px] md:h-auto">
-        <iframe src={siteConfig.googleMapsEmbed} width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <div class="rounded-2xl overflow-hidden border border-gold/30 h-[320px] md:h-full min-h-[360px]">
+        <iframe src={googleMapsEmbed} width="100%" height="100%" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>
     </div>
   </div>

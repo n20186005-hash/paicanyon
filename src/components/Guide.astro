@@ -26,7 +26,15 @@ const guideImgs = [
         <div class="grid sm:grid-cols-2 gap-4">
           {guide.twoZone.items.map((z) => (
             <div class="rounded-xl border border-gold/25 bg-teak/5 p-5">
-              <div class="font-display text-teak font-semibold text-lg">{z.name}</div>
+              <div class="flex items-start justify-between gap-3">
+                <div class="font-display text-teak font-semibold text-lg">{z.name}</div>
+                {z.difficulty && (
+                  <span class="shrink-0 text-gold text-base tracking-tight" title={guide.twoZone.difficultyLabel} aria-label={`${guide.twoZone.difficultyLabel}${z.difficulty}`}>{z.difficulty}</span>
+                )}
+              </div>
+              {z.difficulty && (
+                <p class="mt-1 text-xs text-ink/60">{guide.twoZone.difficultyLabel}<span class="text-gold">{z.difficulty}</span>{z.note && <span class="ml-1 text-teak font-medium">· {z.note}</span>}</p>
+              )}
               <p class="mt-2 text-sm text-ink/75"><span class="font-medium text-gold">{guide.twoZone.suitsLabel}</span> {z.suits}</p>
               <p class="mt-2 text-sm text-ink/70">{z.desc}</p>
             </div>
@@ -178,6 +186,30 @@ const guideImgs = [
             </li>
           ))}
         </ul>
+      </div>
+    )}
+
+    <!-- Haze / burning season warning -->
+    {guide.hazeSeason && (
+      <div class="mt-8 rounded-2xl bg-orange-50 border border-orange-300 p-6 max-w-4xl shadow-sm">
+        <h3 class="font-display text-orange-800 text-lg font-semibold">{guide.hazeSeason.tag}</h3>
+        <p class="mt-2 text-orange-900/85 text-sm leading-relaxed">{guide.hazeSeason.text}</p>
+      </div>
+    )}
+
+    <!-- Emergency & rescue -->
+    {guide.emergency && (
+      <div class="mt-8 rounded-2xl border border-red-300 bg-red-50 p-6 max-w-4xl shadow-sm">
+        <h3 class="font-display text-xl text-red-700 font-semibold">{guide.emergency.title}</h3>
+        <p class="mt-2 text-sm text-red-900/80">{guide.emergency.intro}</p>
+        <div class="mt-4 grid sm:grid-cols-3 gap-3">
+          {guide.emergency.items.map((it) => (
+            <a href={`tel:${(it.value || '').replace(/[^+0-9]/g, '')}`} class="block rounded-xl border border-red-200 bg-white/70 p-4 hover:border-red-400 hover:shadow-md transition">
+              <div class="text-xs text-red-700/80">{it.title}</div>
+              <div class="mt-1 font-display text-lg font-semibold text-red-800">{it.value}</div>
+            </a>
+          ))}
+        </div>
       </div>
     )}
 

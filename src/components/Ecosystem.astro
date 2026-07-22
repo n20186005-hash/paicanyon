@@ -64,11 +64,19 @@ const eco = messages.eco;
     <div class="mt-12 rounded-2xl border border-teak/30 bg-teak/5 p-6">
       <h4 class="font-display text-xl text-teak mb-2">{eco.lntTitle}</h4>
       <p class="text-sm text-ink/75 mb-3">{eco.lntIntro}</p>
-      <ol class="space-y-2 text-sm text-ink/80 list-decimal pl-6">
-        {eco.lnt.map((t) => (
-          <li>{t}</li>
+      <ul class="space-y-2 text-sm text-ink/80">
+        {eco.lnt.map((t, i) => (
+          <li>
+            <label class="flex items-start gap-3 cursor-pointer group rounded-lg px-2 py-1.5 -mx-2 hover:bg-teak/5 transition-colors">
+              <input type="checkbox" id={`lnt-${i}`} class="peer mt-0.5 h-5 w-5 shrink-0 accent-teak cursor-pointer" />
+              <span class="leading-relaxed peer-checked:line-through peer-checked:text-ink/45 transition-colors">{t}</span>
+            </label>
+          </li>
         ))}
-      </ol>
+      </ul>
+      {eco.lntCheckHint && (
+        <p class="mt-4 text-xs font-medium text-teak/80">{eco.lntCheckHint}</p>
+      )}
     </div>
 
     <!-- Fauna & Flora checklist -->
