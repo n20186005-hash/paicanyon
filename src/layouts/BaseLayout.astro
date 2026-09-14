@@ -8,55 +8,137 @@ interface Props {
   title: string;
   description: string;
   messages: Record<string, any>;
+  canonicalPath?: string;
+  robots?: string;
+  includeFaq?: boolean;
 }
-const { lang, title, description, messages } = Astro.props;
-const canonical = `${siteConfig.domain}/${lang}/`;
+const {
+  lang,
+  title,
+  description,
+  messages,
+  canonicalPath,
+  robots = 'index,follow',
+  includeFaq = true,
+} = Astro.props;
+const canonical = `${siteConfig.domain}${canonicalPath ?? `/${lang}/`}`;
+const homeUrl = `${siteConfig.domain}/${lang}/`;
+const heroImage = `${siteConfig.domain}/gallery/${siteConfig.galleryPrefix}1.jpg`;
+const heroImageAlt = messages.hero?.imgAlt ?? siteConfig.fullName;
 
 const faqs = (messages && messages.guide && messages.guide.faqs) ? messages.guide.faqs : [];
+const about = messages.about ?? {};
+const breadcrumbItems: string[] = Array.isArray(about.breadcrumb) ? about.breadcrumb : [];
 
-const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'TouristAttraction',
-    name: siteConfig.name[lang],
-    description,
-    image: `${siteConfig.domain}/gallery/pai-canyon-1.jpg`,
-    url: canonical,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: siteConfig.address,
-      addressCountry: 'TH',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: siteConfig.coords.lat,
-      longitude: siteConfig.coords.lng,
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: siteConfig.rating,
-      reviewCount: siteConfig.reviewCount.replace(/,/g, ''),
-    },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        opens: '06:00',
-        closes: '19:00',
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${siteConfig.domain}/#organization`,
+      name: siteConfig.name[lang],
+      url: siteConfig.domain,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteConfig.domain}/icons/icon.svg`,
       },
-    ],
-    sameAs: siteConfig.sameAs,
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((f) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
-    })),
-  },
-];
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteConfig.domain}/#website`,
+      url: siteConfig.domain,
+      name: siteConfig.name[lang],
+      description,
+      inLanguage: htmlLang[lang],
+      publisher: { '@id': `${siteConfig.domain}/#organization` },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${canonical}#webpage`,
+      url: canonical,
+      name: title,
+      description,
+      isPartOf: { '@id': `${siteConfig.domain}/#website` },
+      about: { '@id': `${siteConfig.domain}/#attraction` },
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: heroImage,
+      },
+      inLanguage: htmlLang[lang],
+      datePublished: '2026-01-01',
+      dateModified: siteConfig.lastUpdated,
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${canonical}#breadcrumb`,
+      itemListElement: breadcrumbItems.map((b, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: b,
+        ...(i === 0 ? { item: homeUrl } : {}),
+      })),
+    },
+    {
+      '@type': 'TouristAttraction',
+      '@id': `${siteConfig.domain}/#attraction`,
+      name: siteConfig.fullName,
+      alternateName: siteConfig.alternateNames[lang],
+      description,
+      url: homeUrl,
+      image: [
+        heroImage,
+        `${siteConfig.domain}/gallery/${siteConfig.galleryPrefix}2.jpg`,
+        `${siteConfig.domain}/gallery/${siteConfig.galleryPrefix}3.jpg`,
+      ],
+      isAccessibleForFree: true,
+      publicAccess: true,
+      touristType: ['Viewpoint', 'Nature reserve'],
+      telephone: siteConfig.phone,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: siteConfig.streetAddress,
+        addressLocality: siteConfig.city,
+        addressRegion: siteConfig.state,
+        postalCode: siteConfig.postalCode,
+        addressCountry: siteConfig.countryCode,
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: siteConfig.coords.lat,
+        longitude: siteConfig.coords.lng,
+      },
+      hasMap: siteConfig.mapsUrl,
+      sameAs: siteConfig.sameAs,
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: siteConfig.rating,
+        reviewCount: siteConfig.reviewCount.replace(/,/g, ''),
+        bestRating: 5,
+      },
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+          opens: siteConfig.openingHours.opens,
+          closes: siteConfig.openingHours.closes,
+        },
+      ],
+    },
+    ...(includeFaq && faqs.length
+      ? [
+          {
+            '@type': 'FAQPage',
+            '@id': `${canonical}#faq`,
+            mainEntity: faqs.map((f: any) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          },
+        ]
+      : []),
+  ],
+};
 ---
 
 <!doctype html>
@@ -64,21 +146,39 @@ const jsonLd = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/jpeg" href={`/gallery/pai-canyon-1.jpg`} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
     <link rel="canonical" href={canonical} />
+
+    <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#1d241f" />
+
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteConfig.name[lang]} />
     <meta property="og:locale" content={htmlLang[lang]} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={`${siteConfig.domain}/gallery/pai-canyon-1.jpg`} />
+    <meta property="og:image" content={heroImage} />
+    <meta property="og:image:alt" content={heroImageAlt} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={heroImage} />
+    <meta name="twitter:image:alt" content={heroImageAlt} />
+
+    <meta name="geo.region" content="TH" />
+    <meta name="geo.placename" content={`${siteConfig.city}, ${siteConfig.state}, ${siteConfig.country}`} />
+    <meta name="ICBM" content={`${siteConfig.coords.lat}, ${siteConfig.coords.lng}`} />
+    <meta name="geo.position" content={`${siteConfig.coords.lat};${siteConfig.coords.lng}`} />
+
     {languagesList.map((l) => (
       <link rel="alternate" hreflang={htmlLang[l]} href={`${siteConfig.domain}/${l}/`} />
     ))}
-    <link rel="alternate" hreflang="x-default" href={`${siteConfig.domain}/th/`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteConfig.domain}/en/`} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -93,10 +193,18 @@ const jsonLd = [
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', gaId);
+      gtag('config', gaId, { anonymize_ip: true });
     </script>
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <script is:inline>
+      if ('serviceWorker' in navigator && location.hostname !== 'localhost') {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js').catch(function () {});
+        });
+      }
+    </script>
   </head>
   <body class="grain">
     <slot />

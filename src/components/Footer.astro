@@ -8,6 +8,9 @@ interface Props {
 const { lang, messages } = Astro.props;
 const footer = messages.footer;
 const mapsUrl = siteConfig.mapsUrl;
+
+/** 语言键安全取值（保留语言回退，避免索引类型报错） */
+const nameOf = (n: Record<string, string>) => n[String(lang)] ?? n.en;
 ---
 
 <footer class="bg-teakDeep text-ivory pt-16 pb-8">
@@ -22,7 +25,7 @@ const mapsUrl = siteConfig.mapsUrl;
       <div>
         <div class="text-xs uppercase tracking-wider text-gold mb-3">{footer.navTitle}</div>
         <ul class="grid grid-cols-2 gap-2 text-sm">
-          {footer.navItems.map((n) => (
+          {footer.navItems.map((n: any) => (
             <li><a href={n.href} class="text-ivory/80 hover:text-goldBright transition-colors">{n.label}</a></li>
           ))}
         </ul>
@@ -34,7 +37,7 @@ const mapsUrl = siteConfig.mapsUrl;
         <a
           href={mapsUrl}
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           class="mt-5 inline-flex items-center gap-2 bg-gold text-teak font-semibold px-5 py-2.5 rounded-full hover:bg-goldBright transition-colors"
         >
           {footer.mapsLabel}
@@ -55,7 +58,7 @@ const mapsUrl = siteConfig.mapsUrl;
               rel="noopener noreferrer"
               class="text-goldBright hover:underline inline-flex items-center gap-1"
             >
-              {s.name[lang]} <span class="text-ivory/40">↗</span>
+              {nameOf(s.name)} <span class="text-ivory/40">↗</span>
             </a>
           </li>
         ))}
@@ -63,9 +66,9 @@ const mapsUrl = siteConfig.mapsUrl;
     </div>
 
     <div class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs">
-      <a href={`/${lang}/privacy-policy`} class="text-ivory/60 hover:text-goldBright underline-offset-2 hover:underline">{footer.privacy}</a>
-      <a href={`/${lang}/terms-of-service`} class="text-ivory/60 hover:text-goldBright underline-offset-2 hover:underline">{footer.terms}</a>
-      <a href={`/${lang}/cookie-settings`} class="text-ivory/60 hover:text-goldBright underline-offset-2 hover:underline">{footer.cookies}</a>
+      <a href={`/${lang}/privacy-policy/`} class="text-ivory/60 hover:text-goldBright underline-offset-2 hover:underline">{footer.privacy}</a>
+      <a href={`/${lang}/terms-of-service/`} class="text-ivory/60 hover:text-goldBright underline-offset-2 hover:underline">{footer.terms}</a>
+      <a href={`/${lang}/cookie-settings/`} class="text-ivory/60 hover:text-goldBright underline-offset-2 hover:underline">{footer.cookies}</a>
     </div>
 
     <div class="ornament my-10 opacity-60"></div>
@@ -74,6 +77,8 @@ const mapsUrl = siteConfig.mapsUrl;
       <p>{footer.disclaimerLead}</p>
       <p class="text-ivory/70">{footer.unofficial}</p>
       <p>{footer.dataSource}</p>
+      {footer.photoCredit && <p>{footer.photoCredit}</p>}
+      {footer.lastUpdated && <p>{footer.lastUpdated}</p>}
       <p class="pt-2 text-ivory/40">{footer.copyright}</p>
     </div>
   </div>

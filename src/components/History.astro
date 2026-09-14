@@ -13,7 +13,7 @@ const history = messages.history;
     <p class="mt-4 max-w-2xl text-ivory/80">{history.intro}</p>
 
     <div class="grid md:grid-cols-3 gap-6 mt-12">
-      {history.blocks.map((b, i) => (
+      {history.blocks.map((b: any, i: any) => (
         <div class="rounded-2xl bg-teak/60 border border-gold/20 p-6">
           <div class="font-display text-goldBright text-3xl mb-3">0{i + 1}</div>
           <h3 class="font-display text-xl text-ivory mb-2">{b.title}</h3>
@@ -44,6 +44,51 @@ const history = messages.history;
           <p class="text-sm md:text-base text-ivory/80 leading-relaxed">{history.folklore.shrine}</p>
         </div>
       </div>
+    )}
+
+    <!-- timeline -->
+    {history.timeline && (
+      <div class="mt-16">
+        <h3 class="font-display text-2xl md:text-3xl text-goldBright">{history.timelineTitle}</h3>
+        <p class="mt-3 max-w-3xl text-sm text-ivory/75">{history.timelineIntro}</p>
+
+        <ol class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {history.timeline.map((t: any) => (
+            <li class="rounded-2xl border border-gold/25 bg-teak/50 p-5">
+              <p class="font-display text-sm font-semibold uppercase tracking-wide text-gold">{t.year}</p>
+              <p class="mt-2 text-sm text-ivory/80 leading-relaxed">{t.text}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    )}
+
+    <!-- stories & local lore -->
+    {history.stories && (
+      <div class="mt-16">
+        <h3 class="font-display text-2xl md:text-3xl text-goldBright">{history.storiesTitle}</h3>
+        <p class="mt-3 max-w-3xl text-sm text-ivory/75">{history.storiesIntro}</p>
+
+        <div class="grid md:grid-cols-2 gap-6 mt-8">
+          {history.stories.map((s: any) => (
+            <article class="rounded-2xl border border-gold/25 bg-gold/5 p-6">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="chip border-gold/50 text-goldBright">{s.tag}</span>
+                <span class="text-[11px] uppercase tracking-wide text-ivory/55">{s.kind}</span>
+              </div>
+              <h4 class="mt-3 font-display text-xl text-ivory">{s.title}</h4>
+              <p class="mt-2 text-sm text-ivory/80 leading-relaxed">{s.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {history.didYouKnow2 && (
+      <p class="mt-10 rounded-2xl border border-gold/30 bg-gold/10 px-6 py-5 text-sm text-ivory/85">
+        <span class="font-display text-goldBright font-semibold">{history.didYouKnow2.title} </span>
+        {history.didYouKnow2.text}
+      </p>
     )}
   </div>
 </section>

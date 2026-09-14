@@ -13,8 +13,13 @@ const navItems = [
   { label: h.home, href: '#home' },
   { label: h.about, href: '#about' },
   { label: h.history, href: '#history' },
+  { label: h.science, href: '#science' },
+  { label: h.season, href: '#season' },
+  { label: h.routes, href: '#routes' },
   { label: h.guide, href: '#guide' },
+  { label: h.facilities, href: '#facilities' },
   { label: h.food, href: '#food' },
+  { label: h.weather, href: '#weather' },
   { label: h.gallery, href: '#gallery' },
   { label: h.reviews, href: '#reviews' },
   { label: h.map, href: '#map' },
@@ -29,7 +34,7 @@ const switchTo = (target: Lang) => `/${target}/`;
       {siteConfig.name[lang]}
     </a>
 
-    <nav class="hidden md:flex items-center md:gap-4 lg:gap-7 text-sm text-ivory/80">
+    <nav class="hidden md:flex items-center gap-2 lg:gap-3.5 xl:gap-5 text-[12px] lg:text-[13px] text-ivory/80">
       {navItems.map((item) => (
         <a href={item.href} class="hover:text-goldBright transition-colors whitespace-nowrap">{item.label}</a>
       ))}

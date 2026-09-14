@@ -1,6 +1,8 @@
 ---
 const home = { th: '/th/', en: '/en/', zh: '/zh/' };
 const labels = { th: 'ไทย', en: 'English', zh: '中文' };
+
+const labelOf = (l: string) => (labels as Record<string, string>)[l] ?? l;
 ---
 <!doctype html>
 <html lang="en">
@@ -15,7 +17,7 @@ const labels = { th: 'ไทย', en: 'English', zh: '中文' };
       <p style="font-size:1.1rem;margin-top:8px;">Page not found · 页面未找到 · ไม่พบหน้านี้</p>
       <div style="margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
         {Object.entries(home).map(([l, href]) => (
-          <a href={href} style="color:#a07d3a;text-decoration:none;border:1px solid #c9a962;padding:8px 18px;border-radius:9999px;font-weight:600;">{labels[l]}</a>
+          <a href={href} style="color:#a07d3a;text-decoration:none;border:1px solid #c9a962;padding:8px 18px;border-radius:9999px;font-weight:600;">{labelOf(l)}</a>
         ))}
       </div>
     </div>

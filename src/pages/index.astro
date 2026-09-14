@@ -1,4 +1,5 @@
 ---
-import { defaultLang } from '../i18n/ui';
-return Astro.redirect(`/${defaultLang}/`);
+// Search Console shows /en/ carrying ~90% of impressions, so English is the
+// global fallback (matches hreflang x-default). Thai stays fully available at /th/.
+return Astro.redirect('/en/');
 ---

@@ -1,0 +1,78 @@
+---
+interface Props {
+  messages: Record<string, any>;
+}
+const { messages } = Astro.props;
+const r = messages.routes;
+---
+
+<section id="routes" class="py-20 bg-ivory">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-gold text-xl md:text-2xl">{r.label}</p>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{r.heading}</h2>
+    <p class="mt-4 max-w-3xl text-ink/80">{r.lead}</p>
+
+    <!-- tailored plans by visitor type -->
+    <h3 class="font-display text-2xl text-teak mt-12">{r.audienceTitle}</h3>
+    <div class="grid lg:grid-cols-3 gap-6 mt-6">
+      {r.audience.map((a: any) => (
+        <article class="rounded-2xl border border-gold/30 bg-white/65 p-6 flex flex-col">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h4 class="font-display text-xl font-semibold text-teak">{a.name}</h4>
+              <p class="mt-1 text-xs uppercase tracking-wide text-gold">{a.duration}</p>
+            </div>
+            <span class="font-display text-3xl leading-none text-gold/45">{a.tag}</span>
+          </div>
+          <p class="mt-3 text-sm text-ink/75">{a.forWhom}</p>
+
+          <ol class="mt-4 space-y-3 text-sm text-ink/85 flex-1">
+            {a.steps.map((step: string, i: number) => (
+              <li class="flex gap-3">
+                <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teak text-[11px] font-semibold text-goldBright">
+                  {i + 1}
+                </span>
+                <span>{step}</span>
+              </li>
+            ))}
+          </ol>
+
+          <p class="mt-4 rounded-xl border border-gold/25 bg-sand px-4 py-3 text-xs text-ink/80">
+            {a.tips}
+          </p>
+        </article>
+      ))}
+    </div>
+
+    <!-- standard half day / full day routes -->
+    <h3 class="font-display text-2xl text-teak mt-14">{r.generalTitle}</h3>
+    <div class="grid lg:grid-cols-2 gap-6 mt-6">
+      {r.general.map((g: any) => (
+        <article class="rounded-2xl border border-gold/30 bg-white/65 p-6">
+          <div class="flex items-center justify-between gap-3">
+            <h4 class="font-display text-xl font-semibold text-teak">{g.name}</h4>
+            <span class="chip bg-gold/15 text-teak whitespace-nowrap">{g.tag}</span>
+          </div>
+          <p class="mt-1 text-xs uppercase tracking-wide text-gold">{g.duration}</p>
+
+          <ol class="mt-5 space-y-0">
+            {g.stops.map((s: any) => (
+              <li class="relative pl-8 pb-5 last:pb-0 border-l border-gold/35">
+                <span class="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-gold ring-4 ring-ivory"></span>
+                <div class="flex flex-wrap items-baseline gap-2">
+                  <span class="font-display text-sm font-semibold text-burgundy">{s.time}</span>
+                  <span class="font-semibold text-teak text-sm">{s.title}</span>
+                </div>
+                <p class="mt-1 text-sm text-ink/80">{s.desc}</p>
+              </li>
+            ))}
+          </ol>
+
+          <p class="mt-4 rounded-xl border border-gold/25 bg-sand px-4 py-3 text-xs text-ink/80">{g.note}</p>
+        </article>
+      ))}
+    </div>
+
+    <p class="mt-6 text-xs text-ink/60">{r.note}</p>
+  </div>
+</section>

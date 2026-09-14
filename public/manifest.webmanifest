@@ -1,0 +1,41 @@
+{
+  "name": "Pai Canyon — ปายแคนยอน | Pai, Mae Hong Son, Thailand",
+  "short_name": "Pai Canyon",
+  "description": "คู่มือท่องเที่ยวปายแคนยอน (Pai Canyon) ที่อำเภอปาย จังหวัดแม่ฮ่องสอน ประเทศไทย — สันเขาดินแดง จุดชมพระอาทิตย์ตก เวลาเปิด-ปิด แผนที่ และเคล็ดลับการเดินทาง",
+  "id": "/",
+  "start_url": "/th/",
+  "scope": "/",
+  "lang": "th",
+  "dir": "ltr",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5efe5",
+  "theme_color": "#1d241f",
+  "categories": ["travel", "education"],
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

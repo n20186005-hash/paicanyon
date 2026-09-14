@@ -1,0 +1,33 @@
+---
+import { siteConfig } from '../config';
+
+interface Props {
+  messages: Record<string, any>;
+}
+const { messages } = Astro.props;
+const bar = messages.mobileBar;
+---
+<!-- Mobile conversion bar: GSC shows mobile averaging position 7.3 vs 36.6 on desktop —
+     one tap to navigate, one tap to call. -->
+<div class="md:hidden h-20" aria-hidden="true"></div>
+<div
+  class="md:hidden fixed inset-x-0 bottom-0 z-40 border-t border-gold/30 bg-teak/95 backdrop-blur-sm"
+  style="padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));"
+>
+  <div class="flex items-center gap-2 px-3 pt-2">
+    <a
+      href={siteConfig.mapsUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-gold px-4 py-2.5 text-sm font-semibold text-teak"
+    >
+      <span aria-hidden="true">📍</span> {bar.openMaps}
+    </a>
+    <a
+      href={`tel:${siteConfig.phone}`}
+      class="inline-flex items-center justify-center gap-2 rounded-full border border-gold/50 px-4 py-2.5 text-sm font-semibold text-ivory"
+    >
+      <span aria-hidden="true">☎</span> {bar.call}
+    </a>
+  </div>
+</div>

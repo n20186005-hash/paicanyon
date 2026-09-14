@@ -1,0 +1,63 @@
+---
+interface Props {
+  messages: Record<string, any>;
+}
+const { messages } = Astro.props;
+const sc = messages.science;
+---
+
+<section id="science" class="py-20 bg-teak text-ivory">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-goldBright text-xl md:text-2xl">{sc.label}</p>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-ivory mt-2">{sc.heading}</h2>
+    <p class="mt-4 max-w-3xl text-ivory/80">{sc.lead}</p>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-10">
+      {sc.blocks.map((b: any, i: number) => (
+        <article class="rounded-2xl border border-gold/25 bg-white/5 p-6">
+          <div class="flex items-baseline gap-3">
+            <span class="font-display text-2xl text-goldBright/70">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="font-display text-xl font-semibold text-goldBright">{b.title}</h3>
+          </div>
+          <p class="mt-3 text-sm text-ivory/85">{b.text}</p>
+        </article>
+      ))}
+    </div>
+
+    <!-- visitor responsibility -->
+    <div class="mt-14 rounded-3xl border border-gold/30 bg-white/5 p-6 md:p-8">
+      <h3 class="font-display text-2xl md:text-3xl text-goldBright">{sc.responsibilityTitle}</h3>
+      <p class="mt-3 max-w-3xl text-sm text-ivory/80">{sc.responsibilityIntro}</p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-7">
+        <ul class="space-y-2 text-sm text-ivory/85">
+          {sc.dos.map((d: string) => (
+            <li class="flex gap-2">
+              <span class="text-emerald-300/85 shrink-0">✓</span>
+              <span>{d}</span>
+            </li>
+          ))}
+        </ul>
+        <ul class="space-y-2 text-sm text-ivory/85">
+          {sc.donts.map((d: string) => (
+            <li class="flex gap-2">
+              <span class="text-rose-300/85 shrink-0">✕</span>
+              <span>{d}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- ridge safety -->
+    <h3 class="font-display text-2xl text-goldBright mt-14">{sc.safetyTitle}</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-5">
+      {sc.safetyItems.map((s: any) => (
+        <div class="rounded-2xl border border-gold/25 bg-white/5 p-4">
+          <h4 class="font-semibold text-ivory text-sm">{s.title}</h4>
+          <p class="mt-2 text-xs text-ivory/75">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

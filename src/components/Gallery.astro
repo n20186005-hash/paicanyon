@@ -27,7 +27,8 @@ const mapsUrl = siteConfig.mapsUrl;
             <img
               src={`/gallery/${siteConfig.galleryPrefix}${i + 1}.jpg`}
               alt={alts[i]}
-              loading="lazy"
+              loading={i < 2 ? 'eager' : 'lazy'}
+              decoding="async"
             />
           </div>
         );
@@ -35,7 +36,7 @@ const mapsUrl = siteConfig.mapsUrl;
     </div>
 
     <div class="mt-10 text-center">
-      <a href={mapsUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-teak border border-gold/50 px-6 py-3 rounded-full hover:bg-gold hover:text-teak transition-colors">
+      <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-teak border border-gold/50 px-6 py-3 rounded-full hover:bg-gold hover:text-teak transition-colors">
         {gallery.viewLocation}
       </a>
     </div>

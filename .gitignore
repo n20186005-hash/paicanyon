@@ -36,7 +36,12 @@ update_*.ps1
 rename_*.ps1
 rename_*.js
 probe_out.txt
-scripts/
+scripts/*
+# 质量校验脚本（保留入库，便于后续回归）
+!scripts/test-weather-advice.mjs
+!scripts/verify-weather.mjs
+!scripts/check-i18n-parity.mjs
+!scripts/check-seo-dist.mjs
 
 # ===== 包管理器锁文件（可选：如团队统一用 lock，可注释下行） =====
 # package-lock.json

@@ -1,0 +1,304 @@
+---
+import { siteConfig } from '../config';
+import { buildView, type WeatherPayload } from '../lib/weather';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  messages: Record<string, any>;
+}
+const { lang, messages } = Astro.props;
+const w = messages.weather;
+const timeZone = siteConfig.timeZone;
+const intlLocale = lang === 'zh' ? 'zh-CN' : lang === 'th' ? 'th-TH' : 'en-GB';
+const { lat, lng } = siteConfig.coords;
+
+const endpoint =
+  'https://api.open-meteo.com/v1/forecast' +
+  `?latitude=${lat}&longitude=${lng}` +
+  '&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m,wind_gusts_10m' +
+  '&hourly=precipitation_probability' +
+  '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,uv_index_max,wind_speed_10m_max,sunrise,sunset' +
+  '&timezone=' +
+  encodeURIComponent(timeZone) +
+  '&forecast_days=7&wind_speed_unit=kmh&alerts=true';
+
+// Reading taken once at build time so the first paint is already localised and complete.
+let payload: WeatherPayload | null = null;
+try {
+  const res = await fetch(endpoint, { signal: AbortSignal.timeout(9000) });
+  if (res.ok) payload = (await res.json()) as WeatherPayload;
+} catch {
+  payload = null;
+}
+
+const view = buildView(payload, w, { locale: intlLocale, timeZone, lang });
+const asJson = (value: unknown) => JSON.stringify(value ?? null).replace(/</g, '\\u003c');
+
+const metrics = [
+  { id: 'w-feels', label: w.feelsLike, icon: '🌡️', value: view.feels },
+  { id: 'w-humidity', label: w.humidity, icon: '💧', value: view.humidity },
+  { id: 'w-wind', label: w.wind, icon: '💨', value: view.wind },
+  { id: 'w-rain', label: w.rainChance, icon: '🌧️', value: view.prob },
+  { id: 'w-uv', label: w.uv, icon: '🔆', value: view.uv },
+  { id: 'w-sun', label: `${w.sunrise} / ${w.sunset}`, icon: '🌅', value: view.sun },
+];
+
+const blocks = [
+  { id: 'w-dress', label: w.dressLabel, icon: '👕', text: view.dress },
+  { id: 'w-plan', label: w.planLabel, icon: '🧭', text: view.plan },
+];
+---
+
+<section
+  id="weather"
+  class="bg-sand py-20"
+  data-lat={lat}
+  data-lon={lng}
+  data-tz={timeZone}
+  data-lang={lang}
+  data-locale={intlLocale}
+  data-endpoint={endpoint}
+  data-cache={`pai-canyon-weather-v2-${lang}`}
+>
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-gold text-xl md:text-2xl">{w.label}</p>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{w.heading}</h2>
+    <p class="mt-4 max-w-3xl text-ink/80">{w.lead}</p>
+
+    <div class="grid lg:grid-cols-12 gap-6 mt-10">
+      <!-- current conditions -->
+      <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-gold/30 bg-teak text-ivory shadow-xl">
+        <div class="flex items-center justify-between gap-3 px-5 py-3 border-b border-gold/20">
+          <span class="font-semibold text-goldBright">{w.nowTitle}</span>
+          <span id="w-updated" class="text-xs text-ivory/60">{view.updated}</span>
+        </div>
+
+        <div class="p-5">
+          <div class="flex items-center gap-5">
+            <span id="w-icon" class="text-5xl leading-none">{view.icon}</span>
+            <div>
+              <div class="flex items-end gap-2">
+                <span id="w-temp" class="font-display text-5xl font-semibold text-goldBright leading-none">{view.temp}</span>
+                <span class="pb-1 text-sm text-ivory/70">°C</span>
+              </div>
+              <div id="w-cond" class="text-sm text-ivory/85 mt-1">{view.condition}</div>
+            </div>
+          </div>
+
+          <p class="mt-5 text-[11px] uppercase tracking-wider text-ivory/55">{w.detailTitle}</p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-2">
+            {metrics.map((m) => (
+              <div class="rounded-xl bg-white/5 border border-gold/20 px-3 py-2.5">
+                <div class="text-[11px] uppercase tracking-wide text-ivory/60">{m.icon} {m.label}</div>
+                <div id={m.id} class="mt-0.5 font-semibold text-goldBright text-sm">{m.value}</div>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-5 rounded-xl bg-gold/15 border border-gold/35 px-4 py-3">
+            <p class="text-[11px] uppercase tracking-wider text-goldBright">{w.quickTitle}</p>
+            <p id="w-umbrella" class="mt-1 text-sm text-ivory">{view.umbrella}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- what to do about it -->
+      <div class="lg:col-span-5 rounded-2xl border border-gold/30 bg-white/60 p-5">
+        <!-- risk banner: only rendered when something actually needs a warning -->
+        <div id="w-risk-wrap" class={view.risks.length ? 'rounded-xl border border-burgundy/40 bg-burgundy/10 p-4' : 'hidden'}>
+          <p class="flex items-center gap-2 font-display text-base font-semibold text-burgundy">
+            <span>⚠️</span><span>{w.riskLabel}</span>
+          </p>
+          <ul id="w-risk-list" class="mt-2 space-y-2 text-sm text-burgundy">
+            {view.risks.map((r) => (
+              <li class="flex gap-2">
+                <span class="shrink-0">•</span><span>{r}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div id="w-risk-clear" class={view.calm ? 'flex items-start gap-2 rounded-xl border border-emerald-700/25 bg-emerald-600/10 px-4 py-3 text-sm text-emerald-900' : 'hidden'}>
+          <span class="shrink-0">✓</span>
+          <span>{w.riskLabel} · {w.emptyAdvice}</span>
+        </div>
+
+        <div class="mt-4 space-y-4">
+          {blocks.map((b) => (
+            <div id={`${b.id}-wrap`} class={b.text ? '' : 'hidden'}>
+              <p class="flex items-center gap-2 font-display text-base font-semibold text-teak">
+                <span>{b.icon}</span><span>{b.label}</span>
+              </p>
+              <p id={b.id} class="mt-1 text-sm text-ink/85">{b.text}</p>
+            </div>
+          ))}
+
+          <div>
+            <p class="flex items-center gap-2 font-display text-base font-semibold text-teak">
+              <span>🎒</span><span>{w.gearLabel}</span>
+            </p>
+            <ul id="w-gear" class="mt-2 flex flex-wrap gap-2">
+              {view.gear.map((g) => (
+                <li class="rounded-full border border-gold/40 bg-sand px-3 py-1 text-xs text-ink/85">{g}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <p class="mt-5 pt-3 border-t border-gold/20 text-xs text-ink/60">{w.safetyNote}</p>
+      </div>
+    </div>
+
+    <!-- 7-day outlook -->
+    <div class="mt-10">
+      <h3 class="font-display text-xl text-teak">{w.forecastTitle}</h3>
+      <div id="w-days" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 mt-4">
+        {
+          view.days.map((d, i) => (
+            <div class={`rounded-2xl border p-3 text-center ${i === 0 ? 'border-gold bg-gold/15' : 'border-gold/25 bg-white/50'}`}>
+              <div class="text-xs text-ink/65">{d.name}</div>
+              <div class="text-2xl my-2">{d.icon}</div>
+              <div class="text-sm font-semibold text-teak">{d.range}</div>
+              <div class="text-xs text-ink/60 mt-1">🌧️ {d.prob}</div>
+              <div class="text-[11px] text-ink/55 mt-1">{d.label}</div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline type="application/json" id="wx-labels" set:html={asJson(w)} />
+<script is:inline type="application/json" id="wx-seed" set:html={asJson(payload)} />
+
+<script>
+  import { buildView, type WeatherPayload } from '../lib/weather';
+
+  const section = document.getElementById('weather');
+  const labelsEl = document.getElementById('wx-labels');
+  const seedEl = document.getElementById('wx-seed');
+
+  if (section && labelsEl && seedEl) {
+    const CACHE_MS = 30 * 60 * 1000;
+    const w = JSON.parse(labelsEl.textContent || '{}');
+    const seed = JSON.parse(seedEl.textContent || 'null');
+    const opts = {
+      locale: section.dataset.locale || 'en-GB',
+      timeZone: section.dataset.tz || 'Asia/Bangkok',
+      lang: section.dataset.lang || 'en',
+    };
+    const cacheKey = section.dataset.cache || 'pai-canyon-weather';
+    const endpoint = section.dataset.endpoint;
+    const el = (id: string) => document.getElementById(id);
+    const set = (id: string, value: string) => {
+      const node = el(id);
+      if (node) node.textContent = value;
+    };
+    const show = (id: string, visible: boolean, fallback: string) => {
+      const node = el(id);
+      if (node) node.className = visible ? fallback : 'hidden';
+    };
+
+    function paint(data: WeatherPayload | null) {
+      const v = buildView(data, w, opts);
+      set('w-icon', v.icon);
+      set('w-temp', v.temp);
+      set('w-cond', v.condition);
+      set('w-updated', v.updated);
+      set('w-feels', v.feels);
+      set('w-humidity', v.humidity);
+      set('w-wind', v.wind);
+      set('w-rain', v.prob);
+      set('w-uv', v.uv);
+      set('w-sun', v.sun);
+      set('w-umbrella', v.ready ? v.umbrella : w.unavailable);
+
+      const dress = el('w-dress');
+      if (dress) dress.textContent = v.dress;
+      const plan = el('w-plan');
+      if (plan) plan.textContent = v.plan;
+      show('w-dress-wrap', !!v.dress, '');
+      show('w-plan-wrap', !!v.plan, '');
+
+      const gear = el('w-gear');
+      if (gear) {
+        gear.innerHTML = '';
+        v.gear.forEach((g) => {
+          const li = document.createElement('li');
+          li.className = 'rounded-full border border-gold/40 bg-sand px-3 py-1 text-xs text-ink/85';
+          li.textContent = g;
+          gear.appendChild(li);
+        });
+      }
+
+      const riskList = el('w-risk-list');
+      if (riskList) {
+        riskList.innerHTML = '';
+        v.risks.forEach((r) => {
+          const li = document.createElement('li');
+          li.className = 'flex gap-2';
+          li.innerHTML = '<span class="shrink-0">•</span><span></span>';
+          const span = li.querySelector('span:last-child');
+          if (span) span.textContent = r;
+          riskList.appendChild(li);
+        });
+      }
+      show('w-risk-wrap', v.risks.length > 0, 'rounded-xl border border-burgundy/40 bg-burgundy/10 p-4');
+      show(
+        'w-risk-clear',
+        v.calm,
+        'flex items-start gap-2 rounded-xl border border-emerald-700/25 bg-emerald-600/10 px-4 py-3 text-sm text-emerald-900'
+      );
+
+      const wrap = el('w-days');
+      if (wrap && v.days.length) {
+        wrap.innerHTML = '';
+        v.days.forEach((d, i) => {
+          const cell = document.createElement('div');
+          cell.className =
+            'rounded-2xl border p-3 text-center ' + (i === 0 ? 'border-gold bg-gold/15' : 'border-gold/25 bg-white/50');
+          const parts = [
+            ['text-xs text-ink/65', d.name],
+            ['text-2xl my-2', d.icon],
+            ['text-sm font-semibold text-teak', d.range],
+            ['text-xs text-ink/60 mt-1', '🌧️ ' + d.prob],
+            ['text-[11px] text-ink/55 mt-1', d.label],
+          ];
+          parts.forEach(([cls, text]) => {
+            const div = document.createElement('div');
+            div.className = cls;
+            div.textContent = text;
+            cell.appendChild(div);
+          });
+          wrap.appendChild(cell);
+        });
+      }
+    }
+
+    // A stored reading paints instantly; the network refresh then replaces it silently.
+    try {
+      const cached = JSON.parse(localStorage.getItem(cacheKey) || 'null');
+      if (cached && cached.at && Date.now() - cached.at < CACHE_MS) paint(cached.data);
+    } catch (e) {
+      /* ignore unreadable cache */
+    }
+
+    if (endpoint) {
+      fetch(endpoint)
+        .then((r) => r.json())
+        .then((data: WeatherPayload) => {
+          if (!data || !data.current || !data.daily) throw new Error('incomplete payload');
+          paint(data);
+          try {
+            localStorage.setItem(cacheKey, JSON.stringify({ at: Date.now(), data }));
+          } catch (e) {
+            /* storage may be unavailable */
+          }
+        })
+        .catch(() => {
+          if (!seed) paint(null);
+        });
+    }
+  }
+</script>

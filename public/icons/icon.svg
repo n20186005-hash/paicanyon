@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Pai Canyon">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2b880" />
+      <stop offset="55%" stop-color="#c9713c" />
+      <stop offset="100%" stop-color="#7a3b23" />
+    </linearGradient>
+    <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b9552f" />
+      <stop offset="100%" stop-color="#5e2a1a" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="#1d241f" />
+  <circle cx="256" cy="196" r="86" fill="url(#sky)" />
+  <path d="M40 372 L150 236 L232 320 L300 232 L392 330 L472 372 Z" fill="url(#ridge)" opacity="0.95" />
+  <path d="M0 400 L110 300 L206 392 L286 296 L372 380 L448 336 L512 392 L512 512 L0 512 Z" fill="url(#ridge)" />
+  <rect x="0" y="440" width="512" height="72" fill="#1d241f" />
+</svg>

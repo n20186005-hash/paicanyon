@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Pai Canyon — Guide to Pai's Red-Earth Canyon & Sunset Viewpoint (Mae Hong Son)",
-    "description": "A complete visitor guide to Pai Canyon (ปายแคนยอน) in Mae Hong Son — winding red-clay ridges, narrow trails, sweeping valley views, history, how to get there and real traveler reviews."
+    "title": "Pai Canyon: Entrance Fee, Sunset & Hike Guide (2026)",
+    "description": "Pai Canyon in Pai, Mae Hong Son: free entry, opening hours 06:00–19:00, sunset & hiking tips, safety notes, exact location and how to get there from Pai town."
   },
   "header": {
     "home": "Home",
@@ -11,7 +11,12 @@
     "food": "Food",
     "gallery": "Photos",
     "reviews": "Reviews",
-    "map": "Map"
+    "map": "Map",
+    "weather": "Weather",
+    "season": "Seasons",
+    "routes": "Routes",
+    "facilities": "Facilities",
+    "science": "Science"
   },
   "hero": {
     "eyebrow": "Viewpoint · Pai, Mae Hong Son · Northern Thailand",
@@ -19,9 +24,15 @@
     "titleAccent": " Canyon",
     "subtitle": "A free natural viewpoint of winding red-clay ridges, narrow trails and sweeping valley views — 8 km south of Pai town, famous for its copper sunsets.",
     "rating": "4.5",
-    "reviews": "8,288",
-    "reviewCount": "8,288",
+    "reviews": "8,368",
+    "reviewCount": "8,368",
+    "reviewsLabel": "Google reviews",
     "category": "Tourist Attraction",
+    "imgAlt": "Pai Canyon - main view of the red-earth ridges in Pai, Mae Hong Son, Thailand",
+    "citySuffix": " (Pai)",
+    "titleSub": "Pai Canyon · Pai, Mae Hong Son, Thailand",
+    "ratingSourceNote": "Rating and review count synced from Google Maps (Google Maps) user reviews · September 2026 ·",
+    "ratingSourceLink": "View all reviews on Google Maps ↗",
     "badge": "Mae Hong Son · Northern Thailand",
     "cta1": "Get Directions",
     "cta2": "View Photos",
@@ -56,21 +67,51 @@
   },
   "about": {
     "label": "About",
-    "heading": "Pai Canyon — Northern Thailand's Red-Earth Ridgeline",
+    "heading": "About Pai Canyon — Northern Thailand's Red-Earth Ridgeline",
     "lead": "A free, open-air viewpoint of winding red-clay ridges, narrow trails and sweeping valley views, about 8 km south of Pai town.",
+    "breadcrumbLabel": "Breadcrumb",
+    "breadcrumb": [
+      "Pai Canyon",
+      "Pai",
+      "Mae Hong Son",
+      "Thailand"
+    ],
+    "equivalence": "Welcome to Pai Canyon (ปายแคนยอน, locally known as Kong Lan), widely recognised as the red-earth canyon viewpoint of Northern Thailand. Located in the heart of Pai, Mae Hong Son, Thailand, this destination serves as a primary hub for travelers visiting the region.",
     "paragraph1": "Pai Canyon (also called Kong Lan, กองหลาน, in Northern Thai) is a natural landform carved by rain and wind into a maze of narrow red-laterite ridges and steep gullies. Unlike a fenced viewpoint, the trail follows the very edge of the cliffs — a short but thrilling walk with drop-offs on both sides. Entry is free and it is one of the most photographed spots around Pai.",
     "paragraph2": "The canyon sits on the hills between Pai town and the Mae Hong Son highlands. At dawn and dusk the laterite walls glow copper-red and the whole valley falls quiet, which is why visitors from all over the world time their trip to the light. Wooden ladders and a few metal rails help on the steepest sections, but much of the path is raw earth.",
     "quote": "Stand at the edge at sunset and the whole valley turns to copper.",
     "quoteAuthor": "— A Pai local",
+    "nearbySemantic": "When visiting Pai Canyon, visitors can easily explore surrounding landmarks and points of interest, including Pai Town (Walking Street) and Tha Pai Hot Spring.",
     "stats": [
-      { "value": "~8 km", "label": "from Pai town" },
-      { "value": "4.5", "label": "rating" },
-      { "value": "Free", "label": "no entry fee" }
+      {
+        "value": "~8 km",
+        "label": "from Pai town"
+      },
+      {
+        "value": "4.5",
+        "label": "rating"
+      },
+      {
+        "value": "Free",
+        "label": "no entry fee"
+      }
     ],
     "highlights": [
-      { "tag": "Canyon", "title": "Red-earth ridges", "desc": "Wind-carved laterite walls and gullies form a natural maze above the valley" },
-      { "tag": "Sunset", "title": "Golden-hour viewpoint", "desc": "The rim lights up copper-red at dawn and dusk — Pai's classic photo spot" },
-      { "tag": "Trail", "title": "Easy yet thrilling", "desc": "A short ridge walk with ladders and rails, but steep, open drops on both sides" }
+      {
+        "tag": "Canyon",
+        "title": "Red-earth ridges",
+        "desc": "Wind-carved laterite walls and gullies form a natural maze above the valley"
+      },
+      {
+        "tag": "Sunset",
+        "title": "Golden-hour viewpoint",
+        "desc": "The rim lights up copper-red at dawn and dusk — Pai's classic photo spot"
+      },
+      {
+        "tag": "Trail",
+        "title": "Easy yet thrilling",
+        "desc": "A short ridge walk with ladders and rails, but steep, open drops on both sides"
+      }
     ],
     "editorTip": {
       "tag": "Editor's Tip",
@@ -87,29 +128,82 @@
       "title": "🌿 Flora & Fauna checklist",
       "intro": "Bring this checklist to Pai Canyon and log what you spot along the rim:",
       "items": [
-        { "emoji": "🦎", "name": "Bengal monitor lizard", "best": "Year-round · basks on warm rocks mid-morning", "rare": "Rarity: ★★" },
-        { "emoji": "🐦", "name": "Red-whiskered bulbul & tailor birds", "best": "Year-round · most active at dawn and dusk", "rare": "Rarity: ★★★" },
-        { "emoji": "🦋", "name": "Butterflies & dragonflies", "best": "Mar–Oct · swarm the gully breezes", "rare": "Rarity: ★★" },
-        { "emoji": "🌿", "name": "Wild grasses & ferns", "best": "Greenest in the wet season · roots hold the fragile soil", "rare": "Note: ★", "rareClass": "warn" }
+        {
+          "emoji": "🦎",
+          "name": "Bengal monitor lizard",
+          "best": "Year-round · basks on warm rocks mid-morning",
+          "rare": "Rarity: ★★"
+        },
+        {
+          "emoji": "🐦",
+          "name": "Red-whiskered bulbul & tailor birds",
+          "best": "Year-round · most active at dawn and dusk",
+          "rare": "Rarity: ★★★"
+        },
+        {
+          "emoji": "🦋",
+          "name": "Butterflies & dragonflies",
+          "best": "Mar–Oct · swarm the gully breezes",
+          "rare": "Rarity: ★★"
+        },
+        {
+          "emoji": "🌿",
+          "name": "Wild grasses & ferns",
+          "best": "Greenest in the wet season · roots hold the fragile soil",
+          "rare": "Note: ★",
+          "rareClass": "warn"
+        }
       ]
     },
     "microTitle": "1. How the canyon was made",
     "micro": [
-      { "title": "Laterite soil", "desc": "The reddish earth is laterite, rich in iron and aluminium oxides. Baked by the sun it 'ferricretes' and sets almost as hard as concrete, yet grows fragile with moisture — which is why the ridges feel rock-solid in the dry season but soap-slick in the rains, and why they are cut so sharply" },
-      { "title": "Wind & rain erosion", "desc": "Centuries of monsoon rain and wind carved the soft earth into a maze of narrow fins and gullies" },
-      { "title": "A living edge", "desc": "The rim keeps changing after each storm — a section that was wide last year may be a thin ledge today, so never assume the path is fixed" }
+      {
+        "title": "Laterite soil",
+        "desc": "The reddish earth is laterite, rich in iron and aluminium oxides. Baked by the sun it 'ferricretes' and sets almost as hard as concrete, yet grows fragile with moisture — which is why the ridges feel rock-solid in the dry season but soap-slick in the rains, and why they are cut so sharply"
+      },
+      {
+        "title": "Wind & rain erosion",
+        "desc": "Centuries of monsoon rain and wind carved the soft earth into a maze of narrow fins and gullies"
+      },
+      {
+        "title": "A living edge",
+        "desc": "The rim keeps changing after each storm — a section that was wide last year may be a thin ledge today, so never assume the path is fixed"
+      }
     ],
     "plantsTitle": "2. Plants that hold the ground",
     "plants": [
-      { "title": "Grasses & ferns on the rim", "desc": "Tough wild grasses and ferns root into the cracks and slow the erosion — the only thing keeping the narrow ridges from washing away", "items": [
-        { "name": "Dry-season hardpan", "desc": "In the hot season the surface bakes solid and is firm underfoot; after rain it turns to slick clay" },
-        { "name": "Dry dipterocarp forest (valley floor)", "desc": "Below the rim grows Northern Thailand's mixed deciduous and dry dipterocarp forest. These trees shed their leaves seasonally to survive the parched red soil, shading the gullies and sheltering birds" }
-      ]},
-      { "title": "Trees at the viewpoints", "desc": "Scattered shrubs and small trees mark the safer, wider sections where visitors gather for photos", "items": [
-        { "name": "Shade at the entrance", "desc": "A few trees near the parking give the only real shade — rest here before the open ridge" },
-        { "name": "Roots as handholds", "desc": "Tree roots double as natural rails on the steeper drops" }
-      ]},
-      { "title": "Seasonal wildflowers", "desc": "After the first rains small wildflowers speckle the red earth, a brief contrast against the laterite" }
+      {
+        "title": "Grasses & ferns on the rim",
+        "desc": "Tough wild grasses and ferns root into the cracks and slow the erosion — the only thing keeping the narrow ridges from washing away",
+        "items": [
+          {
+            "name": "Dry-season hardpan",
+            "desc": "In the hot season the surface bakes solid and is firm underfoot; after rain it turns to slick clay"
+          },
+          {
+            "name": "Dry dipterocarp forest (valley floor)",
+            "desc": "Below the rim grows Northern Thailand's mixed deciduous and dry dipterocarp forest. These trees shed their leaves seasonally to survive the parched red soil, shading the gullies and sheltering birds"
+          }
+        ]
+      },
+      {
+        "title": "Trees at the viewpoints",
+        "desc": "Scattered shrubs and small trees mark the safer, wider sections where visitors gather for photos",
+        "items": [
+          {
+            "name": "Shade at the entrance",
+            "desc": "A few trees near the parking give the only real shade — rest here before the open ridge"
+          },
+          {
+            "name": "Roots as handholds",
+            "desc": "Tree roots double as natural rails on the steeper drops"
+          }
+        ]
+      },
+      {
+        "title": "Seasonal wildflowers",
+        "desc": "After the first rains small wildflowers speckle the red earth, a brief contrast against the laterite"
+      }
     ],
     "wildlifeTitle": "3. Wildlife along the rim",
     "wildlife": [
@@ -128,14 +222,29 @@
   },
   "history": {
     "label": "History",
-    "heading": "The Story of Pai Canyon",
+    "heading": "History & Significance of Pai Canyon",
     "intro": "From ancient Shan valleys to a backpacker landmark — the land, the town and the name",
     "blocks": [
-      { "title": "Millions of years — Earth shaped the ridges", "text": "The red laterite of Pai Canyon was laid down and then slowly sculpted by monsoon rain and wind into the narrow fins and gullies we walk today. Unlike limestone karst, this is soft earth — the canyon is constantly reshaped, a little, after every storm." },
-      { "title": "Older days — Muleteer caravans & the tea-horse trails", "text": "Long before Route 1095 was paved, this area lay on the caravan routes linking Chiang Mai, Pai and Myanmar's Shan State. The red-clay ridges were a striking natural landmark — old trading caravans used them to know they had reached the southern gateway into the Pai basin." },
-      { "title": "The 1940s — Pai, a Shan-Burmese border town", "text": "Pai sits in a broad valley near the Myanmar border, long home to Tai Yai (Shan) and Karen communities. Its name is often traced to the Tai Yai word for the local river. During World War II the Japanese army built the now-famous Memorial Bridge (Saphan Watanan) across the Pai River as a supply line — today a beloved photo stop." },
-      { "title": "1990s–2000s — Pai's backpacker boom", "text": "After the road from Chiang Mai improved, Pai blossomed into a laid-back haven for travelers, artists and yogis. Its relaxed vibe and surrounding nature — hot springs, waterfalls and this red canyon — turned it into one of Northern Thailand's most talked-about small towns." },
-      { "title": "Today — A free community viewpoint", "text": "Pai Canyon (Kong Lan) is now a free, community-managed viewpoint. No ticket booth, just a small parking area, a few rails and ladders, and one of the best sunset seats in Mae Hong Son." }
+      {
+        "title": "Millions of years — Earth shaped the ridges",
+        "text": "The red laterite of Pai Canyon was laid down and then slowly sculpted by monsoon rain and wind into the narrow fins and gullies we walk today. Unlike limestone karst, this is soft earth — the canyon is constantly reshaped, a little, after every storm."
+      },
+      {
+        "title": "Older days — Muleteer caravans & the tea-horse trails",
+        "text": "Long before Route 1095 was paved, this area lay on the caravan routes linking Chiang Mai, Pai and Myanmar's Shan State. The red-clay ridges were a striking natural landmark — old trading caravans used them to know they had reached the southern gateway into the Pai basin."
+      },
+      {
+        "title": "The 1940s — Pai, a Shan-Burmese border town",
+        "text": "Pai sits in a broad valley near the Myanmar border, long home to Tai Yai (Shan) and Karen communities. Its name is often traced to the Tai Yai word for the local river. During World War II the Japanese army built the now-famous Memorial Bridge (Saphan Watanan) across the Pai River as a supply line — today a beloved photo stop."
+      },
+      {
+        "title": "1990s–2000s — Pai's backpacker boom",
+        "text": "After the road from Chiang Mai improved, Pai blossomed into a laid-back haven for travelers, artists and yogis. Its relaxed vibe and surrounding nature — hot springs, waterfalls and this red canyon — turned it into one of Northern Thailand's most talked-about small towns."
+      },
+      {
+        "title": "Today — A free community viewpoint",
+        "text": "Pai Canyon (Kong Lan) is now a free, community-managed viewpoint. No ticket booth, just a small parking area, a few rails and ladders, and one of the best sunset seats in Mae Hong Son."
+      }
     ],
     "legend": {
       "title": "📜 The name: from 'Kong Lan' to 'Pai Canyon'",
@@ -150,11 +259,77 @@
       "tale": "In old Tai Yai (Shan) stories, 'Kong Lan' (กองหลาน) means more than 'winding gully' — elders also called it the 'labyrinth valley'. Legend tells of an old hunter who followed a sacred white deer with his grandson (Lan) and lost his way in this maze of red-clay cliffs. Locals still use the tale as a warning: the ridges are steep and shift like a maze — never wander in carelessly.",
       "shrineTitle": "The little shrine by the trail",
       "shrine": "The small shrine at the foot of the ridge honours the local guardian spirit (Chao Pho). By Northern Thai custom, passing caravans and hunters would light incense here before the steep ridge, asking the mountain spirit for protection against a fatal slip."
+    },
+    "timelineTitle": "How Pai Canyon Became a Destination",
+    "timelineIntro": "The ridge itself has no recorded building history — its story is one of geology, land use and the road that opened the Pai valley to the outside world.",
+    "timeline": [
+      {
+        "year": "Pre-1970s",
+        "text": "Pai district is a remote farming valley in Mae Hong Son, reached from Chiang Mai by a long, slow mountain route. The canyon is simply grazing and scrub land above the Mae Hi valley."
+      },
+      {
+        "year": "1970s",
+        "text": "Route 1095 is built and sealed over the mountains. The road is famously winding — local markers still count 762 curves between Mae Malai and Pai — and with it, the first casual visitors reach the district."
+      },
+      {
+        "year": "1980s – 1990s",
+        "text": "Pai becomes a stop on the northern backpacker circuit. The ridges start to appear in guidebooks as a free, unmanaged viewpoint on the road south."
+      },
+      {
+        "year": "2000s",
+        "text": "Domestic tourism grows quickly, and the sunset viewpoint becomes a known Thai photo stop as much as a foreign one. Basic stalls and a parking area appear at the entrance."
+      },
+      {
+        "year": "2010s",
+        "text": "Photography and social media turn the narrow fins into one of the most reproduced landscapes in Thailand. Visitor numbers at sunset rise sharply and crowd management becomes an issue."
+      },
+      {
+        "year": "Today",
+        "text": "The site remains a free, open natural area with no formal visitor centre, no lighting and no barriers beyond short sections of chain. Management is light and pressure on the edges is real."
+      }
+    ],
+    "storiesTitle": "Stories, Names & Local Lore",
+    "storiesIntro": "Collected from local usage and public sources, and marked so you can tell documented history from the stories people simply tell.",
+    "stories": [
+      {
+        "tag": "Local name",
+        "kind": "Documented usage",
+        "title": "Why Mae Hi residents say Kong Lan",
+        "text": "Long before \"Pai Canyon\" appeared on English-language maps and road signs, the ridges above the Mae Hi valley carried a local name still in use by older residents: Kong Lan. It is a reminder that the site was a familiar piece of farmland and forest long before it became a photograph."
+      },
+      {
+        "tag": "The road",
+        "kind": "Documented history",
+        "title": "The 762 curves that opened the valley",
+        "text": "Pai was effectively sealed off until Route 1095 was driven over the mountains. Its thousand-plus bends — the celebrated count between Mae Malai and Pai is 762 — made the canyon a natural roadside stop, and it is still how most visitors first see it. The same curves are why an 8 km drive can take twenty minutes."
+      },
+      {
+        "tag": "Ancient ground",
+        "kind": "Local understanding",
+        "title": "Land that erodes and returns",
+        "text": "In local telling, the red earth is not permanent; it is being given back to the valley a little at a time. That matches the geology — the fins are the remains of a surface being removed from both sides — and it is the reason older farmers treat the slopes as land in transit rather than a fixed landmark."
+      },
+      {
+        "tag": "Culture",
+        "kind": "Documented history",
+        "title": "A valley of many communities",
+        "text": "Mae Hi and the villages around the canyon are home to Shan, Karen, Lisu, Lahu and Yunnanese communities alongside northern Thai families. The canyon is a natural feature of an inhabited farming landscape, and the fields, irrigation channels and smallholdings around it are as much part of the visit as the viewpoint itself."
+      },
+      {
+        "tag": "Sunset",
+        "kind": "Recent lore",
+        "title": "The copper hour",
+        "text": "The claim that the whole valley turns copper at dusk is repeated by almost everyone who comes down from the ridge, and it is the reason the car park fills in the last hour of daylight. It happens when low sun, dry-season haze and the red laterite line up — which is exactly why it is not guaranteed."
+      }
+    ],
+    "didYouKnow2": {
+      "title": "Did you know?",
+      "text": "The canyon is a comparatively young landform. Because the laterite is soft and rainfall in the Pai valley is heavy, the ridge loses material every monsoon season: the fins are being carved, narrowed and occasionally undermined in real time."
     }
   },
   "guide": {
     "label": "Visit Guide",
-    "heading": "Planning Your Visit",
+    "heading": "Planning Your Visit — Pai Canyon Entrance Fee, Hours & Location",
     "lead": "Everything you need to walk the ridge safely — hours, the trail, and how to get there",
     "twoZone": {
       "title": "Two ways to enjoy it",
@@ -162,36 +337,82 @@
       "suitsLabel": "Best for: ",
       "difficultyLabel": "Difficulty: ",
       "items": [
-        { "name": "The Main Viewpoint", "suits": "Families & casual visitors", "difficulty": "★☆☆☆☆", "note": "Great for all ages", "desc": "A short, easy walk to the rim overlook for sunset and valley panoramas — the classic Pai photo with far less exposure" },
-        { "name": "The Deep-Ridge Trail", "suits": "Photo lovers & thrill-seekers", "difficulty": "★★★★☆", "note": "Grippy shoes needed · not for vertigo", "desc": "A narrow red-clay ridge with steep drops on both sides, short metal rails and a wooden ladder. Exciting, but not for vertigo or small children unsupervised" }
+        {
+          "name": "The Main Viewpoint",
+          "suits": "Families & casual visitors",
+          "difficulty": "★☆☆☆☆",
+          "note": "Great for all ages",
+          "desc": "A short, easy walk to the rim overlook for sunset and valley panoramas — the classic Pai photo with far less exposure"
+        },
+        {
+          "name": "The Deep-Ridge Trail",
+          "suits": "Photo lovers & thrill-seekers",
+          "difficulty": "★★★★☆",
+          "note": "Grippy shoes needed · not for vertigo",
+          "desc": "A narrow red-clay ridge with steep drops on both sides, short metal rails and a wooden ladder. Exciting, but not for vertigo or small children unsupervised"
+        }
       ]
     },
     "hours": {
-      "tag": "Opening Hours",
-      "title": "When it's open",
+      "tag": "🕒",
+      "title": "Pai Canyon Opening Hours",
       "time": "06:00 – 19:00",
       "items": [
-        { "label": "Every day (Mon–Sun)", "value": "06:00–19:00" }
+        {
+          "label": "Every day (Mon–Sun)",
+          "value": "06:00–19:00"
+        },
+        {
+          "label": "Best light",
+          "value": "17:00–18:30 (sunset)"
+        }
       ]
     },
     "fees": {
-      "tag": "Fees",
-      "title": "Entry & parking",
+      "tag": "🎟️",
+      "title": "Pai Canyon Entrance Fee & Parking",
       "items": [
-        { "title": "Entry", "desc": "Free — there is no ticket booth" },
-        { "title": "Parking", "desc": "Small roadside lot, usually free; fills up around sunset" },
-        { "title": "Guides", "desc": "Not required — the trail is self-guided" }
+        {
+          "title": "Entrance fee",
+          "desc": "Free admission — there is no ticket booth, you simply walk in."
+        },
+        {
+          "title": "Parking",
+          "desc": "Roadside lot beside the entrance; a small local collection fee may apply, so bring small cash. It fills up around sunset."
+        },
+        {
+          "title": "Guides",
+          "desc": "Not required — the trail is self-guided and unmarked in places."
+        }
       ]
     },
     "transport": {
-      "tag": "Getting There",
-      "title": "How to get to Pai Canyon",
+      "tag": "🛣️",
+      "title": "How to Get to Pai Canyon & Location",
+      "addressLabel": "Address",
+      "plusCodeLabel": "Plus Code",
+      "routeCta": "Open route in Google Maps",
       "items": [
-        { "title": "From Pai town", "desc": "About 8 km south on Route 1095 toward Mae Hong Son. Easily reached by motorbike, songthaew (shared pickup) or taxi in 15–20 minutes" },
-        { "title": "From Chiang Mai", "desc": "Around 3–3.5 hours by minivan or car (762 curves on the famous road). Many travelers base in Pai and visit the canyon at sunset" },
-        { "title": "From the airport", "desc": "The nearest airport is Chiang Mai International (CNX), about 3–3.5 hours' drive from Pai (the 762-curve road). After landing, take a minivan or private car to Pai town, then a songthaew or motorbike 8 km south on Route 1095. Pai's own airport (PYY) has only a few, mostly seasonal flights — from there it is likewise about 8 km south" },
-        { "title": "By motorbike", "desc": "The most popular option — rent in Pai and follow the signs to 'Pai Canyon / Kong Lan'. Watch the curves and the heat" },
-        { "title": "Coordinates", "desc": "19.3533° N, 98.4428° E (Plus Code 8F43+F22) — paste into any map app" }
+        {
+          "title": "From Pai town",
+          "desc": "About 8 km south on Route 1095 toward Mae Hong Son. Easily reached by motorbike, songthaew (shared pickup) or taxi in 15–20 minutes"
+        },
+        {
+          "title": "From Chiang Mai",
+          "desc": "Around 3–3.5 hours by minivan or car (762 curves on the famous road). Many travelers base in Pai and visit the canyon at sunset"
+        },
+        {
+          "title": "From the airport",
+          "desc": "The nearest airport is Chiang Mai International (CNX), about 3–3.5 hours' drive from Pai (the 762-curve road). After landing, take a minivan or private car to Pai town, then a songthaew or motorbike 8 km south on Route 1095. Pai's own airport (PYY) has only a few, mostly seasonal flights — from there it is likewise about 8 km south"
+        },
+        {
+          "title": "By motorbike",
+          "desc": "The most popular option — rent in Pai and follow the signs to 'Pai Canyon / Kong Lan'. Watch the curves and the heat"
+        },
+        {
+          "title": "Coordinates",
+          "desc": "19.3061° N, 98.4525° E (Plus Code 8F43+F22) — paste into any map app"
+        }
       ]
     },
     "photography": {
@@ -199,24 +420,53 @@
       "intro": "Pai Canyon is a photographer's dream: copper ridges at golden hour, long valley shadows and a huge sunset sky",
       "timesTitle": "Best light windows",
       "times": [
-        { "period": "06:00 – 07:30", "desc": "Sunrise — soft light, cool air and few people; the east valley glows as mist lifts" },
-        { "period": "16:30 – 18:30", "desc": "Golden hour — the laterite walls turn copper-red, the classic Pai Canyon shot" },
-        { "period": "18:30 – 19:20", "desc": "Blue hour — deep skies after sunset, great for silhouettes of the ridge" }
+        {
+          "period": "06:00 – 07:30",
+          "desc": "Sunrise — soft light, cool air and few people; the east valley glows as mist lifts"
+        },
+        {
+          "period": "16:30 – 18:30",
+          "desc": "Golden hour — the laterite walls turn copper-red, the classic Pai Canyon shot"
+        },
+        {
+          "period": "18:30 – 19:20",
+          "desc": "Blue hour — deep skies after sunset, great for silhouettes of the ridge"
+        }
       ],
       "spotsTitle": "3 golden spots",
       "viewLabel": "View:",
       "tipLabel": "Composition:",
       "spots": [
-        { "name": "The main overlook", "view": "Wide valley panorama with the red fins in the foreground — the postcard frame", "tip": "Use a wide lens; arrive 45 min early to claim the spot before the crowd" },
-        { "name": "The narrow ridge", "view": "A person walking the thin fin with drops both sides — dramatic sense of scale", "tip": "Shoot low with a tele lens to compress the ridge; never step back for the shot" },
-        { "name": "The ladder section", "view": "Rustic wooden ladder against red earth — texture and leading lines", "tip": "Side-light at golden hour brings out the cracks in the laterite" }
+        {
+          "name": "The main overlook",
+          "view": "Wide valley panorama with the red fins in the foreground — the postcard frame",
+          "tip": "Use a wide lens; arrive 45 min early to claim the spot before the crowd"
+        },
+        {
+          "name": "The narrow ridge",
+          "view": "A person walking the thin fin with drops both sides — dramatic sense of scale",
+          "tip": "Shoot low with a tele lens to compress the ridge; never step back for the shot"
+        },
+        {
+          "name": "The ladder section",
+          "view": "Rustic wooden ladder against red earth — texture and leading lines",
+          "tip": "Side-light at golden hour brings out the cracks in the laterite"
+        }
       ],
       "settingsTitle": "Camera & phone settings",
       "cameraLabel": "Camera:",
       "phoneLabel": "Phone:",
       "settings": [
-        { "style": "Golden-hour ridges (landscape)", "camera": "f/8–f/11 · ISO 100 · 1/125s · wide 16–35mm · small aperture for depth", "phone": "Tap to expose for the sky, drop exposure slightly; use 0.5× wide for the panorama" },
-        { "style": "Silhouette at blue hour", "camera": "f/4 · ISO 400 · 1/60s · shoot toward the afterglow", "phone": "Night mode off; tap the bright horizon, lock focus, fire before full dark" }
+        {
+          "style": "Golden-hour ridges (landscape)",
+          "camera": "f/8–f/11 · ISO 100 · 1/125s · wide 16–35mm · small aperture for depth",
+          "phone": "Tap to expose for the sky, drop exposure slightly; use 0.5× wide for the panorama"
+        },
+        {
+          "style": "Silhouette at blue hour",
+          "camera": "f/4 · ISO 400 · 1/60s · shoot toward the afterglow",
+          "phone": "Night mode off; tap the bright horizon, lock focus, fire before full dark"
+        }
       ],
       "tipsTitle": "Gear & safety tips",
       "tips": [
@@ -230,17 +480,49 @@
       "title": "Best Season",
       "intro": "Pai has three broad moods — cool and clear is best, hot is intense, wet is green but slippery",
       "seasons": [
-        { "tag": "Cool", "months": "Nov – Feb", "name": "Most comfortable · clear skies", "desc": "Coolest, driest and busiest time. Crisp mornings and glowing sunsets — ideal for the canyon. Book Pai stays ahead" },
-        { "tag": "Hot", "months": "Mar – May", "name": "Intense heat · go early/late", "desc": "Very hot midday with flat light; visit at sunrise or sunset and carry water. The ridges can be slippery-dry and dusty" },
-        { "tag": "Wet", "months": "Jun – Oct", "name": "Green & quiet · slippery", "desc": "Lush and uncrowded, but the red clay turns slick after rain and storms can roll in fast. Good shoes and caution essential" }
+        {
+          "tag": "Cool",
+          "months": "Nov – Feb",
+          "name": "Most comfortable · clear skies",
+          "desc": "Coolest, driest and busiest time. Crisp mornings and glowing sunsets — ideal for the canyon. Book Pai stays ahead"
+        },
+        {
+          "tag": "Hot",
+          "months": "Mar – May",
+          "name": "Intense heat · go early/late",
+          "desc": "Very hot midday with flat light; visit at sunrise or sunset and carry water. The ridges can be slippery-dry and dusty"
+        },
+        {
+          "tag": "Wet",
+          "months": "Jun – Oct",
+          "name": "Green & quiet · slippery",
+          "desc": "Lush and uncrowded, but the red clay turns slick after rain and storms can roll in fast. Good shoes and caution essential"
+        }
       ]
     },
     "safety": {
-      "title": "Safety Tips",
+      "title": "Pai Canyon Hiking & Sunset Safety Tips",
       "items": [
-        { "title": "Steep, open drops", "desc": "Much of the ridge has no guardrail and falls away on both sides — keep children close and skip it if you fear heights" },
-        { "title": "Slippery when wet", "desc": "Red laterite turns to slick clay after rain; wear proper shoes and avoid the narrow fin in wet weather" },
-        { "title": "Heat & water", "desc": "Almost no shade on the ridge — bring water and avoid the midday sun" }
+        {
+          "title": "Narrow fins, open drops",
+          "desc": "The ridge paths are narrow with no guardrail and fall away on both sides — keep children close, walk single file and skip the fins if you fear heights"
+        },
+        {
+          "title": "Wear grippy shoes",
+          "desc": "Red laterite turns to slick clay after rain — trainers or hiking shoes with real tread; flip-flops, sandals and bare feet are a bad idea"
+        },
+        {
+          "title": "Sunset descent in the dark",
+          "desc": "Light fades fast once the sun drops — start walking back before the last light, keep a phone torch handy and never climb the fins in the dark"
+        },
+        {
+          "title": "Heat & water",
+          "desc": "Almost no shade on the ridge — bring water and avoid the midday sun"
+        },
+        {
+          "title": "Rainy-season gullies",
+          "desc": "In the wet months the soil erodes and the gullies get slippery — stay clear of freshly cracked edges and check the sky before setting off"
+        }
       ]
     },
     "hazeSeason": {
@@ -251,36 +533,93 @@
       "title": "🚑 Emergency & rescue",
       "intro": "The ridge has no guardrails — save these numbers on your phone just in case:",
       "items": [
-        { "title": "Tourist Police hotline", "value": "1155" },
-        { "title": "National emergency", "value": "191 / 1669 (medical)" },
-        { "title": "Pai Hospital", "value": "+66 53 699 031" }
+        {
+          "title": "Tourist Police hotline",
+          "value": "1155"
+        },
+        {
+          "title": "National emergency",
+          "value": "191 / 1669 (medical)"
+        },
+        {
+          "title": "Pai Hospital",
+          "value": "+66 53 699 031"
+        }
       ]
     },
     "accessibility": {
       "title": "Accessibility",
       "intro": "The main viewpoint is easy; the ridge trail is not for everyone",
       "items": [
-        { "title": "Easy viewpoint", "desc": "A short, mostly flat walk from the road leads to the main overlook — fine for most visitors" },
-        { "title": "Not step-free throughout", "desc": "The ridge has a wooden ladder and uneven earth; not wheelchair-friendly and tricky for very young kids" },
-        { "title": "Facilities", "desc": "Small roadside parking and a few local drink stalls near the entrance; no toilets right at the rim" }
+        {
+          "title": "Easy viewpoint",
+          "desc": "A short, mostly flat walk from the road leads to the main overlook — fine for most visitors"
+        },
+        {
+          "title": "Not step-free throughout",
+          "desc": "The ridge has a wooden ladder and uneven earth; not wheelchair-friendly and tricky for very young kids"
+        },
+        {
+          "title": "Facilities",
+          "desc": "Small roadside parking and a few local drink stalls near the entrance; no toilets right at the rim"
+        }
       ]
     },
     "nearby": {
-      "title": "Nearby Attractions",
+      "title": "Landmarks & Attractions Around Pai Canyon",
       "cta": "See more",
       "items": [
-        { "name": "Pai Town", "desc": "Laid-back riverside town with cafes, the Walking Street night market and guesthouses", "url": "https://en.wikipedia.org/wiki/Pai_district" },
-        { "name": "Tha Pai Hot Spring", "desc": "Natural warm springs set in forest, about 20 km from Pai", "url": "https://en.wikipedia.org/wiki/Pai_district" },
-        { "name": "Pai Memorial Bridge", "desc": "The WWII wooden bridge over the Pai River — a classic photo stop", "url": "https://en.wikipedia.org/wiki/Pai_district" }
+        {
+          "name": "Pai Town",
+          "desc": "Laid-back riverside town with cafes, the Walking Street night market and guesthouses",
+          "url": "https://en.wikipedia.org/wiki/Pai_district"
+        },
+        {
+          "name": "Tha Pai Hot Spring",
+          "desc": "Natural warm springs set in forest, about 20 km from Pai",
+          "url": "https://en.wikipedia.org/wiki/Pai_district"
+        },
+        {
+          "name": "Pai Memorial Bridge",
+          "desc": "The WWII wooden bridge over the Pai River — a classic photo stop",
+          "url": "https://en.wikipedia.org/wiki/Pai_district"
+        }
       ]
     },
     "faqTitle": "Frequently Asked Questions",
     "faqs": [
-      { "q": "When is the best time to visit Pai Canyon", "a": "Sunrise and sunset are best — cool light and few crowds. Avoid midday heat. Cool season (Nov–Feb) has the clearest skies." },
-      { "q": "Is there an entry fee", "a": "No — Pai Canyon is free to enter. There is a small roadside parking area that is usually free as well." },
-      { "q": "Is it safe for children", "a": "The main viewpoint is fine, but the narrow ridge has steep open drops and a ladder. Keep kids close and skip the thin fin if they are small or you fear heights." },
-      { "q": "How do I get there from Pai town", "a": "About 8 km south on Route 1095. Motorbike rental is most popular; songthaews and taxis also go. Paste the coordinates 19.3533, 98.4428 into your map app." },
-      { "q": "How long should I spend", "a": "Most visitors spend 30–60 minutes — enough for the ridge walk and photos. Plan for sunset and you may stay longer as the light changes." }
+      {
+        "q": "When is the best time to visit Pai Canyon",
+        "a": "Sunrise and sunset are best — cool light and few crowds. Avoid midday heat. Cool season (Nov–Feb) has the clearest skies."
+      },
+      {
+        "q": "Is there an entry fee",
+        "a": "No — Pai Canyon is free to enter. There is a small roadside parking area that is usually free as well."
+      },
+      {
+        "q": "Is it safe for children",
+        "a": "The main viewpoint is fine, but the narrow ridge has steep open drops and a ladder. Keep kids close and skip the thin fin if they are small or you fear heights."
+      },
+      {
+        "q": "How do I get there from Pai town",
+        "a": "About 8 km south on Route 1095. Motorbike rental is most popular; songthaews and taxis also go. Paste the coordinates 19.3061, 98.4525 into your map app."
+      },
+      {
+        "q": "How long should I spend",
+        "a": "Most visitors spend 30–60 minutes — enough for the ridge walk and photos. Plan for sunset and you may stay longer as the light changes."
+      },
+      {
+        "q": "Where is Pai Canyon located",
+        "a": "Pai Canyon is located at 8F43+F22, Mae Hi, Pai District, Mae Hong Son 58130, Thailand (19.3061° N, 98.4525° E), about 8 km south of Pai town on Route 1095 toward Mae Hong Son."
+      },
+      {
+        "q": "What should I wear and bring to Pai Canyon",
+        "a": "Wear shoes with good grip — the red laterite turns slick after rain. Bring drinking water, a hat and sunscreen: the ridge is almost entirely unshaded."
+      },
+      {
+        "q": "Can I watch sunrise at Pai Canyon",
+        "a": "Yes. The site is open daily from 06:00 to 19:00, so sunrise is possible and far less crowded than the famous sunset; the light on the east-facing gullies is soft and cool."
+      }
     ]
   },
   "food": {
@@ -288,11 +627,36 @@
     "heading": "Food & Drink Around Pai",
     "lead": "Northern Thai and Burmese flavours in laid-back Pai town — a short drive from the canyon",
     "dishes": [
-      { "tag": "Northern", "name": "Khao Soi", "price": "from 60 ฿", "desc": "Coconut curry noodle soup with crispy noodles — Northern Thailand's signature dish" },
-      { "tag": "Northern", "name": "Sai Ua", "price": "from 80 ฿", "desc": "Herbed Northern Thai sausage, grilled and served with chili dipping sauce" },
-      { "tag": "Burmese", "name": "Lahpet (tea-leaf salad)", "price": "from 70 ฿", "desc": "Fermented tea leaves with peanuts and sesame — a legacy of Pai's Shan-Burmese roots" },
-      { "tag": "Drinks", "name": "Fresh fruit shakes", "price": "from 50 ฿", "desc": "Mango, banana and dragonfruit shakes from the night-market stalls" },
-      { "tag": "Cafe", "name": "Coffee & bakeries", "price": "from 60 ฿", "desc": "Pai's cafe scene is famous — flat whites, sourdough and vegan treats all day" }
+      {
+        "tag": "Northern",
+        "name": "Khao Soi",
+        "price": "from 60 ฿",
+        "desc": "Coconut curry noodle soup with crispy noodles — Northern Thailand's signature dish"
+      },
+      {
+        "tag": "Northern",
+        "name": "Sai Ua",
+        "price": "from 80 ฿",
+        "desc": "Herbed Northern Thai sausage, grilled and served with chili dipping sauce"
+      },
+      {
+        "tag": "Burmese",
+        "name": "Lahpet (tea-leaf salad)",
+        "price": "from 70 ฿",
+        "desc": "Fermented tea leaves with peanuts and sesame — a legacy of Pai's Shan-Burmese roots"
+      },
+      {
+        "tag": "Drinks",
+        "name": "Fresh fruit shakes",
+        "price": "from 50 ฿",
+        "desc": "Mango, banana and dragonfruit shakes from the night-market stalls"
+      },
+      {
+        "tag": "Cafe",
+        "name": "Coffee & bakeries",
+        "price": "from 60 ฿",
+        "desc": "Pai's cafe scene is famous — flat whites, sourdough and vegan treats all day"
+      }
     ],
     "quote": {
       "text": "Sunset at the canyon, then khao soi at the night market — that's a perfect Pai day",
@@ -303,6 +667,7 @@
     "label": "Photos",
     "heading": "Scenes of Pai Canyon",
     "intro": "Red-earth ridges, valley panoramas, sunset skies and the narrow trail that draws visitors from around the world",
+    "credits": "All photos displayed on this website remain the property of their original photographers; all rights reserved.",
     "alts": [
       "Pai Canyon viewpoint entrance sign",
       "Red-earth ridges of Pai Canyon",
@@ -336,36 +701,99 @@
     "label": "Reviews",
     "heading": "What Visitors Say",
     "intro": "A summary of traveler opinions on Google Maps to help you plan",
-    "disclaimer": "This summary is drawn from public Google Maps reviews and does not reflect the views of this site",
+    "disclaimer": "Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps.",
+    "sourceTag": "Google Maps user reviews",
+    "ratingSourceNote": "Rating and review count synced from Google Maps (Google Maps) user reviews · September 2026 ·",
+    "ratingSourceLink": "View all reviews on Google Maps ↗",
     "declaration": "As a non-profit educational site we present both the highlights and the cautions, straight.",
     "featured": [
-      { "text": "The sunset here is unreal — the whole canyon glows red and the valley goes quiet. A highlight of Pai.", "source": "— Summarised from Google Maps" },
-      { "text": "Easy to reach but thrilling. The narrow ridge with drops on both sides got my heart racing.", "source": "— Summarised from Google Maps" }
+      {
+        "text": "The sunset here is unreal — the whole canyon glows red and the valley goes quiet. A highlight of Pai.",
+        "source": "— Summarised from Google Maps"
+      },
+      {
+        "text": "Easy to reach but thrilling. The narrow ridge with drops on both sides got my heart racing.",
+        "source": "— Summarised from Google Maps"
+      }
     ],
     "items": [
-      { "text": "Came for sunset and stayed till dark — the colours were incredible.", "rating": 5, "name": "Emma L.", "date": "Mar 2026" },
-      { "text": "Fun little hike along the ridge. Wear proper shoes; some parts are slippery.", "rating": 5, "name": "Somchai Y.", "date": "Feb 2026" },
-      { "text": "Beautiful but not for the faint-hearted — the path is narrow with steep drops.", "rating": 4, "name": "David P.", "date": "Jan 2026" },
-      { "text": "Best free viewpoint near Pai. Arrive before 6pm to catch the golden light.", "rating": 5, "name": "Nina K.", "date": "Dec 2025" },
-      { "text": "Went at noon and it was blazing hot. Go early or late for sure.", "rating": 4, "name": "Aiko T.", "date": "Nov 2025" },
-      { "text": "Loved the maze-like gullies. Took so many photos.", "rating": 5, "name": "Tom B.", "date": "Oct 2025" },
-      { "text": "Family visit — kids were nervous on the narrow bits, so we stuck to the viewpoint.", "rating": 4, "name": "Jira W.", "date": "Sep 2025" },
-      { "text": "Quiet and free. Bring water and don't underestimate the heat.", "rating": 5, "name": "Witthaya T.", "date": "Aug 2025" }
+      {
+        "text": "Came for sunset and stayed till dark — the colours were incredible.",
+        "rating": 5,
+        "name": "Emma L.",
+        "date": "Mar 2026"
+      },
+      {
+        "text": "Fun little hike along the ridge. Wear proper shoes; some parts are slippery.",
+        "rating": 5,
+        "name": "Somchai Y.",
+        "date": "Feb 2026"
+      },
+      {
+        "text": "Beautiful but not for the faint-hearted — the path is narrow with steep drops.",
+        "rating": 4,
+        "name": "David P.",
+        "date": "Jan 2026"
+      },
+      {
+        "text": "Best free viewpoint near Pai. Arrive before 6pm to catch the golden light.",
+        "rating": 5,
+        "name": "Nina K.",
+        "date": "Dec 2025"
+      },
+      {
+        "text": "Went at noon and it was blazing hot. Go early or late for sure.",
+        "rating": 4,
+        "name": "Aiko T.",
+        "date": "Nov 2025"
+      },
+      {
+        "text": "Loved the maze-like gullies. Took so many photos.",
+        "rating": 5,
+        "name": "Tom B.",
+        "date": "Oct 2025"
+      },
+      {
+        "text": "Family visit — kids were nervous on the narrow bits, so we stuck to the viewpoint.",
+        "rating": 4,
+        "name": "Jira W.",
+        "date": "Sep 2025"
+      },
+      {
+        "text": "Quiet and free. Bring water and don't underestimate the heat.",
+        "rating": 5,
+        "name": "Witthaya T.",
+        "date": "Aug 2025"
+      }
     ],
-    "viewLocation": "View location on Google Maps"
+    "viewLocation": "View all reviews on Google Maps"
   },
   "mapSection": {
     "label": "Map",
-    "heading": "How to Find Pai Canyon",
+    "heading": "Location & How to Visit Pai Canyon in Pai",
     "lead": "In Mae Hi, Pai District, Mae Hong Son — about 8 km south of Pai town along Route 1095 toward Mae Hong Son.",
     "stats": [
-      { "tag": "Province", "value": "Mae Hong Son", "sub": "Thailand" },
-      { "tag": "Coordinates", "value": "19.3533, 98.4428", "sub": "19.3533° N, 98.4428° E" },
-      { "tag": "Distance", "value": "~8 km from Pai", "sub": "20 min by motorbike (south on Rte 1095)" }
+      {
+        "tag": "Province",
+        "value": "Mae Hong Son",
+        "sub": "Thailand"
+      },
+      {
+        "tag": "Coordinates",
+        "value": "19.3061, 98.4525",
+        "sub": "19.3061° N, 98.4525° E"
+      },
+      {
+        "tag": "Distance",
+        "value": "~8 km from Pai",
+        "sub": "20 min by motorbike (south on Rte 1095)"
+      }
     ],
     "address": "Mae Hi, Pai District, Mae Hong Son 58130 (Plus Code 8F43+F22), about 8 km south of Pai town",
     "plusCode": "8F43+F22",
-    "coords": "19.3533° N, 98.4428° E"
+    "coords": "19.3061° N, 98.4525° E",
+    "authority": "For official updates and regional tourism information, visit",
+    "authorityLinkText": "Tourism Authority of Thailand (TAT)"
   },
   "footer": {
     "brand": {
@@ -375,14 +803,38 @@
     "about": "This site is built to share the history and landscape of Pai Canyon with no commercial interest.",
     "navTitle": "Menu",
     "navItems": [
-      { "label": "Home", "href": "#top" },
-      { "label": "About", "href": "#about" },
-      { "label": "History", "href": "#history" },
-      { "label": "Visit Guide", "href": "#guide" },
-      { "label": "Food", "href": "#food" },
-      { "label": "Photos", "href": "#gallery" },
-      { "label": "Reviews", "href": "#reviews" },
-      { "label": "Map", "href": "#map" }
+      {
+        "label": "Home",
+        "href": "#top"
+      },
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "History",
+        "href": "#history"
+      },
+      {
+        "label": "Visit Guide",
+        "href": "#guide"
+      },
+      {
+        "label": "Food",
+        "href": "#food"
+      },
+      {
+        "label": "Photos",
+        "href": "#gallery"
+      },
+      {
+        "label": "Reviews",
+        "href": "#reviews"
+      },
+      {
+        "label": "Map",
+        "href": "#map"
+      }
     ],
     "noteTitle": "Note",
     "note": "Details may change — please check with local information before you travel.",
@@ -394,7 +846,9 @@
     "cookies": "Cookies",
     "disclaimerLead": "This site is not affiliated with any government body or the canyon's operators",
     "unofficial": "An independent resource maintained by volunteers",
-    "dataSource": "Weather data: Open-Meteo · Coordinates: 19.3533, 98.4428",
+    "dataSource": "Coordinates: 19.3061, 98.4525 · Mae Hi, Pai District, Mae Hong Son 58130, Thailand",
+    "photoCredit": "All photos displayed on this website remain the property of their original photographers; all rights reserved.",
+    "lastUpdated": "Content last updated: September 2026",
     "copyright": "© 2026 Pai Canyon Guide. All rights reserved."
   },
   "sources": {
@@ -403,11 +857,21 @@
     "intro": "This site is a non-profit educational project. Content is compiled from public sources, and photos are used under Creative Commons (CC) licences; copyright belongs to the original owners. If anything is missing or wrong, let us know.",
     "photoTitle": "Photo Licences",
     "photoItems": [
-      { "text": "Gallery photos are used under CC BY / CC BY-SA and other Creative Commons licences.", "url": "https://creativecommons.org/licenses/", "linkLabel": "View CC licences" },
-      { "text": "Photo sources include public tourism image collections and visitor-shared open-licence photos." }
+      {
+        "text": "Gallery photos are used under CC BY / CC BY-SA and other Creative Commons licences.",
+        "url": "https://creativecommons.org/licenses/",
+        "linkLabel": "View CC licences"
+      },
+      {
+        "text": "Photo sources include public tourism image collections and visitor-shared open-licence photos."
+      }
     ],
     "factTitle": "Facts & Information",
-    "factText": "Place and history information references public sources including the Tourism Authority of Thailand (TAT) and Wikipedia (Pai District). Weather and sunlight data come from the free Open-Meteo API.",
+    "factText": "Place, geology and history information references public sources including the Tourism Authority of Thailand (TAT), the Thai Meteorological Department climate normals for Mae Hong Son Province (1991–2020) and Wikipedia (Pai District). Live conditions and the multi-day outlook shown on this page are refreshed automatically from a weather data service.",
+    "reviewsTitle": "Reviews · Synced September 2026",
+    "reviewsText": "Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps.",
+    "reviewsLink": "View all reviews on Google Maps",
+    "photoCredit": "All photos displayed on this website remain the property of their original photographers; all rights reserved.",
     "correctionTitle": "Found a mistake? Let us know",
     "correctionText": "We try to keep information accurate, but entry fees and opening hours can change. If you spot any error, email us so we can fix it for every traveler.",
     "correctionCta": "Email a correction",
@@ -419,17 +883,32 @@
       "title": "Privacy Policy",
       "updated": "Last updated: July 2026",
       "sections": [
-        { "h": "Information we collect", "p": "This site has no membership system and collects no personal data, beyond what you type into a contact form (if any)." },
-        { "h": "Cookies", "p": "We use cookies only to remember your language preference and display settings — not to track your identity." },
-        { "h": "Contact", "p": "If you have questions about your data, reach us through the channels listed on the home page." }
+        {
+          "h": "Information we collect",
+          "p": "This site has no membership system and collects no personal data, beyond what you type into a contact form (if any)."
+        },
+        {
+          "h": "Cookies",
+          "p": "We use cookies only to remember your language preference and display settings — not to track your identity."
+        },
+        {
+          "h": "Contact",
+          "p": "If you have questions about your data, reach us through the channels listed on the home page."
+        }
       ]
     },
     "terms": {
       "title": "Terms of Use",
       "updated": "Last updated: July 2026",
       "sections": [
-        { "h": "Usage", "p": "All content is provided for education. You may share it with credit, but not resell it." },
-        { "h": "Liability", "p": "We are not responsible for accidents or losses arising from the use of this site's information." }
+        {
+          "h": "Usage",
+          "p": "All content is provided for education. You may share it with credit, but not resell it."
+        },
+        {
+          "h": "Liability",
+          "p": "We are not responsible for accidents or losses arising from the use of this site's information."
+        }
       ]
     },
     "cookies": {
@@ -437,12 +916,399 @@
       "updated": "Last updated: July 2026",
       "intro": "We use cookies to remember your preferences and measure usage, to improve the site.",
       "categories": [
-        { "h": "Essential cookies", "status": "Always on", "p": "Required for the site to work, such as remembering your chosen language. Cannot be turned off.", "sub": "Language & display", "subStatus": "Automatic", "active": true },
-        { "h": "Analytics cookies", "status": "Optional", "p": "Help us understand how visitors use the site, to improve the content.", "sub": "Usage statistics", "subStatus": "Can be off", "active": false }
+        {
+          "h": "Essential cookies",
+          "status": "Always on",
+          "p": "Required for the site to work, such as remembering your chosen language. Cannot be turned off.",
+          "sub": "Language & display",
+          "subStatus": "Automatic",
+          "active": true
+        },
+        {
+          "h": "Analytics cookies",
+          "status": "Optional",
+          "p": "Help us understand how visitors use the site, to improve the content.",
+          "sub": "Usage statistics",
+          "subStatus": "Can be off",
+          "active": false
+        }
       ],
       "consent": "Clicking 'Save' means you accept the use of cookies as described.",
       "save": "Save settings",
       "rejectAll": "Reject all"
     }
+  },
+  "weather": {
+    "label": "Weather",
+    "heading": "Live Weather & 7-Day Forecast at Pai Canyon",
+    "lead": "The ridge is fully exposed to sun, wind and rain, so the forecast decides how you pack. Check the next few hours before you ride out from Pai town.",
+    "nowTitle": "Right now at the canyon",
+    "feelsLike": "Feels like",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "rainChance": "Chance of rain",
+    "uv": "UV index",
+    "sunrise": "Sunrise",
+    "sunset": "Sunset",
+    "updated": "Updated",
+    "forecastTitle": "Next 7 days",
+    "umbrellaYes": "Take an umbrella or a rain shell — rain is likely within the next few hours.",
+    "umbrellaMaybe": "A light rain jacket is worth packing — showers are possible later today.",
+    "umbrellaNo": "No umbrella needed — the ridge should stay dry for the rest of the day.",
+    "safetyNote": "Forecasts for mountain terrain are indicative, not guarantees: canyon weather can change within an hour. Carry water, tell someone your plan and keep an eye on the sky.",
+    "loading": "Loading the latest forecast…",
+    "unavailable": "The live forecast is temporarily unavailable. Please judge the sky and local conditions before you set off.",
+    "rain": "Rain",
+    "uvLow": "Low",
+    "uvModerate": "Moderate",
+    "uvHigh": "High",
+    "uvVeryHigh": "Very high",
+    "uvExtreme": "Extreme",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "quickTitle": "Do I need an umbrella?",
+    "detailTitle": "Right now",
+    "dressLabel": "What to wear",
+    "planLabel": "How to plan the day",
+    "gearLabel": "What to pack",
+    "riskLabel": "Safety notice",
+    "emptyAdvice": "Nothing unusual in today’s weather — prepare as you normally would.",
+    "advice": {
+      "dStorm": "Thunderstorms or heavy rain: bring a waterproof, windproof shell and closed, grippy shoes. Skip flip-flops — wet red soil is very slippery.",
+      "dRain": "Rain expected: a waterproof or quick-dry layer plus closed, grippy shoes — the canyon’s red soil turns slick when wet.",
+      "dCold": "Cold for this area: a thick jacket and a scarf, and sunrise feels noticeably colder.",
+      "dHot": "Hot: wear light, breathable, pale clothing and a hat — there is almost no shade on the ridge.",
+      "dLayers": "A big day-to-night swing: bring a layer you can add or shed, sunrise is noticeably cool.",
+      "dWind": "Blustery: skip loose skirts and wide-brim hats — a light jacket that stays put works better.",
+      "dMild": "Comfortable temperatures: light long sleeves or a t-shirt plus a pair of good walking shoes.",
+      "pThunder": "If thunder starts, head down immediately — do not stay on the red ridge: it is open with no shelter, and never shelter under a lone tree or rock.",
+      "pHeavy": "Do not continue the ridge walk — heavy rain makes the red slopes dangerously slippery and can trigger flash flooding. Cafés, hot springs or temples in Pai town are the safer plan.",
+      "pChance": "Rain is likely: move the ridge walk and sunset viewing earlier or to another day, and keep an indoor plan in Pai town as backup.",
+      "pHot": "Avoid walking between 11:00 and 15:00 — the ridge has almost no shade. Go at sunrise or in the two hours before sunset.",
+      "pFog": "Fog hurts visibility: canyon views and sunrise or sunset will be washed out. Postpone, and drive the hill road slowly with fog lights.",
+      "pWind": "The ridge top has no shelter. When it is windy, do not stand near the edge for photos — keep your distance, stay low, and fly drones with care.",
+      "pOvercast": "Overcast light is soft and even: good for portraits and landscape shots, and no harsh sun to endure.",
+      "pClear": "Clear and dry — great for being outdoors. Sunrise and the hours around sunset are the best windows (see times above); midday light is harsh.",
+      "pDefault": "Settled weather: plan the ridge walk as usual, but check the sky again before you set off.",
+      "gRain": "Rain jacket or a folding umbrella (ridge winds make long umbrellas useless)",
+      "gRaincoat": "A rain jacket beats an umbrella up here (strong ridge winds)",
+      "gShoes": "Closed grippy shoes — red soil and loose gravel; flip-flops, sandals and bare feet are a bad idea",
+      "gSun": "Sunscreen, sunglasses, a hat",
+      "gWater": "Plenty of drinking water (there is no shop on the ridge)",
+      "gWarm": "A light jacket (cool at sunrise and after sunset)",
+      "gTorch": "Head torch or phone light (no lighting at the canyon — the walk back after sunset is dark)",
+      "rAlert": "Weather warning: “{event}” has been issued. Consider adjusting your plans, avoid exposed mountain and canyon areas, and keep watching the forecast.",
+      "rThunder": "Lightning risk: leave the ridge top and open ground immediately — never shelter under a lone tree or rock, and stay back from the cliffs.",
+      "rRain": "Heavy rain: avoid gullies and low ground, watch for flash flooding, and keep away from the edges — wet red soil is slick.",
+      "rGale": "Strong winds: stay back from ridge edges and loose red pinnacles, and mind your balance and loose items.",
+      "rFog": "Low visibility: canyon views will be poor; drive the access road slowly with fog lights.",
+      "rHeat": "Extreme heat: cut midday outdoor activity, drink regularly and guard against heat exhaustion.",
+      "pCloudSea": "Morning humidity is high: a sea of clouds may form in the valley — be on the ridge before sunrise, it burns off quickly."
+    }
+  },
+  "season": {
+    "label": "Seasons",
+    "heading": "Season-by-Season Visiting Strategy",
+    "lead": "Pai sits in a monsoon valley, so the year splits into four clearly different windows for the canyon. The table below summarises typical weather, the best visiting strategy, the quality of light, crowd levels and an overall rating for each one.",
+    "sourceNote": "Typical conditions are drawn from the 1991–2020 climatological normal for Mae Hong Son Province and from long-term records for the Pai valley. Individual years vary.",
+    "cols": {
+      "season": "Season",
+      "months": "Months",
+      "weather": "Typical weather",
+      "visiting": "Visiting strategy",
+      "light": "Light & photography",
+      "crowds": "Crowds",
+      "grade": "Overall"
+    },
+    "rows": [
+      {
+        "season": "Cool dry season",
+        "months": "Nov – Feb",
+        "weather": "Clear, dry and cool. Mornings 12–18 °C, afternoons 24–30 °C; clear nights on the ridge can fall below 10 °C.",
+        "visiting": "The best all-round window. Walk the full ridge mid-morning or in the two hours before sunset; bring a light layer for the evening.",
+        "light": "Long, clean golden hour, low haze and sharp valley silhouettes — the most reliable sunset photography of the year.",
+        "crowds": "Busiest, especially late December to mid-January and around Thai New Year holidays. Arrive 45–60 minutes before sunset.",
+        "grade": "★★★★★",
+        "gradeClass": "best"
+      },
+      {
+        "season": "Hot dry season",
+        "months": "Mar – Apr",
+        "weather": "Peak heat: 33–38 °C by midday, almost cloudless, dust and smoke haze build through late March and April.",
+        "visiting": "Walk at first light (06:00–09:00) or after 16:00. Shorten the route, take more water than feels necessary and avoid the exposed middle section at midday.",
+        "light": "Very strong contrast after 10:00, which flattens colour; the haze can turn sunsets a heavy orange or mute them completely.",
+        "crowds": "Generally quiet, except Songkran (13–15 April), when Pai district fills up for several days.",
+        "grade": "★★★☆☆",
+        "gradeClass": "caution"
+      },
+      {
+        "season": "Green season",
+        "months": "May – Jun",
+        "weather": "The first monsoon showers arrive as short, heavy afternoon storms. Green-up happens fast; humidity climbs and the air clears.",
+        "visiting": "Use the dry mornings and treat the ridge as a morning activity. Check the radar before setting off and expect slippery laterite for a day after rain.",
+        "light": "Washed, dramatic cloud structures and occasional shafts of sun — good for atmospheric rather than classic sunset shots.",
+        "crowds": "Very light. This is the quietest good-value window of the year.",
+        "grade": "★★★★☆",
+        "gradeClass": "good"
+      },
+      {
+        "season": "Rainy season",
+        "months": "Jul – Oct",
+        "weather": "Frequent heavy showers, saturated soils and standing water in the gullies. Fog banks form in the valley on many mornings.",
+        "visiting": "Go in the reliable dry hours of mid-morning to early afternoon, stay on the main ridge, and skip the narrow outer fins entirely. Check access after storms.",
+        "light": "Moody fog and shafts of light between showers; a genuine dramatic sunset is possible but far from guaranteed.",
+        "crowds": "Lowest crowds of the year, with the biggest weather risk and the highest chance of a cancelled sunset.",
+        "grade": "★★★☆☆",
+        "gradeClass": "caution"
+      }
+    ],
+    "notes": [
+      "Sunset time in Pai moves by roughly one hour across the year, so verify it on the day rather than relying on a fixed hour.",
+      "The burning-season smoke (mid-February to April) can reduce visibility substantially; plan a second morning if the view matters to you.",
+      "Rain can make the laterite footpaths dangerously slick — grip shoes are essential rather than optional in the wet months."
+    ]
+  },
+  "routes": {
+    "label": "Routes",
+    "heading": "Recommended Routes for Every Kind of Visitor",
+    "lead": "Pai Canyon is small enough for a 45-minute stop and rich enough for a full day. Choose a plan by who is travelling with you and how much time you have, then adapt it on the ground.",
+    "audienceTitle": "Tailored plans by visitor type",
+    "audience": [
+      {
+        "tag": "01",
+        "name": "Families with children",
+        "duration": "45 – 60 minutes",
+        "forWhom": "Families with younger children, grandparents and anyone who prefers solid ground underfoot.",
+        "steps": [
+          "Park in the lot beside the entrance and use the toilets there before setting off.",
+          "Walk the first wide lookout with the guard rails — this is the classic photo stop and it needs no scrambling.",
+          "Follow the main ridge only as far as the trail stays wide and level, then turn back at the first narrow section.",
+          "Finish with a cold drink at the entrance stalls while the light drops, then drive back to Pai town before dark."
+        ],
+        "tips": "Hold hands on the fins, keep children away from the outer edges and never let them run ahead on the ridge."
+      },
+      {
+        "tag": "02",
+        "name": "Photographers & nature lovers",
+        "duration": "2.5 – 3 hours",
+        "forWhom": "Anyone willing to walk the full ridge for the best light and the quietest angles.",
+        "steps": [
+          "Arrive 60–75 minutes before sunset and first scout the three main viewing points without a camera in hand.",
+          "Shoot the long views while the sun is still high enough to throw shape into the gullies.",
+          "Move to the far western viewpoint for the sunset itself — the light travels along the ridge line.",
+          "Stay for 20–40 minutes after the sun clears the horizon for blue-hour frames of the silhouetted fins.",
+          "Bring a head torch for the walk back to the car; the ridge is unlit."
+        ],
+        "tips": "A polarising filter cuts haze on the valley, and a tripod is worth the weight for blue hour. Watch for dust on the lens in the dry season."
+      },
+      {
+        "tag": "03",
+        "name": "Low-mobility and low-energy visitors",
+        "duration": "20 – 30 minutes",
+        "forWhom": "Visitors who use a stick or wheelchair, recover from injury, or simply want the view without the climbing.",
+        "steps": [
+          "Drive directly to the upper parking area beside the entrance to shorten the approach.",
+          "Stay on the flat, fenced viewpoint platform — it gives most of the classic panorama with no steps and no exposure.",
+          "Take the short graded path to the second bench if the surface is dry; skip it after rain.",
+          "Cool off in the shade by the stalls and watch the light change from the platform instead of the ridge."
+        ],
+        "tips": "The laterite is uneven and root-crossed off the platform, so wheelchairs should stay on the prepared surface. Avoid the narrow fins entirely."
+      }
+    ],
+    "generalTitle": "Standard routes: half day and full day",
+    "general": [
+      {
+        "tag": "Half day",
+        "name": "Canyon & hot spring loop",
+        "duration": "3 – 4 hours",
+        "stops": [
+          {
+            "time": "15:30",
+            "title": "Leave Pai town",
+            "desc": "Ride south on Route 1095, about 8 km of easy curves."
+          },
+          {
+            "time": "16:00",
+            "title": "Walk the ridge",
+            "desc": "45–60 minutes on the main ridge and viewpoints while the light softens."
+          },
+          {
+            "time": "17:15",
+            "title": "Sunset from the west viewpoint",
+            "desc": "The main event: the valley turns copper as the sun drops."
+          },
+          {
+            "time": "18:15",
+            "title": "Tha Pai Hot Spring",
+            "desc": "15 minutes further south for a soak before heading back."
+          }
+        ],
+        "note": "Best in the cool dry season. Leave time for the drive back in the dark — the road has no street lighting."
+      },
+      {
+        "tag": "Full day",
+        "name": "South Pai countryside day",
+        "duration": "7 – 8 hours",
+        "stops": [
+          {
+            "time": "07:00",
+            "title": "Sunrise start",
+            "desc": "Early ridge walk in cool air and near-empty paths, then breakfast in Pai town."
+          },
+          {
+            "time": "10:00",
+            "title": "Tha Pai Hot Spring",
+            "desc": "Thermal pools in the forest, roughly 15 km south of the canyon."
+          },
+          {
+            "time": "12:30",
+            "title": "Lunch",
+            "desc": "Local kitchens along Route 1095 or back in Pai town."
+          },
+          {
+            "time": "14:30",
+            "title": "Village and valley stops",
+            "desc": "Ridgeline and bamboo-bridge viewpoints on the southern loop."
+          },
+          {
+            "time": "17:00",
+            "title": "Return to the canyon",
+            "desc": "Second visit for sunset, when the whole ridge glows."
+          },
+          {
+            "time": "18:45",
+            "title": "Back to town",
+            "desc": "Dinner in Pai town walking street and an early finish."
+          }
+        ],
+        "note": "Only attempt the full loop with a motorbike, a car, or a hired driver — and check the weather before committing to the sunset stop."
+      }
+    ],
+    "note": "All timings assume you are starting from Pai town. Distances on Route 1095 are short but the curves are constant, so a 8 km leg can take 20 minutes or more."
+  },
+  "facilities": {
+    "label": "Facilities",
+    "heading": "Visitor Services & Facilities Around Pai Canyon",
+    "lead": "A practical, neutral overview of the kinds of services you can expect near the canyon and in the surrounding district, so you know what to carry and what to buy before you set off.",
+    "neutralNote": "This section describes categories of services only. As a non-commercial educational project we do not name, rank or recommend individual businesses, and we have no commercial relationship with any operator.",
+    "items": [
+      {
+        "emoji": "🚻",
+        "name": "Toilets (WC)",
+        "desc": "Basic toilets operate next to the parking area and the entrance stalls. There are none along the ridge itself, and none of the route has running water or hand-washing points.",
+        "hint": "Carry tissues and a little change"
+      },
+      {
+        "emoji": "🅿️",
+        "name": "Parking",
+        "desc": "An unpaved parking area sits beside the entrance. It is comfortable most of the day and completely full during the sunset peak, when vehicles also line the roadside.",
+        "hint": "Arrive 45+ min before sunset"
+      },
+      {
+        "emoji": "🥤",
+        "name": "Drinks & snack stalls",
+        "desc": "Small stalls and drinks carts cluster around the entrance, typically selling bottled water, soft drinks, coffee and simple local snacks. They run to the end of the sunset shift and are seasonal.",
+        "hint": "Bring a refillable bottle"
+      },
+      {
+        "emoji": "🍜",
+        "name": "Restaurants & cafés",
+        "desc": "Types available within a short drive: northern Thai family restaurants, simple noodle kitchens, coffee shops and a few vegetarian-friendly cafés. The widest choice is in Pai town rather than beside the canyon.",
+        "hint": "Best choice is 8 km away in town"
+      },
+      {
+        "emoji": "🛏️",
+        "name": "Accommodation",
+        "desc": "Types available: guesthouses, hostels, boutique resorts and hillside cabins. Almost all of it sits in Pai town and the surrounding valleys, so the canyon is always visited as a short trip rather than an overnight stay.",
+        "hint": "No lodging on the ridge"
+      },
+      {
+        "emoji": "🛒",
+        "name": "Shops, groceries & pharmacies",
+        "desc": "Types available in Pai town: convenience stores, grocery shops, pharmacies and a weekly market. Nothing is sold on the ridge beyond the entrance stalls, so stock up before you leave town.",
+        "hint": "Last supplies before the ridge"
+      },
+      {
+        "emoji": "⛽",
+        "name": "Fuel & EV charging",
+        "desc": "Types available: petrol stations along Route 1095 and in Pai town, plus an increasing number of charging points for electric vehicles and e-scooters operated by hotels and rental shops.",
+        "hint": "Fill up in town first"
+      },
+      {
+        "emoji": "📶",
+        "name": "Signal, ATMs & medical help",
+        "desc": "Mobile data is usable around the entrance and patchy on the ridge. ATMs and banks are in Pai town, and the district hospital with an emergency department is roughly 8–10 km away.",
+        "hint": "Emergency 191 · ambulance 1669"
+      }
+    ],
+    "closeNote": "Facilities change with the season and with how busy the site is. Treat this as a checklist of what to prepare rather than a guarantee of what will be open on the day."
+  },
+  "science": {
+    "label": "Science",
+    "heading": "The Science Behind the Red Ridges",
+    "lead": "Pai Canyon is not a canyon in the river-cut sense: it is a ridge of soft, iron-rich laterite that rain has sliced into narrow fins. Understanding how it formed explains why it changes shape, and why it demands care.",
+    "blocks": [
+      {
+        "title": "Why the ground is red",
+        "text": "The ridges are built from laterite — a soil and soft rock horizon that forms when intense tropical rainfall leaches silica and soluble minerals out of the ground and leaves iron and aluminium oxides behind. Those oxides are what give the surface its rust-orange colour, and they also cement the sediment into a material that can stand as a near-vertical fin before it finally collapses."
+      },
+      {
+        "title": "Layers that were lifted and tilted",
+        "text": "The laterite sits on a sequence of sedimentary beds — sandstones, shales and thin limestone — laid down long ago and then raised by the tectonic forces that built the highlands of northern Thailand. Walking the ridge, you are effectively walking along an eroded edge of that uplifted block, which is why the valley falls away on both sides at once."
+      },
+      {
+        "title": "Rain does the carving",
+        "text": "Each monsoon season, water running off the ridge gathers into rills, then gullies, then deep channels. The strips of ground left standing between two channels narrow into the knife-edge partitions the site is famous for. This is why the canyon is genuinely young and genuinely mobile: every wet season removes material, and the fins you photograph this year are not exactly the fins of a decade ago."
+      },
+      {
+        "title": "A habitat on difficult ground",
+        "text": "Laterite is acidic, nutrient-poor and dries out completely between showers, so the plant cover is sparse and tough: grasses, scrub, fire-adapted trees and low pine. The open habitat suits lizards, snakes, insects and hunting birds such as kestrels and bee-eaters, while the surrounding valleys of Mae Hi subdistrict are farmland — rice, corn and smallholdings — rather than forest. The ecosystem here is a product of poor soil and a hard dry season, not of lush rainforest."
+      }
+    ],
+    "responsibilityTitle": "Visitor Responsibility",
+    "responsibilityIntro": "Pai Canyon is an unprotected natural surface with no barriers, no lighting and no rescue patrol. Almost all of the damage and almost all of the accidents here come down to a handful of habits.",
+    "dos": [
+      "Stay on worn paths and keep to the wide, stable parts of the ridge.",
+      "Wear shoes with real grip — trainers or hiking shoes, not sandals or flip-flops.",
+      "Carry at least one litre of drinking water per person and a hat.",
+      "Tell someone where you are going if you plan to walk the full ridge alone.",
+      "Take every piece of litter back to the entrance bins, including fruit peel.",
+      "Keep a head torch or phone light for the walk back after sunset."
+    ],
+    "donts": [
+      "Do not step over or around any safety chain, rope or warning sign.",
+      "Do not walk the narrow outer fins, especially in wind or after rain.",
+      "Do not climb the fins for a photo, and do not sit on unsupported edges.",
+      "Do not light fires, incense or sky lanterns on the ridge.",
+      "Do not fly drones over the crowded sunset viewpoints.",
+      "Do not enter restricted or fenced-off vegetation on the surrounding farmland."
+    ],
+    "safetyTitle": "Staying safe on the ridges",
+    "safetyItems": [
+      {
+        "title": "Slippery after rain",
+        "desc": "Wet laterite behaves like grease. If it rains, wait for the surface to dry or stay on the fenced platform."
+      },
+      {
+        "title": "Wind gusts",
+        "desc": "The ridge funnels gusts that can unbalance an adult on a narrow fin. Crouch and move on hands if you are caught out."
+      },
+      {
+        "title": "Heat and dehydration",
+        "desc": "There is no shade and no water on the ridge. Heat exhaustion is the most common problem reported here."
+      },
+      {
+        "title": "Crevasse-like gullies",
+        "desc": "The gaps between fins can be deep and hidden by grass. Never jump across them and never descend into one."
+      },
+      {
+        "title": "Darkness",
+        "desc": "The site is unlit. If you stay for the sunset, finish your walk before the last light goes."
+      }
+    ]
+  },
+  "mobileBar": {
+    "openMaps": "Open in Google Maps",
+    "call": "Call"
   }
 }

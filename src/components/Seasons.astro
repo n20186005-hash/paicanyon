@@ -1,0 +1,62 @@
+---
+interface Props {
+  messages: Record<string, any>;
+}
+const { messages } = Astro.props;
+const s = messages.season;
+
+const gradeStyle: Record<string, string> = {
+  best: 'bg-gold/25 text-teak border-gold',
+  good: 'bg-emerald-500/10 text-emerald-900 border-emerald-600/40',
+  caution: 'bg-burgundy/10 text-burgundy border-burgundy/35',
+};
+---
+
+<section id="season" class="py-20 bg-ivory">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-gold text-xl md:text-2xl">{s.label}</p>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{s.heading}</h2>
+    <p class="mt-4 max-w-3xl text-ink/80">{s.lead}</p>
+
+    <div class="mt-9 overflow-x-auto rounded-2xl border border-gold/30 bg-white/65">
+      <table class="w-full min-w-[900px] text-left text-sm align-top">
+        <thead>
+          <tr class="bg-teak text-ivory">
+            <th class="px-4 py-3 font-semibold">{s.cols.season}</th>
+            <th class="px-4 py-3 font-semibold whitespace-nowrap">{s.cols.months}</th>
+            <th class="px-4 py-3 font-semibold">{s.cols.weather}</th>
+            <th class="px-4 py-3 font-semibold">{s.cols.visiting}</th>
+            <th class="px-4 py-3 font-semibold">{s.cols.light}</th>
+            <th class="px-4 py-3 font-semibold">{s.cols.crowds}</th>
+            <th class="px-4 py-3 font-semibold">{s.cols.grade}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {s.rows.map((r: any, i: number) => (
+            <tr class={i % 2 ? 'bg-sand/50' : 'bg-white/40'}>
+              <td class="px-4 py-4 font-display font-semibold text-teak whitespace-nowrap">{r.season}</td>
+              <td class="px-4 py-4 text-ink/80 whitespace-nowrap">{r.months}</td>
+              <td class="px-4 py-4 text-ink/85">{r.weather}</td>
+              <td class="px-4 py-4 text-ink/85">{r.visiting}</td>
+              <td class="px-4 py-4 text-ink/85">{r.light}</td>
+              <td class="px-4 py-4 text-ink/85">{r.crowds}</td>
+              <td class="px-4 py-4">
+                <span class={`inline-block rounded-full border px-3 py-1 text-xs font-semibold whitespace-nowrap ${gradeStyle[r.gradeClass] ?? gradeStyle.good}`}>
+                  {r.grade}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="mt-6 grid md:grid-cols-3 gap-4">
+      {s.notes.map((n: string) => (
+        <li class="rounded-2xl border border-gold/25 bg-white/55 px-4 py-3 text-sm text-ink/80">{n}</li>
+      ))}
+    </ul>
+
+    <p class="mt-5 text-xs text-ink/60">{s.sourceNote}</p>
+  </div>
+</section>

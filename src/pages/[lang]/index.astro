@@ -6,13 +6,19 @@ import Hero from '../../components/Hero.astro';
 import About from '../../components/About.astro';
 import Ecosystem from '../../components/Ecosystem.astro';
 import History from '../../components/History.astro';
-  import Guide from '../../components/Guide.astro';
-  import Sources from '../../components/Sources.astro';
-  import Food from '../../components/Food.astro';
+import Science from '../../components/Science.astro';
+import Seasons from '../../components/Seasons.astro';
+import Routes from '../../components/Routes.astro';
+import Guide from '../../components/Guide.astro';
+import Facilities from '../../components/Facilities.astro';
+import Sources from '../../components/Sources.astro';
+import Food from '../../components/Food.astro';
+import Weather from '../../components/Weather.astro';
 import Gallery from '../../components/Gallery.astro';
 import Reviews from '../../components/Reviews.astro';
 import MapSection from '../../components/MapSection.astro';
 import Footer from '../../components/Footer.astro';
+import MobileBar from '../../components/MobileBar.astro';
 import { getI18n } from '../../i18n/ui';
 
 export async function getStaticPaths() {
@@ -29,12 +35,18 @@ const { lang, messages } = await getI18n(Astro.url);
     <About messages={messages} />
     <Ecosystem messages={messages} />
     <History messages={messages} />
+    <Science messages={messages} />
+    <Seasons messages={messages} />
+    <Routes messages={messages} />
     <Guide messages={messages} />
+    <Facilities messages={messages} />
     <Food messages={messages} />
+    <Weather lang={lang} messages={messages} />
     <Gallery messages={messages} />
     <Reviews messages={messages} />
     <Sources messages={messages} />
     <MapSection lang={lang} messages={messages} />
   </main>
   <Footer lang={lang} messages={messages} />
+  <MobileBar messages={messages} />
 </BaseLayout>
