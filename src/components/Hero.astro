@@ -115,7 +115,7 @@ const weatherMap = weatherMapFor(lang);
   </div>
 </section>
 
-<script is:inline define:vars={{ lang, lat: siteConfig.coords.lat, lon: siteConfig.coords.lng, weatherError: hero.weatherError, weatherMap, goldenChanceLabel: hero.goldenChanceLabel }}>
+<script is:inline define:vars={{ lang, lat: siteConfig.coords.lat, lon: siteConfig.coords.lng, weatherOffline: hero.weatherOffline, weatherMap, goldenChanceLabel: hero.goldenChanceLabel }}>
   (function () {
     // Pai Canyon — actual coordinates (Mae Hi, Pai District, Mae Hong Son, Northern Thailand)
     const LAT = lat, LON = lon;
@@ -182,11 +182,9 @@ const weatherMap = weatherMapFor(lang);
         if (sEl) sEl.textContent = fmt(ss);
         if (bEl) bEl.textContent = fmt(addMin(ss, 20)) + ' – ' + fmt(addMin(ss, 50));
 
-        if (statusEl) statusEl.textContent = weatherError ? '' : '';
-        if (bodyEl) bodyEl.classList.remove('hidden');
-      })
-      .catch(() => {
-        // keep static default values; do not break the card layout
+        // The static values are typical (not live) readings — say so plainly when
+        // the live API cannot be reached, instead of passing them off as realtime.
+        if (statusEl) statusEl.textContent = weatherOffline;
         if (bodyEl) bodyEl.classList.remove('hidden');
       });
   })();

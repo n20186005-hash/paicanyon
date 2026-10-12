@@ -11,6 +11,9 @@ interface Props {
   canonicalPath?: string;
   robots?: string;
   includeFaq?: boolean;
+  /** Topic-page slug (e.g. "entrance-fee"). When set, hreflang alternates point to
+   *  the same topic page in the other locales instead of their homepages. */
+  altSlug?: string;
 }
 const {
   lang,
@@ -20,11 +23,13 @@ const {
   canonicalPath,
   robots = 'index,follow',
   includeFaq = true,
+  altSlug,
 } = Astro.props;
 const canonical = `${siteConfig.domain}${canonicalPath ?? `/${lang}/`}`;
 const homeUrl = `${siteConfig.domain}/${lang}/`;
 const heroImage = `${siteConfig.domain}/gallery/${siteConfig.galleryPrefix}1.jpg`;
 const heroImageAlt = messages.hero?.imgAlt ?? siteConfig.fullName;
+const altFor = (l: Lang) => `${siteConfig.domain}/${l}/${altSlug ? `${altSlug}/` : ''}`;
 
 const faqs = (messages && messages.guide && messages.guide.faqs) ? messages.guide.faqs : [];
 const about = messages.about ?? {};
@@ -115,14 +120,9 @@ const jsonLd = {
         reviewCount: siteConfig.reviewCount.replace(/,/g, ''),
         bestRating: 5,
       },
-      openingHoursSpecification: [
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-          opens: siteConfig.openingHours.opens,
-          closes: siteConfig.openingHours.closes,
-        },
-      ],
+      // NOTE: no openingHoursSpecification — Pai Canyon is an open-air natural site
+      // with no official gate hours, and unverified hours must not be presented as
+      // official structured data.
     },
     ...(includeFaq && faqs.length
       ? [
@@ -176,9 +176,9 @@ const jsonLd = {
     <meta name="geo.position" content={`${siteConfig.coords.lat};${siteConfig.coords.lng}`} />
 
     {languagesList.map((l) => (
-      <link rel="alternate" hreflang={htmlLang[l]} href={`${siteConfig.domain}/${l}/`} />
+      <link rel="alternate" hreflang={htmlLang[l]} href={altFor(l)} />
     ))}
-    <link rel="alternate" hreflang="x-default" href={`${siteConfig.domain}/en/`} />
+    <link rel="alternate" hreflang="x-default" href={altFor('en')} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

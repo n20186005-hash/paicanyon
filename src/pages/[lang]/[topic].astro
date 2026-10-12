@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import MobileBar from '../../components/MobileBar.astro';
+import TopicPage from '../../components/TopicPage.astro';
+import { TOPIC_KEYS, getTopic } from '../../lib/topics';
+import { languagesList, messagesFor, type Lang } from '../../i18n/ui';
+
+export const dynamicParams = false;
+
+export async function getStaticPaths() {
+  const paths: Array<{ params: { lang: string; topic: string } }> = [];
+  for (const lang of languagesList) {
+    const m = messagesFor(lang);
+    for (const key of TOPIC_KEYS) {
+      paths.push({ params: { lang, topic: m.topics[key].slug } });
+    }
+  }
+  return paths;
+}
+
+const lang = Astro.params.lang as Lang;
+const slug = Astro.params.topic as string;
+const found = getTopic(lang, slug);
+if (!found) return Astro.redirect(`/${lang}/`);
+const { topic } = found;
+
+const base = messagesFor(lang);
+// Reuse the homepage JSON-LD machinery: breadcrumb + FAQPage + shared #attraction.
+const messages = {
+  ...base,
+  about: { ...base.about, breadcrumb: [base.about.breadcrumb[0], topic.title] },
+  guide: { ...base.guide, faqs: topic.faqs },
+};
+---
+
+<BaseLayout
+  lang={lang}
+  title={topic.metaTitle}
+  description={topic.metaDescription}
+  messages={messages}
+  canonicalPath={`/${lang}/${slug}/`}
+  altSlug={slug}
+>
+  <Header lang={lang} messages={messages} simple />
+  <main class="pt-4">
+    <TopicPage lang={lang} messages={messages} topic={topic} />
+  </main>
+  <Footer lang={lang} messages={messages} />
+  <MobileBar messages={messages} />
+</BaseLayout>

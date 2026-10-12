@@ -14,11 +14,14 @@ export const languages: Record<Lang, string> = {
 
 const messagesMap: Record<Lang, any> = { th, en, zh };
 
+/** Full message bundle for a locale (avoids re-importing the JSON per page). */
+export const messagesFor = (lang: Lang): Record<string, any> => messagesMap[lang];
+
 // mapping for <html lang> / hreflang
 export const htmlLang: Record<Lang, string> = {
   th: 'th',
   en: 'en',
-  zh: 'zh-CN',
+  zh: 'zh-Hans',
 };
 
 const lookup = (obj: Record<string, unknown>, key: string): string => {

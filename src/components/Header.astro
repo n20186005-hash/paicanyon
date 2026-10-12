@@ -5,25 +5,30 @@ import { languages, languagesList, type Lang } from '../i18n/ui';
 interface Props {
   lang: Lang;
   messages: Record<string, any>;
+  /** Topic pages: show brand + language switcher + a single Home link instead of
+   *  the homepage's hash-anchor navigation. */
+  simple?: boolean;
 }
-const { lang, messages } = Astro.props;
+const { lang, messages, simple = false } = Astro.props;
 const h = messages.header;
 
-const navItems = [
-  { label: h.home, href: '#home' },
-  { label: h.about, href: '#about' },
-  { label: h.history, href: '#history' },
-  { label: h.science, href: '#science' },
-  { label: h.season, href: '#season' },
-  { label: h.routes, href: '#routes' },
-  { label: h.guide, href: '#guide' },
-  { label: h.facilities, href: '#facilities' },
-  { label: h.food, href: '#food' },
-  { label: h.weather, href: '#weather' },
-  { label: h.gallery, href: '#gallery' },
-  { label: h.reviews, href: '#reviews' },
-  { label: h.map, href: '#map' },
-];
+const navItems = simple
+  ? [{ label: h.home, href: `/${lang}/` }]
+  : [
+      { label: h.home, href: '#home' },
+      { label: h.about, href: '#about' },
+      { label: h.history, href: '#history' },
+      { label: h.science, href: '#science' },
+      { label: h.season, href: '#season' },
+      { label: h.routes, href: '#routes' },
+      { label: h.guide, href: '#guide' },
+      { label: h.facilities, href: '#facilities' },
+      { label: h.food, href: '#food' },
+      { label: h.weather, href: '#weather' },
+      { label: h.gallery, href: '#gallery' },
+      { label: h.reviews, href: '#reviews' },
+      { label: h.map, href: '#map' },
+    ];
 
 const switchTo = (target: Lang) => `/${target}/`;
 ---

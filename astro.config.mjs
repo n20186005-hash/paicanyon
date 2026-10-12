@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://paicanyon.com',
+  site: 'https://www.paicanyon.com',
   output: 'static',
   // Canonical/OG/hreflang all use the trailing-slash form; keep routing consistent
   // with public/_redirects, which 301s the non-slash variants.

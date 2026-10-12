@@ -18,6 +18,14 @@ const guideImgs = [
     <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{guide.heading}</h2>
     <p class="mt-4 max-w-2xl text-ink/80">{guide.lead}</p>
 
+    <!-- Independent-guide disclosure (report P1: never let a third-party guide be
+         mistaken for the attraction operator's own site) -->
+    {guide.independentNote && (
+      <p class="mt-4 max-w-3xl rounded-xl border border-gold/25 bg-white/60 px-4 py-3 text-xs text-ink/70">
+        <span class="font-semibold text-teak">{guide.independentNote.tag}:</span> {guide.independentNote.text}
+      </p>
+    )}
+
     <!-- Two-Zone guide -->
     {guide.twoZone && (
       <div class="mt-10 rounded-2xl border border-gold/30 bg-white/60 p-6 max-w-4xl shadow-sm">

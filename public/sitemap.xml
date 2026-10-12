@@ -2,34 +2,155 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://paicanyon.com/en/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="th" href="https://paicanyon.com/th/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://paicanyon.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://paicanyon.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://paicanyon.com/en/"/>
+    <loc>https://www.paicanyon.com/en/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.paicanyon.com/th/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.paicanyon.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.paicanyon.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.paicanyon.com/en/"/>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://paicanyon.com/th/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="th" href="https://paicanyon.com/th/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://paicanyon.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://paicanyon.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://paicanyon.com/en/"/>
+    <loc>https://www.paicanyon.com/th/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.paicanyon.com/th/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.paicanyon.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.paicanyon.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.paicanyon.com/en/"/>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://paicanyon.com/zh/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="th" href="https://paicanyon.com/th/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://paicanyon.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://paicanyon.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://paicanyon.com/en/"/>
+    <loc>https://www.paicanyon.com/zh/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.paicanyon.com/th/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.paicanyon.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.paicanyon.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.paicanyon.com/en/"/>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <!-- Long-tail topic guides: identical slugs in all locales, paired with hreflang -->
+  <url>
+    <loc>https://www.paicanyon.com/en/entrance-fee/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.paicanyon.com/th/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.paicanyon.com/en/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.paicanyon.com/zh/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.paicanyon.com/en/entrance-fee/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.paicanyon.com/th/entrance-fee/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.paicanyon.com/th/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.paicanyon.com/en/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.paicanyon.com/zh/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.paicanyon.com/en/entrance-fee/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.paicanyon.com/zh/entrance-fee/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.paicanyon.com/th/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.paicanyon.com/en/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.paicanyon.com/zh/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.paicanyon.com/en/entrance-fee/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.paicanyon.com/en/sunset/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.paicanyon.com/th/sunset/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.paicanyon.com/en/sunset/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.paicanyon.com/zh/sunset/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.paicanyon.com/en/sunset/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.paicanyon.com/th/sunset/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.paicanyon.com/th/sunset/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.paicanyon.com/en/sunset/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.paicanyon.com/zh/sunset/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.paicanyon.com/en/sunset/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.paicanyon.com/zh/sunset/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.paicanyon.com/th/sunset/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.paicanyon.com/en/sunset/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.paicanyon.com/zh/sunset/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.paicanyon.com/en/sunset/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.paicanyon.com/en/hiking-guide/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.paicanyon.com/th/hiking-guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.paicanyon.com/en/hiking-guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.paicanyon.com/zh/hiking-guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.paicanyon.com/en/hiking-guide/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.paicanyon.com/th/hiking-guide/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.paicanyon.com/th/hiking-guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.paicanyon.com/en/hiking-guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.paicanyon.com/zh/hiking-guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.paicanyon.com/en/hiking-guide/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.paicanyon.com/zh/hiking-guide/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.paicanyon.com/th/hiking-guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.paicanyon.com/en/hiking-guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.paicanyon.com/zh/hiking-guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.paicanyon.com/en/hiking-guide/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.paicanyon.com/en/how-to-get-there/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.paicanyon.com/th/how-to-get-there/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.paicanyon.com/en/how-to-get-there/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.paicanyon.com/zh/how-to-get-there/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.paicanyon.com/en/how-to-get-there/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.paicanyon.com/th/how-to-get-there/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.paicanyon.com/th/how-to-get-there/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.paicanyon.com/en/how-to-get-there/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.paicanyon.com/zh/how-to-get-there/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.paicanyon.com/en/how-to-get-there/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.paicanyon.com/zh/how-to-get-there/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.paicanyon.com/th/how-to-get-there/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.paicanyon.com/en/how-to-get-there/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.paicanyon.com/zh/how-to-get-there/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.paicanyon.com/en/how-to-get-there/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <!-- Legal pages are noindex,follow — intentionally kept out of the sitemap -->
 </urlset>

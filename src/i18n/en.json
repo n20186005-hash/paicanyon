@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Pai Canyon: Entrance Fee, Sunset & Hike Guide (2026)",
-    "description": "Pai Canyon in Pai, Mae Hong Son: free entry, opening hours 06:00–19:00, sunset & hiking tips, safety notes, exact location and how to get there from Pai town."
+    "title": "Pai Canyon (Kong Lan) Guide 2026: Sunset, Hiking & Entry Fee",
+    "description": "Explore Pai Canyon (Kong Lan) in Mae Hong Son, Thailand. Plan your visit with sunset tips, free-entry information, hiking safety advice and directions from Pai town."
   },
   "header": {
     "home": "Home",
@@ -24,14 +24,14 @@
     "titleAccent": " Canyon",
     "subtitle": "A free natural viewpoint of winding red-clay ridges, narrow trails and sweeping valley views — 8 km south of Pai town, famous for its copper sunsets.",
     "rating": "4.5",
-    "reviews": "8,368",
-    "reviewCount": "8,368",
+    "reviews": "8,414",
+    "reviewCount": "8,414",
     "reviewsLabel": "Google reviews",
     "category": "Tourist Attraction",
     "imgAlt": "Pai Canyon - main view of the red-earth ridges in Pai, Mae Hong Son, Thailand",
     "citySuffix": " (Pai)",
     "titleSub": "Pai Canyon · Pai, Mae Hong Son, Thailand",
-    "ratingSourceNote": "Rating and review count synced from Google Maps (Google Maps) user reviews · September 2026 ·",
+    "ratingSourceNote": "Rating and review count synced from Google Maps user reviews · October 2026 ·",
     "ratingSourceLink": "View all reviews on Google Maps ↗",
     "badge": "Mae Hong Son · Northern Thailand",
     "cta1": "Get Directions",
@@ -51,7 +51,7 @@
     "sunsetLabel": "Sunset",
     "blueHourLabel": "Blue Hour",
     "sunsetIndexLabel": "Today's sunset index",
-    "sunsetIndexDefault": "Clear · ~85% chance of golden light",
+    "sunsetIndexDefault": "Typical conditions · ~85% golden-light chance",
     "goldenChanceLabel": "golden-light chance",
     "crowdWarningLabel": "Travel Tip",
     "crowdAfter": "Arrive before 18:00 for the golden light and a parking spot",
@@ -63,7 +63,8 @@
     "defaultGolden": "06:00 – 07:30",
     "defaultSunset": "18:30",
     "defaultBlue": "18:50 – 19:20",
-    "defaultTip": "Go at sunrise or sunset — midday heat is intense and the light is flat"
+    "defaultTip": "Go at sunrise or sunset — midday heat is intense and the light is flat",
+    "weatherOffline": "Live data unavailable — showing typical values"
   },
   "about": {
     "label": "About",
@@ -355,12 +356,16 @@
     },
     "hours": {
       "tag": "🕒",
-      "title": "Pai Canyon Opening Hours",
-      "time": "06:00 – 19:00",
+      "title": "Pai Canyon Opening Hours & Best Time to Visit",
+      "time": "Daylight visit · approx. 06:00–19:00",
       "items": [
         {
-          "label": "Every day (Mon–Sun)",
-          "value": "06:00–19:00"
+          "label": "Official gate hours",
+          "value": "None — open-air site"
+        },
+        {
+          "label": "Suggested daylight window",
+          "value": "≈ 06:00–19:00"
         },
         {
           "label": "Best light",
@@ -594,7 +599,7 @@
       },
       {
         "q": "Is there an entry fee",
-        "a": "No — Pai Canyon is free to enter. There is a small roadside parking area that is usually free as well."
+        "a": "No — Pai Canyon is free to enter. The small roadside parking area is usually free as well, though a local attendant may collect a small upkeep fee around sunset."
       },
       {
         "q": "Is it safe for children",
@@ -618,9 +623,13 @@
       },
       {
         "q": "Can I watch sunrise at Pai Canyon",
-        "a": "Yes. The site is open daily from 06:00 to 19:00, so sunrise is possible and far less crowded than the famous sunset; the light on the east-facing gullies is soft and cool."
+        "a": "Yes. Pai Canyon is an open natural site with no official gate hours, so sunrise visits are possible — and far less crowded than the famous sunset. The light on the east-facing gullies is soft and cool; bring a torch for the early ride from Pai town."
       }
-    ]
+    ],
+    "independentNote": {
+      "tag": "Independent guide",
+      "text": "This site is an independent, non-commercial visitor guide to Pai Canyon. It is not run by the site operator or any government body, and details such as fees and facilities can change — please confirm on the spot before you travel."
+    }
   },
   "food": {
     "label": "Food",
@@ -667,7 +676,7 @@
     "label": "Photos",
     "heading": "Scenes of Pai Canyon",
     "intro": "Red-earth ridges, valley panoramas, sunset skies and the narrow trail that draws visitors from around the world",
-    "credits": "All photos displayed on this website remain the property of their original photographers; all rights reserved.",
+    "credits": "Photos are illustrative images of Pai Canyon; copyright remains with their photographers. Credit and removal requests are handled promptly — see the contact link in the Sources section.",
     "alts": [
       "Pai Canyon viewpoint entrance sign",
       "Red-earth ridges of Pai Canyon",
@@ -701,9 +710,9 @@
     "label": "Reviews",
     "heading": "What Visitors Say",
     "intro": "A summary of traveler opinions on Google Maps to help you plan",
-    "disclaimer": "Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps.",
+    "disclaimer": "The rating and review count above are an aggregate snapshot from the Google Maps listing (checked October 2026). We do not republish individual reviews; review copyrights belong to their authors and Google Maps.",
     "sourceTag": "Google Maps user reviews",
-    "ratingSourceNote": "Rating and review count synced from Google Maps (Google Maps) user reviews · September 2026 ·",
+    "ratingSourceNote": "Rating and review count synced from Google Maps user reviews · October 2026 ·",
     "ratingSourceLink": "View all reviews on Google Maps ↗",
     "declaration": "As a non-profit educational site we present both the highlights and the cautions, straight.",
     "featured": [
@@ -714,56 +723,6 @@
       {
         "text": "Easy to reach but thrilling. The narrow ridge with drops on both sides got my heart racing.",
         "source": "— Summarised from Google Maps"
-      }
-    ],
-    "items": [
-      {
-        "text": "Came for sunset and stayed till dark — the colours were incredible.",
-        "rating": 5,
-        "name": "Emma L.",
-        "date": "Mar 2026"
-      },
-      {
-        "text": "Fun little hike along the ridge. Wear proper shoes; some parts are slippery.",
-        "rating": 5,
-        "name": "Somchai Y.",
-        "date": "Feb 2026"
-      },
-      {
-        "text": "Beautiful but not for the faint-hearted — the path is narrow with steep drops.",
-        "rating": 4,
-        "name": "David P.",
-        "date": "Jan 2026"
-      },
-      {
-        "text": "Best free viewpoint near Pai. Arrive before 6pm to catch the golden light.",
-        "rating": 5,
-        "name": "Nina K.",
-        "date": "Dec 2025"
-      },
-      {
-        "text": "Went at noon and it was blazing hot. Go early or late for sure.",
-        "rating": 4,
-        "name": "Aiko T.",
-        "date": "Nov 2025"
-      },
-      {
-        "text": "Loved the maze-like gullies. Took so many photos.",
-        "rating": 5,
-        "name": "Tom B.",
-        "date": "Oct 2025"
-      },
-      {
-        "text": "Family visit — kids were nervous on the narrow bits, so we stuck to the viewpoint.",
-        "rating": 4,
-        "name": "Jira W.",
-        "date": "Sep 2025"
-      },
-      {
-        "text": "Quiet and free. Bring water and don't underestimate the heat.",
-        "rating": 5,
-        "name": "Witthaya T.",
-        "date": "Aug 2025"
       }
     ],
     "viewLocation": "View all reviews on Google Maps"
@@ -848,28 +807,28 @@
     "unofficial": "An independent resource maintained by volunteers",
     "dataSource": "Coordinates: 19.3061, 98.4525 · Mae Hi, Pai District, Mae Hong Son 58130, Thailand",
     "photoCredit": "All photos displayed on this website remain the property of their original photographers; all rights reserved.",
-    "lastUpdated": "Content last updated: September 2026",
+    "lastUpdated": "Content last updated: October 2026",
     "copyright": "© 2026 Pai Canyon Guide. All rights reserved."
   },
   "sources": {
     "label": "Sources",
     "heading": "Sources & Image Credits",
-    "intro": "This site is a non-profit educational project. Content is compiled from public sources, and photos are used under Creative Commons (CC) licences; copyright belongs to the original owners. If anything is missing or wrong, let us know.",
+    "intro": "This site is a non-profit educational project. Place, geology and history information is compiled from public sources; photos are used for illustration with credit to their authors where known. If anything is missing or wrong, let us know.",
     "photoTitle": "Photo Licences",
     "photoItems": [
       {
-        "text": "Gallery photos are used under CC BY / CC BY-SA and other Creative Commons licences.",
-        "url": "https://creativecommons.org/licenses/",
-        "linkLabel": "View CC licences"
+        "text": "Gallery photos are illustrative images of Pai Canyon. If you own any of them and would like credit or removal, please contact us and we will act on it.",
+        "url": "mailto:n20186005@gmail.com?subject=Pai%20Canyon%20photo%20credit",
+        "linkLabel": "Contact us"
       },
       {
-        "text": "Photo sources include public tourism image collections and visitor-shared open-licence photos."
+        "text": "We are compiling per-image photographer, source and licence records; images we cannot verify will be replaced with properly licensed real photos."
       }
     ],
     "factTitle": "Facts & Information",
     "factText": "Place, geology and history information references public sources including the Tourism Authority of Thailand (TAT), the Thai Meteorological Department climate normals for Mae Hong Son Province (1991–2020) and Wikipedia (Pai District). Live conditions and the multi-day outlook shown on this page are refreshed automatically from a weather data service.",
-    "reviewsTitle": "Reviews · Synced September 2026",
-    "reviewsText": "Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps.",
+    "reviewsTitle": "Reviews · Synced October 2026",
+    "reviewsText": "Aggregate rating and review count synced from the Google Maps listing (checked October 2026). Individual reviews are not republished; review copyrights belong to their authors and Google Maps.",
     "reviewsLink": "View all reviews on Google Maps",
     "photoCredit": "All photos displayed on this website remain the property of their original photographers; all rights reserved.",
     "correctionTitle": "Found a mistake? Let us know",
@@ -1310,5 +1269,378 @@
   "mobileBar": {
     "openMaps": "Open in Google Maps",
     "call": "Call"
+  },
+  "topics": {
+    "ui": {
+      "sectionTitle": "Detailed Guides for Your Visit",
+      "sectionLead": "Four focused guides answering the questions visitors ask most",
+      "quickFactsTitle": "Quick facts",
+      "relatedTitle": "Related guides",
+      "backCta": "← Back to the full Pai Canyon guide"
+    },
+    "entranceFee": {
+      "slug": "entrance-fee",
+      "metaTitle": "Pai Canyon Entrance Fee & Parking (2026) — Free Entry",
+      "metaDescription": "Pai Canyon is free to enter — no ticket booth, no booking. See parking fees, the small local charges you may meet, what to bring, and how to avoid surprises at sunset.",
+      "label": "Visitor essentials",
+      "title": "Pai Canyon Entrance Fee & Parking — What It Costs (2026)",
+      "lead": "Pai Canyon is a free, open-air natural site: there is no ticket booth, no gate and no booking. Here is exactly what you pay (almost nothing), the small local charges you may meet, and how to avoid surprises at sunset.",
+      "quickFacts": [
+        {
+          "k": "Entrance fee",
+          "v": "Free — no ticket booth"
+        },
+        {
+          "k": "Parking",
+          "v": "Roadside lot; small local fee may apply"
+        },
+        {
+          "k": "Booking",
+          "v": "Not required"
+        },
+        {
+          "k": "Best value time",
+          "v": "Sunset (free golden light)"
+        }
+      ],
+      "sections": [
+        {
+          "h": "Is there an entrance fee at Pai Canyon?",
+          "p": "No. Pai Canyon (Kong Lan) is a natural landform on open land — you simply walk in from the roadside parking area. There is no ticket office, no turnstile and no reservation system, and no charge for the viewpoint, the ridge trail or the ladder sections. Budget your money for transport and food in Pai instead."
+        },
+        {
+          "h": "Parking at the canyon",
+          "p": "A small roadside parking area sits beside the entrance and is usually free, though a local attendant may collect a modest fee (typically a few dozen baht) toward upkeep, especially around sunset when the lot fills. Bring small cash, arrive 45–60 minutes before sunset, and be ready to park along the road shoulder on busy evenings."
+        },
+        {
+          "h": "Guides, rentals and other costs",
+          "p": "No guide is required — the trail is self-guided and partly unmarked. If you want context, guesthouses in Pai town run half-day tours that combine the canyon with other stops. Motorbike rental in Pai (roughly 200–300 baht per day) is the cheapest way to get here; songthaews and taxis cost more but need no riding experience."
+        },
+        {
+          "h": "What to bring (and what to skip)",
+          "p": "Water is the one thing worth buying before you leave town — there are only a few drink stalls near the entrance and prices are higher than in Pai. Skip flip-flops and heels: the red laterite is slippery, and a bad step on the ridge costs far more than good shoes. A hat, sunscreen and a phone torch for the walk back after sunset are the rest of the kit."
+        },
+        {
+          "h": "Free doesn't mean risk-free",
+          "p": "There are no guardrails on the narrow fins and no rescue patrol. The true \"cost\" of this attraction is attention: keep children close, never back up for a photo, and turn back before the light fails. If you want the calmest experience, the main viewpoint area is the gentlest part of the site."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is Pai Canyon free to enter?",
+          "a": "Yes — entry to Pai Canyon is completely free. There is no ticket booth and no booking; you walk in from the roadside parking area at any time during daylight."
+        },
+        {
+          "q": "How much is parking at Pai Canyon?",
+          "a": "Parking is usually free, but a local attendant may collect a small fee (a few dozen baht) toward site upkeep, particularly around sunset. Bring small cash just in case."
+        },
+        {
+          "q": "Do I need to book tickets or a guide in advance?",
+          "a": "No. Nothing at Pai Canyon is bookable — it is an open natural site. If you prefer a guided visit, guesthouses in Pai town sell half-day tours that include the canyon."
+        },
+        {
+          "q": "Are there toilets or shops at Pai Canyon?",
+          "a": "Facilities are minimal: a small parking area and a few drink stalls near the entrance. There are no toilets at the rim, so use facilities in Pai town before you set off."
+        },
+        {
+          "q": "What is the cheapest way to visit Pai Canyon?",
+          "a": "Rent a motorbike in Pai (about 200–300 baht per day) and ride the 8 km south on Route 1095 — the canyon itself costs nothing, so transport is your only real expense."
+        },
+        {
+          "q": "Can I pay by card or QR payment at Pai Canyon?",
+          "a": "Assume cash only. The site has no payment infrastructure at all; any parking collection is in cash, and the drink stalls near the entrance typically take cash or Thai PromptPay QR."
+        }
+      ],
+      "related": [
+        {
+          "name": "Pai Canyon Sunset",
+          "desc": "Times, seasons and photo spots for the golden hour",
+          "slug": "sunset"
+        },
+        {
+          "name": "Hiking the Ridge Trail",
+          "desc": "Routes, difficulty and safety on the narrow fins",
+          "slug": "hiking-guide"
+        },
+        {
+          "name": "How to Get There",
+          "desc": "Directions from Pai town, Chiang Mai and the airport",
+          "slug": "how-to-get-there"
+        }
+      ]
+    },
+    "sunset": {
+      "slug": "sunset",
+      "metaTitle": "Pai Canyon Sunset Guide 2026 — Times, Seasons & Photo Tips",
+      "metaDescription": "When is sunset at Pai Canyon? Month-by-month sunset times, best photo spots, golden-hour windows and safe tips for the walk back after dark.",
+      "label": "Golden hour",
+      "title": "Pai Canyon Sunset — Times, Seasons & How to Photograph It",
+      "lead": "The copper glow on the red laterite at golden hour is why most people come. Sunset at Pai Canyon falls between roughly 17:40 in November and 18:45 in June, and the light show starts about an hour earlier. Here is how to time it in any month.",
+      "quickFacts": [
+        {
+          "k": "Sunset (Nov)",
+          "v": "≈ 17:40"
+        },
+        {
+          "k": "Sunset (Jun)",
+          "v": "≈ 18:45"
+        },
+        {
+          "k": "Arrive by",
+          "v": "45–60 min before sunset"
+        },
+        {
+          "k": "Golden hour",
+          "v": "Last ~60 min before sunset"
+        }
+      ],
+      "sections": [
+        {
+          "h": "Sunset times through the year",
+          "p": "Pai sits at 19.3° N, so the sunset time moves by about an hour across the year: around 17:40 in November and December, 18:10–18:20 in February–March and September–October, and as late as 18:40–18:45 in June and July. Sunrise runs the opposite way — about 06:20 in November and 05:50 in June. The weather card on this site computes today’s exact times from the canyon’s real coordinates."
+        },
+        {
+          "h": "Why the light is special here",
+          "p": "The ridges are red laterite — iron-rich clay that reflects warm light. In the last hour before sunset the gullies turn copper, shadows stretch across the maze, and the valley beyond catches a haze of gold. After the sun drops, a short blue hour (roughly 20–50 minutes) gives deep silhouettes of the ridge before the sky goes fully dark."
+        },
+        {
+          "h": "Best spots for sunset",
+          "p": "The main rim overlook gives the wide postcard frame and is the safest choice for families. The narrow fins give dramatic scale — a lone walker against the dropping sun — but the drops are real, so never step back for the shot. The wooden ladder section catches side-light that brings out every crack in the clay."
+        },
+        {
+          "h": "Crowds and the parking crunch",
+          "p": "Sunset is peak hour: the small lot fills 45–60 minutes before sunset and cars end up along the road shoulder. Come by motorbike if you can, claim a spot early, and accept that the classic rim position gets busy. Sunrise is the quiet alternative with softer light and cooler air."
+        },
+        {
+          "h": "Getting back after dark",
+          "p": "Light fades fast in the tropics and the trail is uneven red clay with ladders. Start walking out before the last light, carry a phone torch, and do not attempt the narrow fins once the sun is down. If you stay for the blue hour, walk out together and slowly — the 8 km ride back to Pai is unlit in stretches."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "What time is sunset at Pai Canyon?",
+          "a": "It ranges from about 17:40 in November–December to about 18:45 in June–July. The live weather card on this page calculates today’s exact sunset, golden hour and blue hour from the canyon’s coordinates."
+        },
+        {
+          "q": "When should I arrive for sunset at Pai Canyon?",
+          "a": "Arrive 45–60 minutes before sunset to get parking and a good spot on the rim. On peak evenings the small lot fills up even earlier."
+        },
+        {
+          "q": "Is sunrise better than sunset at Pai Canyon?",
+          "a": "Sunrise is quieter, cooler and gives soft light on the east-facing gullies. Sunset is more popular for the copper glow and the valley panorama. If you have one visit, sunset is the classic; if you have two, do both."
+        },
+        {
+          "q": "Can I visit Pai Canyon after dark?",
+          "a": "It is not recommended. The trail is unlit, uneven and edged by drops, and there are no staff on site. If you stay for the blue hour, bring a torch and walk out immediately afterwards."
+        },
+        {
+          "q": "Which month has the best sunsets at Pai Canyon?",
+          "a": "The cool, dry season (November–February) combines clear skies with comfortable temperatures — the most reliable sunsets. The burning season (late February–April) can turn the sun dull red through haze."
+        },
+        {
+          "q": "What camera settings work for the Pai Canyon sunset?",
+          "a": "For golden-hour ridges try f/8–f/11 at ISO 100 with a wide lens; for blue-hour silhouettes open up to f/4 and shoot toward the afterglow. On a phone, tap to expose for the sky and slightly underexpose to keep the highlights."
+        }
+      ],
+      "related": [
+        {
+          "name": "Entrance Fee & Parking",
+          "desc": "Free entry, parking charges and what to bring",
+          "slug": "entrance-fee"
+        },
+        {
+          "name": "Hiking the Ridge Trail",
+          "desc": "Routes, difficulty and safety on the narrow fins",
+          "slug": "hiking-guide"
+        },
+        {
+          "name": "How to Get There",
+          "desc": "Directions from Pai town, Chiang Mai and the airport",
+          "slug": "how-to-get-there"
+        }
+      ]
+    },
+    "hiking": {
+      "slug": "hiking-guide",
+      "metaTitle": "Pai Canyon Hike — Trail Guide, Difficulty & Safety (2026)",
+      "metaDescription": "Walk the Pai Canyon ridge safely: the two routes (easy viewpoint and narrow-fin trail), difficulty, what to wear, ladder sections and the risks to respect.",
+      "label": "On the trail",
+      "title": "Pai Canyon Hiking Guide — The Ridge Trail, Difficulty & Safety",
+      "lead": "The \"hike\" at Pai Canyon is a short but exposed ridge walk: two very different zones, one easy and one thrilling. Here is what each route involves, how long it takes, and the safety rules that matter on the narrow fins.",
+      "quickFacts": [
+        {
+          "k": "Viewpoint walk",
+          "v": "10–15 min · easy"
+        },
+        {
+          "k": "Deep-ridge loop",
+          "v": "30–60 min · moderate"
+        },
+        {
+          "k": "Terrain",
+          "v": "Red laterite, ladders, rails"
+        },
+        {
+          "k": "Footwear",
+          "v": "Grippy closed shoes"
+        }
+      ],
+      "sections": [
+        {
+          "h": "The two zones of Pai Canyon",
+          "p": "From the entrance, a short mostly flat path leads to the main rim overlook — the easy zone, fine for families and anyone uneasy with heights. Beyond it, the deep-ridge trail follows narrow clay fins with drops on both sides, helped by short metal rails and a wooden ladder. Most visitors spend 30–60 minutes on the ridge in total."
+        },
+        {
+          "h": "Route walkthrough",
+          "p": "Walk in from the parking area to the first overlook for the wide valley panorama. If you continue, the path narrows onto the fins: squeeze through gaps, climb the ladder, and loop back through the gullies to the entrance. The trail is self-guided and partly unmarked — in busy periods simply follow the line of people, and retrace your steps rather than pushing into unmapped side-gullies."
+        },
+        {
+          "h": "Difficulty and fitness",
+          "p": "No technical gear or experience is needed, but the route demands steady footing and a head for heights. The clay is firm when dry and slick after rain; the ladder and rails need hands as well as feet. Anyone with mobility issues or vertigo should stay on the easy viewpoint zone, which still delivers the classic panorama."
+        },
+        {
+          "h": "What to wear and carry",
+          "p": "Shoes with real tread — trainers or hiking shoes; flip-flops and sandals are a bad idea on polished clay. Bring at least a litre of water per person in the hot season, a hat and sunscreen (the ridge is almost unshaded), and a phone with charge for the map back. A light rain jacket in the wet season, since storms roll in fast."
+        },
+        {
+          "h": "Safety rules on the ridge",
+          "p": "The fins have no guardrails and vertical drops. Walk single file, keep children within arm’s reach, never back up for a photo, and stay clear of freshly cracked or eroded edges after rain. Turn back before the light fails — navigating the gullies in the dark with a phone torch is how avoidable accidents happen."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How long does the Pai Canyon hike take?",
+          "a": "The easy viewpoint walk takes 10–15 minutes; the full deep-ridge loop with photo stops takes 30–60 minutes. Budget extra time at sunset when the light is at its best."
+        },
+        {
+          "q": "Is the Pai Canyon hike difficult?",
+          "a": "The main viewpoint is easy. The deep-ridge trail is moderate — narrow clay fins with open drops, a ladder and short rails. No special fitness is needed, but sure footing and a head for heights are essential."
+        },
+        {
+          "q": "Is Pai Canyon safe for children?",
+          "a": "The viewpoint zone is fine for children. The narrow ridge is not suitable for small kids or anyone with vertigo — the drops are real and unguarded. Keep children close and turn back if they are nervous."
+        },
+        {
+          "q": "What shoes should I wear to Pai Canyon?",
+          "a": "Closed shoes with grip — trainers or hiking shoes. The red laterite is slippery when dry-dusty and slick after rain; flip-flops, sandals and bare feet are unsafe on the fins."
+        },
+        {
+          "q": "Do I need a guide for the Pai Canyon trail?",
+          "a": "No. The trail is self-guided and usually busy enough to follow. If you want company or context, Pai guesthouses run guided half-day trips that include the canyon."
+        },
+        {
+          "q": "Can I hike Pai Canyon in the rainy season?",
+          "a": "Yes, with care. The clay turns slick, gullies erode and storms arrive quickly. Wear grippy shoes, avoid freshly cracked edges, check the sky before setting off, and skip the fins if you are unsure."
+        }
+      ],
+      "related": [
+        {
+          "name": "Entrance Fee & Parking",
+          "desc": "Free entry, parking charges and what to bring",
+          "slug": "entrance-fee"
+        },
+        {
+          "name": "Pai Canyon Sunset",
+          "desc": "Times, seasons and photo spots for the golden hour",
+          "slug": "sunset"
+        },
+        {
+          "name": "How to Get There",
+          "desc": "Directions from Pai town, Chiang Mai and the airport",
+          "slug": "how-to-get-there"
+        }
+      ]
+    },
+    "gettingThere": {
+      "slug": "how-to-get-there",
+      "metaTitle": "How to Get to Pai Canyon — Directions from Pai & Chiang Mai",
+      "metaDescription": "Directions to Pai Canyon (Kong Lan): 8 km south of Pai town on Route 1095, plus routes from Chiang Mai, the nearest airport, parking and map coordinates.",
+      "label": "Getting there",
+      "title": "How to Get to Pai Canyon — Directions, Distances & Map",
+      "lead": "Pai Canyon sits about 8 km south of Pai town on Route 1095 toward Mae Hong Son. Whether you arrive by motorbike, songthaew, minivan or car, here are the routes, distances and the exact pin to navigate by.",
+      "quickFacts": [
+        {
+          "k": "From Pai town",
+          "v": "≈ 8 km · 15–20 min"
+        },
+        {
+          "k": "From Chiang Mai",
+          "v": "≈ 135 km · 3–3.5 h"
+        },
+        {
+          "k": "Route",
+          "v": "Route 1095 (762 curves)"
+        },
+        {
+          "k": "Pin",
+          "v": "19.3061, 98.4525"
+        }
+      ],
+      "sections": [
+        {
+          "h": "From Pai town",
+          "p": "Head south out of Pai on Route 1095 toward Mae Hong Son for roughly 8 km; the canyon entrance and parking area are on the left, signed for Pai Canyon / Kong Lan. By motorbike it is a 15–20 minute ride on a good road with a gentle climb; songthaews and taxis take similar time — agree the fare and the pickup time in advance, especially for a sunset return."
+        },
+        {
+          "h": "From Chiang Mai",
+          "p": "Pai is about 135 km from Chiang Mai via the famous Route 1095 with its 762 curves — allow 3–3.5 hours by minivan, car or motorbike. Minivans leave from Chiang Mai’s Tha Phae Gate area and drop you in Pai town; from there it is the short 8 km hop to the canyon. Motion-sickness tablets are worth it on the bends."
+        },
+        {
+          "h": "From the airport and beyond",
+          "p": "The nearest airport is Chiang Mai International (CNX). From CNX, take a songthaew or taxi into the city and connect to a Pai minivan, or rent a vehicle. Travellers coming from Mae Hong Son town reach Pai by the same Route 1095 (about 2.5–3 hours), passing the canyon turn-off if you time it for late afternoon."
+        },
+        {
+          "h": "By motorbike, songthaew or tour",
+          "p": "A rented motorbike (roughly 200–300 baht per day in Pai) gives the most flexibility for sunset timing — ride south on 1095, watch for the sign, and park in the roadside lot. Songthaews can be chartered for the round trip; agree the waiting time at sunset. Guided half-day tours from Pai include transport and other stops."
+        },
+        {
+          "h": "Navigation, parking and the ride back",
+          "p": "Pin the coordinates 19.3061, 98.4525 or the Google Maps listing \"Pai Canyon\" before you set off — mobile signal is generally fine along 1095. Parking is a small roadside lot near the entrance that fills before sunset; motorbikes park along the shoulder. Plan the return before dark: the road is unlit in stretches, so carry a torch and ride slowly."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How far is Pai Canyon from Pai town?",
+          "a": "About 8 km south of Pai town on Route 1095 toward Mae Hong Son — a 15–20 minute ride by motorbike, songthaew or taxi."
+        },
+        {
+          "q": "How do I get from Chiang Mai to Pai Canyon?",
+          "a": "Take a minivan or drive from Chiang Mai to Pai (about 3–3.5 hours on the 762-curve Route 1095), then continue 8 km south to the canyon. Many visitors base themselves in Pai and ride out for sunset."
+        },
+        {
+          "q": "Can I drive to Pai Canyon?",
+          "a": "Yes. Route 1095 is paved and the canyon has a small roadside parking area near the entrance. The road is narrow and winding with 762 curves, so drive cautiously, especially on a motorbike."
+        },
+        {
+          "q": "Is there parking at Pai Canyon?",
+          "a": "Yes — a small roadside lot beside the entrance, usually free with a possible small local collection fee. It fills up around sunset, so arrive early or park along the road shoulder."
+        },
+        {
+          "q": "What are the GPS coordinates for Pai Canyon?",
+          "a": "19.3061° N, 98.4525° E (Plus Code 8F43+F22), on Route 1095 about 8 km south of Pai town, Mae Hong Son Province, Thailand."
+        },
+        {
+          "q": "Do I need my own transport to visit Pai Canyon?",
+          "a": "Effectively yes, unless you join a tour. Rent a motorbike in Pai, charter a songthaew or taxi, or join a guided half-day trip — there is no public bus to the canyon itself."
+        }
+      ],
+      "related": [
+        {
+          "name": "Entrance Fee & Parking",
+          "desc": "Free entry, parking charges and what to bring",
+          "slug": "entrance-fee"
+        },
+        {
+          "name": "Pai Canyon Sunset",
+          "desc": "Times, seasons and photo spots for the golden hour",
+          "slug": "sunset"
+        },
+        {
+          "name": "Hiking the Ridge Trail",
+          "desc": "Routes, difficulty and safety on the narrow fins",
+          "slug": "hiking-guide"
+        }
+      ]
+    }
   }
 }

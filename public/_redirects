@@ -1,3 +1,6 @@
+# Path-level rules only. Domain-level canonicalisation (paicanyon.com -> www,
+# http -> https) is handled by src/worker.ts — Workers Static Assets' _redirects
+# file cannot express host-based rules.
 # Root -> global fallback (matches hreflang x-default=/en/)
 / /en/ 301
 

@@ -1,0 +1,96 @@
+---
+import { siteConfig } from '../config';
+import { TOPIC_KEYS } from '../lib/topics';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  messages: Record<string, any>;
+  topic: Record<string, any>;
+}
+const { lang, messages, topic } = Astro.props;
+const t = messages.topics;
+const mapsUrl = siteConfig.mapsUrl;
+const homeHref = `/${lang}/`;
+const related = (topic.related ?? []) as Array<{ name: string; desc: string; slug: string }>;
+---
+
+<article class="pb-4">
+  <!-- breadcrumb -->
+  <nav class="mx-auto max-w-4xl px-5 pt-28 text-sm text-ink/60" aria-label="Breadcrumb">
+    <a href={homeHref} class="text-gold hover:underline">{messages.about.breadcrumb[0]}</a>
+    <span class="mx-2">/</span>
+    <span class="text-ink/80">{topic.title}</span>
+  </nav>
+
+  <header class="mx-auto max-w-4xl px-5 pt-6">
+    <p class="font-hand text-gold text-xl md:text-2xl">{topic.label}</p>
+    <h1 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{topic.title}</h1>
+    <p class="mt-5 max-w-3xl text-ink/80 text-lg">{topic.lead}</p>
+    <a
+      href={mapsUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-6 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 font-semibold text-teak transition-colors hover:bg-goldBright"
+    >
+      <span aria-hidden="true">📍</span> {messages.hero.viewLocation}
+    </a>
+  </header>
+
+  <!-- quick facts -->
+  <section class="mx-auto max-w-4xl px-5 mt-10">
+    <h2 class="font-display text-xl text-teak mb-4">{t.ui.quickFactsTitle}</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      {topic.quickFacts.map((f: any) => (
+        <div class="rounded-2xl border border-gold/30 bg-white/60 p-4">
+          <div class="text-[11px] uppercase tracking-wide text-ink/60">{f.k}</div>
+          <div class="mt-1 font-display font-semibold text-teak">{f.v}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- body sections -->
+  <section class="mx-auto max-w-4xl px-5 mt-12 space-y-8">
+    {topic.sections.map((s: any) => (
+      <div>
+        <h2 class="font-display text-2xl text-teak">{s.h}</h2>
+        <p class="mt-2 text-ink/80 leading-relaxed">{s.p}</p>
+      </div>
+    ))}
+  </section>
+
+  <!-- FAQ: the visible accordion list mirrors the FAQPage JSON-LD entries -->
+  <section class="mx-auto max-w-3xl px-5 mt-14">
+    <h2 class="font-display text-2xl text-teak mb-5">{messages.guide.faqTitle}</h2>
+    <div class="space-y-3">
+      {topic.faqs.map((f: any) => (
+        <details class="group rounded-xl border border-gold/25 bg-white/50 p-4 open:bg-teak/5">
+          <summary class="cursor-pointer font-medium text-teak flex justify-between items-center">
+            {f.q}
+            <span class="text-gold transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="mt-2 text-sm text-ink/75">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- cross-links to the other topic guides -->
+  <section class="mx-auto max-w-4xl px-5 mt-14">
+    <h2 class="font-display text-2xl text-teak mb-5">{t.ui.relatedTitle}</h2>
+    <div class="grid sm:grid-cols-3 gap-4">
+      {related.map((r) => (
+        <a href={`/${lang}/${r.slug}/`} class="group rounded-2xl border border-gold/25 bg-white/50 p-5 transition-colors hover:border-gold hover:shadow-md">
+          <div class="font-display font-semibold text-teak">{r.name}</div>
+          <p class="mt-1 text-sm text-ink/70">{r.desc}</p>
+          <span class="mt-3 inline-block text-sm text-gold group-hover:text-goldBright">→</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-4xl px-5 mt-12">
+    <a href={homeHref} class="text-gold hover:underline">{t.ui.backCta}</a>
+  </div>
+</article>
