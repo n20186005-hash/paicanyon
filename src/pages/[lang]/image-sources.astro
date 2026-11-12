@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Sources from '../../components/Sources.astro';
+import { languagesList, messagesFor, type Lang } from '../../i18n/ui';
+export function getStaticPaths() { return languagesList.map((lang) => ({ params: { lang } })); }
+const lang = Astro.params.lang as Lang;
+const m = messagesFor(lang);
+---
+<BaseLayout lang={lang} title={`${m.sources.heading} | ${m.footer.brand.name}`} description={m.sources.intro} messages={m} canonicalPath={`/${lang}/image-sources/`} altSlug="image-sources" includeFaq={false}>
+  <Header lang={lang} messages={m} simple />
+  <main class="pt-20"><div class="bg-teakDeep px-5 pt-10 mx-auto text-ivory/70"><a href={`/${lang}/`} class="max-w-5xl mx-auto block text-goldBright hover:underline">← {m.header.home}</a></div><Sources messages={m} lang={lang} standalone /></main>
+  <Footer lang={lang} messages={m} />
+</BaseLayout>

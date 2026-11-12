@@ -1,0 +1,16 @@
+---
+import type { Lang } from '../i18n/ui';
+interface Props { lang: Lang; messages: Record<string, any> }
+const { lang, messages } = Astro.props;
+---
+<section id="sources" class="bg-teakDeep text-ivory py-12">
+  <div class="max-w-5xl mx-auto px-5 flex flex-wrap items-center justify-between gap-6">
+    <div><h2 class="font-display text-2xl text-goldBright">{messages.sources.heading}</h2><p class="mt-2 text-sm text-ivory/70 max-w-2xl">{messages.sources.intro}</p></div>
+    <div class="flex flex-wrap items-center gap-4 text-sm">
+      <a class="rounded-full border border-gold/50 text-goldBright px-6 py-3 hover:bg-white/10" href={`/${lang}/image-sources/`}>{messages.sources.heading} →</a>
+      <a href={`/${lang}/privacy-policy/`} class="text-ivory/75 hover:text-goldBright">{messages.footer.privacy}</a>
+      <a href={`/${lang}/terms-of-service/`} class="text-ivory/75 hover:text-goldBright">{messages.footer.terms}</a>
+      <a href={`/${lang}/cookie-settings/`} class="text-ivory/75 hover:text-goldBright">{messages.footer.cookies}</a>
+    </div>
+  </div>
+</section>

@@ -6,7 +6,7 @@ const slugs = [...source.matchAll(/\bslug: '([a-z0-9-]+)'/g)].map((m) => m[1]);
 if (slugs.length < 30 || new Set(slugs).size !== slugs.length) throw new Error(`Expected at least 30 distinct guides, got ${slugs.length}`);
 const langs = ['en', 'th', 'zh'];
 const base = 'https://www.paicanyon.com';
-const urls = ['guides', ...slugs.map((slug) => `guides/${slug}`)];
+const urls = ['guides', 'image-sources', ...slugs.map((slug) => `guides/${slug}`)];
 let xml = fs.readFileSync(file, 'utf8');
 const entries = urls.flatMap((slug) => langs.map((lang) => `  <url>
     <loc>${base}/${lang}/${slug}/</loc>

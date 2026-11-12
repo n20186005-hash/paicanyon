@@ -7,6 +7,8 @@ import { siteConfig } from '../../../config';
 import { languagesList, messagesFor, type Lang } from '../../../i18n/ui';
 import { expandedGuides, localized, guideUi } from '../../../lib/expandedGuides';
 import { nearby, nearbyCopy, nearbyMap } from '../../../lib/nearby';
+import { detailsFor, guideDetailLabels, tr } from '../../../lib/guideDetails';
+import { nearbyPhotos } from '../../../lib/nearbyPhotos';
 
 export function getStaticPaths() {
   return languagesList.flatMap((lang) => expandedGuides.map((guide) => ({
@@ -23,6 +25,9 @@ const related = expandedGuides.filter((g) => g.slug !== guide.slug && g.category
 const pageTitle = `${title} | ${siteConfig.name[lang]}`;
 const pageDescription = `${detail.slice(0, 145)} ${ui.location}`;
 const nearbyPlace = nearby[guide.slug as keyof typeof nearby];
+const sitePhoto = nearbyPhotos[guide.slug];
+const info = detailsFor(guide.slug);
+const labels = guideDetailLabels[lang];
 const mapUrl = nearbyPlace ? nearbyMap(nearbyPlace.query) : siteConfig.mapsUrl;
 const mapLabel = nearbyPlace ? nearbyCopy(nearbyPlace.name, lang) : siteConfig.name[lang];
 const management = {
@@ -30,6 +35,13 @@ const management = {
   th: { title: 'เกี่ยวกับปายแคนยอนและหน่วยงานที่เกี่ยวข้อง', text: 'กองแลน (ปายแคนยอน) เป็นภูมิประเทศที่เกิดจากการกัดเซาะตามธรรมชาติและเป็นจุดชมวิวสำคัญของอำเภอปาย สำนักจัดการป่านันทนาการระบุสำนักจัดการทรัพยากรป่าไม้ที่ 1 สาขาแม่ฮ่องสอนเป็นหน่วยงานหลักของโครงการพัฒนาพื้นที่ป่าเพื่อการเรียนรู้และนันทนาการ โดยมีหน่วยงานจังหวัดและองค์การบริหารส่วนตำบลทุ่งยาวสนับสนุน การเข้าชมให้ยึดประกาศหน้างานล่าสุด', source: 'สำนักจัดการป่านันทนาการ — โครงการกองแลน' },
   zh: { title: '关于拜县大峡谷及管理单位', text: 'Kong Lan（Pai Canyon）是雨水与风化侵蚀形成的天然红土地貌，也是拜县重要观景点。泰国林业部门的森林休闲项目资料列明：第1区域森林资源管理办公室夜丰颂分支为该项目主要负责机构，夜丰颂府有关部门及 Thung Yao 乡行政组织为协作单位。实际通行和安全管理应遵守现场最新告示。', source: '泰国森林休闲管理办公室：Kong Lan 项目资料' },
 }[lang];
+const nearbyStewardship = {
+  en: { title: `About ${mapLabel} and visitor access`, text: `${mapLabel} is a separate attraction in Pai District, not part of the Pai Canyon ridge trail. Local access, maintenance, vendors and any entrance rules are managed according to the relevant site arrangements. Follow posted notices and staff guidance at this location; the forest recreation project described for Kong Lan must not be assumed to operate this separate place.`, source: 'Tourism Authority of Thailand visitor information' },
+  th: { title: `เกี่ยวกับ${mapLabel}และการเข้าชม`, text: `${mapLabel}เป็นสถานที่ท่องเที่ยวแยกจากทางสันเขาปายแคนยอน การเข้าชม การดูแล และกฎต่าง ๆ เป็นไปตามการจัดการของพื้นที่นั้นโดยเฉพาะ ให้ปฏิบัติตามป้ายและเจ้าหน้าที่ ไม่ควรถือว่าหน่วยงานโครงการกองแลนเป็นผู้ดำเนินงานสถานที่นี้`, source: 'ข้อมูลการท่องเที่ยวแห่งประเทศไทย' },
+  zh: { title: `关于${mapLabel}及现场管理`, text: `${mapLabel}是拜县的独立游览地点，并非 Pai Canyon 山脊步道的一部分。现场维护、商户及入场规定由该地点对应的管理安排负责，游览时请以公告和工作人员指引为准；不能把 Kong Lan 森林项目的负责单位直接认定为这一地点的经营方。`, source: '泰国旅游局旅游资料' },
+}[lang];
+const aboutBlock = nearbyPlace ? nearbyStewardship : management;
+const sourceUrl = nearbyPlace ? 'https://www.tourismthailand.org/' : 'https://www.forest.go.th/recreation/โครงการพัฒนาพื้นที่ป่า-10/';
 const extraLabels = {
   en: ['History and character', 'What to observe', 'Photo and walking advice'],
   th: ['ประวัติและลักษณะพื้นที่', 'จุดน่าสังเกต', 'แนวทางถ่ายภาพและเดินชม'],
@@ -47,30 +59,46 @@ const faqs: Array<{ q: string; a: string }> = messages.guide.faqs;
         <p class="text-gold text-sm font-semibold tracking-wide">{ui.category[guide.category]} · Pai, Mae Hong Son</p>
         <h1 class="font-display text-teak text-3xl md:text-5xl font-semibold mt-3">{title}</h1>
         <p class="text-lg text-ink/80 leading-relaxed mt-6 max-w-3xl">{detail}</p>
+        <div class="mt-5 flex flex-wrap gap-2 text-sm text-teak">
+          {nearbyPlace ? <span class="rounded-full border border-gold/40 px-4 py-2">{tr(info.category, lang)}</span> : <span class="rounded-full border border-gold/40 px-4 py-2">★ 4.5 · 8,480 Google Maps</span>}
+          <span class="rounded-full border border-gold/40 px-4 py-2">{tr(info.hours, lang)}</span>
+        </div>
         <div class="mt-7 flex flex-wrap gap-3"><a class="rounded-full bg-gold text-teak font-semibold px-6 py-3 hover:bg-goldBright" href={mapUrl} target="_blank" rel="noopener noreferrer">{mapLabel} · Google Maps ↗</a><a class="rounded-full border border-gold/50 px-6 py-3 text-teak" href={`/${lang}/guides/`}>{ui.hub}</a></div>
       </header>
       <section class="mt-10 grid md:grid-cols-[1fr_1.1fr] gap-7 items-center rounded-3xl bg-sand/70 p-7 md:p-10 border border-gold/20">
-        <img src="/gallery/pai-canyon-5.jpg" alt={`${siteConfig.name[lang]} landscape`} loading="lazy" class="w-full aspect-[4/3] object-cover rounded-2xl" />
-        <div><h2 class="font-display text-2xl md:text-3xl text-teak">{management.title}</h2><p class="mt-4 leading-relaxed text-ink/80">{management.text}</p><a class="mt-4 inline-block text-sm text-gold hover:underline" href="https://www.forest.go.th/recreation/โครงการพัฒนาพื้นที่ป่า-10/" target="_blank" rel="noopener noreferrer">{management.source} ↗</a></div>
+        <img src={sitePhoto?.src ?? '/gallery/pai-canyon-5.jpg'} alt={mapLabel} loading="lazy" class="w-full aspect-[4/3] object-cover rounded-2xl" />
+        <div><h2 class="font-display text-2xl md:text-3xl text-teak">{aboutBlock.title}</h2><p class="mt-4 leading-relaxed text-ink/80">{aboutBlock.text}</p><a class="mt-4 inline-block text-sm text-gold hover:underline" href={sourceUrl} target="_blank" rel="noopener noreferrer">{aboutBlock.source} ↗</a></div>
       </section>
       {nearbyPlace && <section class="mt-10 grid md:grid-cols-2 gap-7">
         <div class="rounded-2xl border border-gold/25 p-7"><h2 class="font-display text-2xl text-teak">{extraLabels[0]}</h2><p class="mt-4 text-ink/80 leading-relaxed">{nearbyCopy(nearbyPlace.history, lang)}</p></div>
         <div class="rounded-2xl border border-gold/25 p-7"><h2 class="font-display text-2xl text-teak">{extraLabels[1]}</h2><p class="mt-4 text-ink/80 leading-relaxed">{nearbyCopy(nearbyPlace.observe, lang)}</p><a href={mapUrl} target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-gold hover:underline">{mapLabel} · Google Maps ↗</a></div>
       </section>}
       <section class="mt-12">
-        <h2 class="font-display text-2xl text-teak">{ui.facts}</h2>
-        <div class="grid md:grid-cols-3 gap-4 mt-5">
-          {[ui.location, ui.access, ui.time].map((item) => <div class="rounded-2xl border border-gold/25 bg-white/60 p-5 text-ink/80">{item}</div>)}
+        <h2 class="font-display text-2xl text-teak">{labels.info}</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mt-5">
+          {[[labels.address, nearbyPlace ? mapLabel + ', Pai, Mae Hong Son, Thailand' : ui.location], [labels.category, tr(info.category, lang)], [labels.entry, tr(info.fees, lang)], [labels.duration, nearbyPlace ? ({ en: 'About 30–90 minutes; allow for travel', th: 'ประมาณ 30–90 นาที รวมเวลาเดินทาง', zh: '约30–90分钟，另计交通' }[lang]) : ui.time]].map(([k,v]) => <div class="rounded-2xl border border-gold/25 bg-white/60 p-5"><p class="text-xs text-ink/60 mb-2">{k}</p><p class="text-ink/85 leading-relaxed">{v}</p></div>)}
         </div>
-        <p class="mt-4 rounded-xl bg-amber-50 border border-amber-200 p-4 text-ink/85">⚠ {ui.safety}</p>
+        <p class="mt-4 rounded-xl bg-amber-50 border border-amber-200 p-4 text-ink/85">⚠ {nearbyPlace ? labels.routeCheck : ui.safety}</p>
       </section>
       <section class="mt-12 grid md:grid-cols-2 gap-8 items-start">
-        <div><h2 class="font-display text-2xl text-teak">{ui.overview}</h2><p class="leading-relaxed mt-4 text-ink/80">{detail}</p><h3 class="font-display text-xl text-teak mt-8">{ui.practical}</h3><p class="leading-relaxed mt-3 text-ink/80">{ui.practicalText}</p></div>
-        <figure class="overflow-hidden rounded-2xl bg-sand"><img loading="lazy" src="/gallery/pai-canyon-2.jpg" alt={`${siteConfig.name[lang]} — ${title}`} class="w-full aspect-[4/3] object-cover"/><figcaption class="p-4 text-sm text-ink/65">{ui.photosNote}</figcaption></figure>
+        <div><h2 class="font-display text-2xl text-teak">{labels.explore}</h2><p class="leading-relaxed mt-4 text-ink/80">{tr(info.discover, lang)}</p><h3 class="font-display text-xl text-teak mt-8">{labels.tips}</h3><p class="leading-relaxed mt-3 text-ink/80">{detail}</p></div>
+        <figure class="overflow-hidden rounded-2xl bg-sand"><img loading="lazy" src={sitePhoto?.src ?? '/gallery/pai-canyon-2.jpg'} alt={mapLabel} class="w-full aspect-[4/3] object-cover"/><figcaption class="p-4 text-sm text-ink/65">{sitePhoto ? <a href={sitePhoto.source} target="_blank" rel="noopener noreferrer" class="hover:underline">{sitePhoto.credit} ↗</a> : ui.photosNote}</figcaption></figure>
       </section>
+      <section class="mt-12 grid md:grid-cols-2 gap-5">
+        <div class="rounded-2xl bg-sand p-7"><h2 class="font-display text-2xl text-teak">{labels.hours}</h2><p class="mt-4 leading-relaxed text-ink/80">{tr(info.hours, lang)}</p></div>
+        <div class="rounded-2xl bg-sand p-7"><h2 class="font-display text-2xl text-teak">{labels.fees}</h2><p class="mt-4 leading-relaxed text-ink/80">{tr(info.fees, lang)}</p></div>
+        <div class="rounded-2xl border border-gold/25 p-7"><h2 class="font-display text-2xl text-teak">{labels.transport}</h2><p class="mt-4 leading-relaxed text-ink/80">{tr(info.transport, lang)}</p></div>
+        <div class="rounded-2xl border border-gold/25 p-7"><h2 class="font-display text-2xl text-teak">{labels.features}</h2><p class="mt-4 leading-relaxed text-ink/80">{nearbyPlace ? nearbyCopy(nearbyPlace.observe, lang) : tr(info.discover, lang)}</p></div>
+      </section>
+      <section class="mt-12"><h2 class="font-display text-2xl text-teak">{labels.discover}</h2><p class="mt-4 text-ink/80 leading-relaxed">{nearbyPlace ? nearbyCopy(nearbyPlace.history, lang) : tr(info.discover, lang)}</p></section>
+      <section class="mt-12"><h2 class="font-display text-2xl text-teak">{labels.route}</h2><ol class="mt-5 grid md:grid-cols-3 gap-4">{info.route.map((step, i) => <li class="rounded-2xl bg-sand p-6"><span class="text-gold font-display text-3xl">{String(i+1).padStart(2,'0')}</span><p class="mt-3 text-ink/80 leading-relaxed">{tr(step as any, lang)}</p></li>)}</ol></section>
       <section class="mt-12"><h2 class="font-display text-2xl text-teak">{ui.plan}</h2><ol class="mt-5 grid md:grid-cols-3 gap-4">{ui.steps.map((step, i) => <li class="rounded-2xl bg-sand p-6"><span class="text-gold font-display text-3xl">{String(i + 1).padStart(2, '0')}</span><p class="mt-3 text-ink/80 leading-relaxed">{step}</p></li>)}</ol></section>
-      <section class="mt-12"><h2 class="font-display text-2xl text-teak">{ui.photos}</h2><div class="grid grid-cols-2 md:grid-cols-3 gap-3 mt-5">{[3, 7, 11].map((n) => <img loading="lazy" src={`/gallery/pai-canyon-${n}.jpg`} alt={`${siteConfig.name[lang]} landscape ${n}`} class="rounded-xl w-full aspect-[4/3] object-cover" />)}</div><p class="mt-3 text-sm text-ink/65">{ui.photosNote}</p></section>
+      <section class="mt-12 grid md:grid-cols-2 gap-6"><div><h2 class="font-display text-2xl text-teak">{labels.rules}</h2><p class="mt-4 text-ink/80 leading-relaxed">{nearbyPlace ? labels.routeCheck : ui.practicalText}</p></div><div><h2 class="font-display text-2xl text-teak">{labels.photos}</h2><p class="mt-4 text-ink/80 leading-relaxed">{tr(info.photos, lang)}</p></div></section>
+      <section class="mt-12"><h2 class="font-display text-2xl text-teak">{labels.stay}</h2><p class="mt-4 text-ink/80 leading-relaxed">{tr(info.stay, lang)}</p></section>
+      <section class="mt-12 rounded-2xl bg-sand/70 p-7"><h2 class="font-display text-2xl text-teak">{labels.reviews}</h2><p class="mt-4 text-ink/80 leading-relaxed">{nearbyPlace ? labels.ratingNote : `★ 4.5 · 8,480 Google Maps · 2026-11-12`}</p><a href={mapUrl} target="_blank" rel="noopener noreferrer" class="text-gold hover:underline inline-block mt-4">{labels.seeMap} ↗</a></section>
+      <section class="mt-12"><h2 class="font-display text-2xl text-teak">{ui.photos}</h2>{sitePhoto ? <figure class="mt-5 max-w-2xl"><img loading="lazy" src={sitePhoto.src} alt={mapLabel} class="rounded-xl w-full aspect-[4/3] object-cover" /><figcaption class="mt-3 text-sm text-ink/65"><a href={sitePhoto.source} target="_blank" rel="noopener noreferrer" class="hover:underline">{sitePhoto.credit} ↗</a></figcaption></figure> : <><div class="grid grid-cols-2 md:grid-cols-3 gap-3 mt-5">{[3, 7, 11].map((n) => <img loading="lazy" src={`/gallery/pai-canyon-${n}.jpg`} alt={`${siteConfig.name[lang]} landscape ${n}`} class="rounded-xl w-full aspect-[4/3] object-cover" />)}</div><p class="mt-3 text-sm text-ink/65">{ui.photosNote}</p></>}</section>
       <section class="mt-12 max-w-3xl"><h2 class="font-display text-2xl text-teak">{ui.faq}</h2><div class="space-y-3 mt-5">{faqs.map((f) => <details class="border border-gold/25 rounded-xl p-5"><summary class="font-semibold text-teak cursor-pointer">{f.q}</summary><p class="mt-3 text-ink/80">{f.a}</p></details>)}</div></section>
+      <section class="mt-12 border-t border-gold/25 pt-8"><h2 class="font-display text-2xl text-teak">{labels.navigation}</h2><p class="mt-3 text-ink/75">{nearbyPlace ? mapLabel + ', Pai, Mae Hong Son, Thailand' : ui.location}</p><a href={mapUrl} target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex rounded-full bg-gold px-6 py-3 text-teak font-semibold hover:bg-goldBright">{labels.seeMap} ↗</a></section>
       <section class="mt-12"><h2 class="font-display text-2xl text-teak">{ui.related}</h2><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-5">{related.map((g) => <a class="rounded-xl p-5 border border-gold/25 text-teak hover:border-gold hover:shadow-md" href={`/${lang}/guides/${g.slug}/`}>{localized(g.title, lang)} →</a>)}</div></section>
       <p class="mt-12"><a class="text-gold hover:underline" href={`/${lang}/`}>← {ui.home}</a></p>
     </article>

@@ -1,14 +1,15 @@
 ---
 import type { Lang } from '../i18n/ui';
 import { nearby, nearbyCopy, nearbyMap } from '../lib/nearby';
+import { nearbyPhotos } from '../lib/nearbyPhotos';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const copy = {
-  en: { title: 'Explore More Around Pai', lead: 'Three practical stops to combine with Pai Canyon, each with its own location and route advice.', detail: 'Explore guide', map: 'Map' },
-  th: { title: 'เที่ยวต่อรอบเมืองปาย', lead: 'สามจุดแวะเที่ยวที่จัดคู่กับปายแคนยอนได้ พร้อมข้อมูลและแผนที่แยกแต่ละแห่ง', detail: 'อ่านคู่มือ', map: 'แผนที่' },
-  zh: { title: '拜县大峡谷周边游览', lead: '精选三个适合串联的地点，各自提供路线说明与独立地图定位。', detail: '查看攻略', map: '地图' },
+  en: { title: 'Explore More Around Pai', lead: 'Six practical stops to combine with Pai Canyon, each with its own location and route advice.', detail: 'Explore guide', map: 'Map' },
+  th: { title: 'เที่ยวต่อรอบเมืองปาย', lead: 'หกจุดแวะเที่ยวที่จัดคู่กับปายแคนยอนได้ พร้อมข้อมูลและแผนที่แยกแต่ละแห่ง', detail: 'อ่านคู่มือ', map: 'แผนที่' },
+  zh: { title: '拜县大峡谷周边游览', lead: '精选六个适合串联的地点，各自提供路线说明与独立地图定位。', detail: '查看攻略', map: '地图' },
 }[lang];
-const slugs = ['pai-memorial-bridge', 'tha-pai-hot-spring', 'pai-walking-street'] as const;
+const slugs = ['pai-memorial-bridge', 'tha-pai-hot-spring', 'pai-walking-street', 'wat-phra-that-mae-yen', 'pam-bok-waterfall', 'boon-ko-ku-so-bridge'] as const;
 ---
 <section class="bg-sand py-16" id="nearby-guides">
   <div class="mx-auto max-w-7xl px-5">
@@ -17,10 +18,12 @@ const slugs = ['pai-memorial-bridge', 'tha-pai-hot-spring', 'pai-walking-street'
     <div class="mt-8 grid md:grid-cols-3 gap-5">
       {slugs.map((slug) => {
         const place = nearby[slug];
-        return <article class="rounded-2xl bg-white/70 border border-gold/25 p-6">
-          <h3 class="font-display font-semibold text-xl text-teak">{nearbyCopy(place.name, lang)}</h3>
+        return <article class="rounded-2xl bg-white/70 border border-gold/25 overflow-hidden">
+          <a href={`/${lang}/guides/${slug}/`}><img loading="lazy" src={nearbyPhotos[slug].src} alt={nearbyCopy(place.name, lang)} class="w-full aspect-[3/2] object-cover" /></a>
+          <div class="p-6"><h3 class="font-display font-semibold text-xl text-teak">{nearbyCopy(place.name, lang)}</h3>
           <p class="mt-3 text-ink/75 text-sm leading-relaxed">{nearbyCopy(place.observe, lang)}</p>
           <div class="mt-5 flex gap-5 text-sm"><a class="text-gold font-semibold hover:underline" href={`/${lang}/guides/${slug}/`}>{copy.detail} →</a><a class="text-teak hover:underline" href={nearbyMap(place.query)} target="_blank" rel="noopener noreferrer">{copy.map} ↗</a></div>
+          </div>
         </article>;
       })}
     </div>

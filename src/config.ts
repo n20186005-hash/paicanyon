@@ -48,10 +48,10 @@ export const siteConfig = {
   phone: '+66861137373',
   phoneDisplay: '+66 86 113 7373',
 
-  /** 最新 Google 地图数据：4.5 分 / 8,414 条评价（同步时间 2026 年 10 月） */
+  /** Google 地图评分快照：4.5 分 / 8,480 条评价（用户提供，2026-11-12） */
   rating: 4.5,
-  reviewCount: '8,414',
-  reviewSyncLabel: '2026-10',
+  reviewCount: '8,480',
+  reviewSyncLabel: '2026-11-12',
 
   /** 实际坐标（Google Maps 嵌入中心点）—— 拜县大峡谷（Pai Canyon，Mae Hi, Pai） */
   coords: { lat: 19.3061375, lng: 98.4525156 },
@@ -89,7 +89,7 @@ export const siteConfig = {
   ],
 
   /** 内容最后更新日期（E-E-A-T） */
-  lastUpdated: '2026-10-12',
+  lastUpdated: '2026-11-12',
 
   /** 时区（天气 / 日出日落 / 时间显示统一使用） */
   timeZone: 'Asia/Bangkok',

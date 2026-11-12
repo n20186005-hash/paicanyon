@@ -93,7 +93,7 @@ for (const lang of LANGS) {
       hasMap: 'https://maps.app.goo.gl/DiyqAjPXo86mCB5c9',
       isAccessibleForFree: true,
       'aggregateRating.ratingValue': 4.5,
-      'aggregateRating.reviewCount': '8414',
+      'aggregateRating.reviewCount': '8480',
     };
     const got = {
       '@id': attraction['@id'],
@@ -213,10 +213,10 @@ for (const lang of LANGS) {
 const sitemap = read('sitemap.xml');
 const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 const expandedSlugs = [...fs.readFileSync('src/lib/expandedGuides.ts', 'utf8').matchAll(/\bslug: '([a-z0-9-]+)'/g)].map((m) => m[1]);
-const expectedUrls = LANGS.length * (2 + TOPICS.length + expandedSlugs.length);
+const expectedUrls = LANGS.length * (3 + TOPICS.length + expandedSlugs.length);
 if (locs.length !== expectedUrls) fail(`sitemap should list ${expectedUrls} URLs, got ${locs.length}`);
 for (const lang of LANGS) {
-  for (const slug of ['guides', ...expandedSlugs.map((s) => `guides/${s}`)]) {
+  for (const slug of ['guides', 'image-sources', ...expandedSlugs.map((s) => `guides/${s}`)]) {
     const route = `${lang}/${slug}/index.html`;
     if (!fs.existsSync(path.join('dist', route))) { fail(`${route} not built`); continue; }
     const html = read(route);

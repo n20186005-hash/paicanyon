@@ -1,17 +1,20 @@
 ---
 import { siteConfig } from '../config';
+import type { Lang } from '../i18n/ui';
 
 interface Props {
   messages: Record<string, any>;
+  standalone?: boolean;
+  lang?: Lang;
 }
-const { messages } = Astro.props;
+const { messages, standalone = false, lang = 'en' } = Astro.props;
 const s = messages.sources;
 ---
 
 <section id="sources" class="py-16 bg-teakDeep text-ivory">
   <div class="max-w-5xl mx-auto px-5">
     <p class="font-hand text-gold text-xl">{s.label}</p>
-    <h2 class="font-display text-3xl md:text-4xl mt-1">{s.heading}</h2>
+    {standalone ? <h1 class="font-display text-3xl md:text-4xl mt-1">{s.heading}</h1> : <h2 class="font-display text-3xl md:text-4xl mt-1">{s.heading}</h2>}
     <p class="mt-4 text-ivory/75 max-w-2xl">{s.intro}</p>
 
     <div class="grid md:grid-cols-2 gap-8 mt-8">
@@ -58,6 +61,10 @@ const s = messages.sources;
         {s.correctionCta}
       </a>
     </div>
+    <ul class="mt-8 grid md:grid-cols-2 gap-3 text-sm text-goldBright">
+      {siteConfig.sources.map((source) => <li><a class="hover:underline" href={source.url} target="_blank" rel="noopener noreferrer">{source.name[lang]} ↗</a></li>)}
+    </ul>
+    <p class="mt-5 text-xs text-ivory/60">{messages.footer.lastUpdated}</p>
 
     <p class="mt-8 text-xs text-ivory/45">© {new Date().getFullYear()} {s.copyright}</p>
   </div>

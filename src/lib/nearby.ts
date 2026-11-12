@@ -43,6 +43,24 @@ export const nearby = {
       '适合观察小吃摊、手工艺品及低层街景；近距离拍摄摊主前应先征求同意，避免堵塞人流。',
     ],
   },
+  'wat-phra-that-mae-yen': {
+    name: ['Wat Phra That Mae Yen', 'วัดพระธาตุแม่เย็น', '拜县美茵寺'],
+    query: 'Wat Phra That Mae Yen Pai Mae Hong Son Thailand',
+    history: ['This hilltop Buddhist temple is a religious place as well as a panorama stop. Its prominent white Buddha has become a familiar landmark above Pai; visitors should distinguish temple worship spaces from tourist viewpoints.', 'วัดบนเนินเขาเป็นทั้งศาสนสถานและจุดชมวิว พระพุทธรูปสีขาวขนาดใหญ่เป็นสัญลักษณ์เหนือเมืองปาย ผู้มาเยือนควรเคารพพื้นที่ประกอบศาสนกิจ', '这座山顶佛寺既是宗教场所也是观景点，大型白佛成为拜县醒目地标。参观时应区分礼佛空间和观景区域。'],
+    observe: ['Look across the Pai valley from the steps and observe the white Buddha against the mountains. Keep shoulders and knees covered where required, and avoid disruptive poses near worshippers.', 'ชมวิวหุบเขาจากบันไดและพระพุทธรูปสีขาวกับภูเขา แต่งกายสุภาพและไม่รบกวนผู้ประกอบศาสนกิจ', '台阶一带可观察白佛与远山的对比及拜县河谷全貌。遵守着装要求，不在礼佛者身旁摆拍。'],
+  },
+  'pam-bok-waterfall': {
+    name: ['Pam Bok Waterfall', 'น้ำตกแพมบก', 'Pam Bok 瀑布'],
+    query: 'Pam Bok Waterfall Pai Mae Hong Son Thailand',
+    history: ['The waterfall runs through a narrow natural gorge. Its appearance changes with seasonal rainfall, so a quiet dry-season flow and a forceful wet-season channel can feel like very different places.', 'น้ำตกไหลผ่านช่องเขาธรรมชาติแคบ รูปลักษณ์เปลี่ยนตามฝน น้ำฤดูแล้งกับน้ำหลากฤดูฝนอาจต่างกันมาก', '瀑布穿过天然狭窄岩谷，水量随降雨季节变化。旱季的小水流和雨季的湍急水道可能呈现截然不同的景观。'],
+    observe: ['Study the gorge walls, seasonal flow and patches of vegetation on the rock. Photograph from stable dry ground; do not enter pools when water is rising or currents are uncertain.', 'สังเกตผาหิน น้ำตามฤดู และพืชตามรอยแตก ถ่ายจากพื้นมั่นคง อย่าลงน้ำเมื่อกระแสแรงหรือระดับน้ำเพิ่ม', '可观察峡谷岩壁、季节性水流与岩缝植物；从稳固干燥位置拍照，涨水或流速不明时不下水。'],
+  },
+  'boon-ko-ku-so-bridge': {
+    name: ['Boon Ko Ku So Bamboo Bridge', 'สะพานไม้ไผ่บุญโขกู้โส่', 'Boon Ko Ku So 竹桥'],
+    query: 'Boon Ko Ku So Bamboo Bridge Pai Mae Hong Son Thailand',
+    history: ['The bamboo walkway links parts of the rural rice-growing landscape and temple surroundings. Its cultural interest lies in how local paths, farmland and community activity meet, rather than a monumental stone structure.', 'ทางเดินไม้ไผ่เชื่อมภูมิทัศน์นาข้าวกับพื้นที่วัด ความน่าสนใจคือวิถีทางเดินเกษตรและชุมชน ไม่ใช่อนุสาวรีย์หิน', '竹桥串联稻田与寺院周边乡村环境，文化意义在于农田、社区出行和宗教空间的交汇，而非大型石造建筑。'],
+    observe: ['Frame the bamboo lines receding across the fields and watch for changing rice colours. Walk carefully where bamboo is wet and do not step off onto cultivated land.', 'ถ่ายแนวไม้ไผ่ทอดผ่านนาและสีข้าวตามฤดู ระวังพื้นไม้ไผ่ลื่นเมื่อเปียก และไม่ลงไปเหยียบแปลงเกษตร', '可用竹桥延伸线条构图，观察稻田随季节变化的色彩；竹面潮湿时防滑，不踩入耕地。'],
+  },
 } as const;
 
 export const nearbyCopy = (values: readonly [string, string, string], lang: Lang) => values[{ en: 0, th: 1, zh: 2 }[lang]];
