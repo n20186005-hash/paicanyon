@@ -840,59 +840,56 @@
   "legal": {
     "privacy": {
       "title": "Privacy Policy",
-      "updated": "Last updated: July 2026",
+      "updated": "Last updated: November 12, 2026",
       "sections": [
-        {
-          "h": "Information we collect",
-          "p": "This site has no membership system and collects no personal data, beyond what you type into a contact form (if any)."
-        },
-        {
-          "h": "Cookies",
-          "p": "We use cookies only to remember your language preference and display settings — not to track your identity."
-        },
-        {
-          "h": "Contact",
-          "p": "If you have questions about your data, reach us through the channels listed on the home page."
-        }
+        {"h":"Scope and independent status","p":"This policy applies to the Chinese, English and Thai pages of paicanyon.com. This volunteer-maintained, nonprofit travel guide is not affiliated with the Thai government, site managers or Google."},
+        {"h":"Information you provide","p":"We do not offer accounts, payments or ticket bookings. If you email us, we receive the address, message and attachments you choose to send, solely to answer questions and address corrections or photo-credit requests. Please avoid sending identity documents or sensitive personal information."},
+        {"h":"Automatically processed visit data","p":"Browsers, hosting and security providers may process IP addresses, access times, browser types, requested paths and error logs to deliver pages, troubleshoot and prevent abuse. We use Google Analytics to measure visits and page usage; this may involve first-party analytics cookies, browser/device details and approximate location."},
+        {"h":"Cookies and browser storage","p":"Google Analytics may use analytics cookies such as _ga to distinguish sessions. The weather widget may temporarily cache weather results and refresh times in localStorage to reduce repeat requests. You can remove cookies and site data in your browser settings; see the Cookie Settings page for details."},
+        {"h":"External services and links","p":"This site may load Google Analytics, Google Maps, weather data and font services. Following an external link or loading a third-party resource can cause that provider to process technical data under its own privacy policy. We do not control third-party privacy practices."},
+        {"h":"Purposes and retention","p":"Technical data helps serve pages, maintain security and improve content. Emails are used to handle the issue raised. We do not sell visitor personal information. Email and security-log retention depends on operational needs and provider settings; information is deleted or archived when appropriate."},
+        {"h":"Your choices and rights","p":"You may block or delete cookies, clear local site data or use browser privacy features. To request access to, correction of or deletion of information you emailed us, contact us and we will respond within reasonable limits."},
+        {"h":"Children and security","p":"This guide is intended for general travel readers and does not intentionally collect information from children. We take reasonable measures to protect content and contact channels, but online transmission and third-party systems cannot be guaranteed completely secure."},
+        {"h":"Updates and contact","p":"We will revise this policy and its date if our services or data practices change. Privacy questions and corrections: n20186005@gmail.com."}
       ]
     },
     "terms": {
       "title": "Terms of Use",
-      "updated": "Last updated: July 2026",
+      "updated": "Last updated: November 12, 2026",
       "sections": [
-        {
-          "h": "Usage",
-          "p": "All content is provided for education. You may share it with credit, but not resell it."
-        },
-        {
-          "h": "Liability",
-          "p": "We are not responsible for accidents or losses arising from the use of this site's information."
-        }
+        {"h":"Purpose and independent status","p":"Pai Canyon Guide is an independent nonprofit visitor information project, not the official website of the site operator, a government agency, Google or a tourism merchant. We do not sell tickets or take reservations for the attraction."},
+        {"h":"Accuracy and updates","p":"We strive to maintain public-source information about places, routes, fees, hours and transport. On-site operations, weather, roads and rules may change. Verify details with the managing authority, the specific Google Maps place listing and signs at the location before visiting."},
+        {"h":"Travel and outdoor risks","p":"Some Pai Canyon ridges are narrow with steep drops, slippery ground after rain and sections without railings. Visitors must assess weather, equipment, health and ability, supervise children and obey local warnings. This guide is not a substitute for a qualified guide or emergency instructions."},
+        {"h":"Text, photographs and credits","p":"Original writing and presentation are protected by applicable rights. Third-party photographs remain the property of their photographers or owners. Quote our writing with attribution and context; use photographs only under their respective source terms. Contact us about photo credits or corrections."},
+        {"h":"External links and services","p":"Links to Google Maps, weather services and tourism information are provided for convenience and verification. A link does not endorse a third-party product or service; external providers control their own pages, data and availability."},
+        {"h":"Permitted and prohibited use","p":"You may use this guide for personal travel planning, learning and noncommercial research. Do not misrepresent it as an official website, abuse it through automation or attacks, or deliberately distort its information."},
+        {"h":"Limits of responsibility","p":"Information is provided as-is without a promise of real-time completeness, absolute route safety or uninterrupted third-party services. To the extent permitted by law, we disclaim liability for indirect losses from reliance on this guide; this does not exclude liability that cannot legally be excluded."},
+        {"h":"Corrections, changes and contact","p":"We may revise content and these terms. For errors, photo credits or technical support, email n20186005@gmail.com with the relevant page URL."}
       ]
     },
     "cookies": {
       "title": "Cookie Settings",
-      "updated": "Last updated: July 2026",
-      "intro": "We use cookies to remember your preferences and measure usage, to improve the site.",
+      "updated": "Last updated: November 12, 2026",
+      "intro": "We use Google Analytics to understand visits and browser storage to cache weather information. This page explains those technologies and your controls.",
       "categories": [
         {
           "h": "Essential cookies",
-          "status": "Always on",
-          "p": "Required for the site to work, such as remembering your chosen language. Cannot be turned off.",
-          "sub": "Language & display",
-          "subStatus": "Automatic",
+          "status": "Site function",
+          "p": "Language is selected by URL path (/zh/, /en/, /th/). The weather widget uses localStorage to cache weather results and timestamps. This is browser site data, not an advertising cookie.",
+          "sub": "Weather cache",
+          "subStatus": "Clearable in browser settings",
           "active": true
         },
         {
           "h": "Analytics cookies",
-          "status": "Optional",
-          "p": "Help us understand how visitors use the site, to improve the content.",
-          "sub": "Usage statistics",
-          "subStatus": "Can be off",
+          "status": "Google Analytics",
+          "p": "This site loads Google Analytics (GA4). It may use cookies such as _ga to distinguish sessions and measure page views, browser details and approximate geography. IP anonymization is configured, but this does not mean technical data is never processed.",
+          "sub": "Visit statistics",
+          "subStatus": "Restrict or clear in browser",
           "active": false
         }
       ],
-      "consent": "Clicking 'Save' means you accept the use of cookies as described.",
+      "consent": "There is currently no on-site consent toggle or Save button. You can block or delete cookies and site data in browser settings, or use tracking protection. Third-party providers' own privacy policies apply to their services.",
       "save": "Save settings",
       "rejectAll": "Reject all"
     }
