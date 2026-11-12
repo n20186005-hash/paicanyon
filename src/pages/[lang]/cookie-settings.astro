@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Footer from '../../components/Footer.astro';
 import th from '../../i18n/th.json';
 import en from '../../i18n/en.json';
 import zh from '../../i18n/zh.json';
@@ -34,4 +35,5 @@ const meta = { title: `${legal.title} — ${m.footer.brand.name}`, description: 
     </div>
     <p class="mt-6 text-sm text-stone-500">{legal.consent}</p>
   </main>
+  <Footer lang={lang} messages={m} />
 </BaseLayout>
