@@ -212,8 +212,19 @@ for (const lang of LANGS) {
 // ── sitemap / redirects / robots ─────────────────────────────────────────────
 const sitemap = read('sitemap.xml');
 const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-const expectedUrls = LANGS.length * (1 + TOPICS.length);
-if (locs.length !== expectedUrls) fail(`sitemap should list ${expectedUrls} URLs (3 homepages + 12 topic pages), got ${locs.length}`);
+const expandedSlugs = [...fs.readFileSync('src/lib/expandedGuides.ts', 'utf8').matchAll(/\bslug: '([a-z0-9-]+)'/g)].map((m) => m[1]);
+const expectedUrls = LANGS.length * (2 + TOPICS.length + expandedSlugs.length);
+if (locs.length !== expectedUrls) fail(`sitemap should list ${expectedUrls} URLs, got ${locs.length}`);
+for (const lang of LANGS) {
+  for (const slug of ['guides', ...expandedSlugs.map((s) => `guides/${s}`)]) {
+    const route = `${lang}/${slug}/index.html`;
+    if (!fs.existsSync(path.join('dist', route))) { fail(`${route} not built`); continue; }
+    const html = read(route);
+    if ((html.match(/<h1[\s>]/g) || []).length !== 1) fail(`${route} requires one h1`);
+    if (!html.includes(`rel="canonical" href="${DOMAIN}/${lang}/${slug}/"`)) fail(`${route} canonical mismatch`);
+    if (!locs.includes(`${DOMAIN}/${lang}/${slug}/`)) fail(`${route} missing sitemap loc`);
+  }
+}
 for (const page of LEGAL) if (sitemap.includes(`/${page}`)) fail(`sitemap still lists ${page}`);
 for (const loc of locs) if (!loc.startsWith(`${DOMAIN}/`)) fail(`sitemap URL off canonical domain: ${loc}`);
 if (!sitemap.includes(`hreflang="x-default" href="${DOMAIN}/en/"`)) fail('sitemap x-default should be /en/');

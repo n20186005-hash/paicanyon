@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import MobileBar from '../../../components/MobileBar.astro';
+import { siteConfig } from '../../../config';
+import { languagesList, messagesFor, type Lang } from '../../../i18n/ui';
+import { expandedGuides, localized, guideUi } from '../../../lib/expandedGuides';
+import { nearby, nearbyCopy, nearbyMap } from '../../../lib/nearby';
+
+export function getStaticPaths() {
+  return languagesList.flatMap((lang) => expandedGuides.map((guide) => ({
+    params: { lang, slug: guide.slug }, props: { guide },
+  })));
+}
+const lang = Astro.params.lang as Lang;
+const guide = Astro.props.guide;
+const m = messagesFor(lang);
+const ui = guideUi[lang];
+const title = localized(guide.title, lang);
+const detail = localized(guide.detail, lang);
+const related = expandedGuides.filter((g) => g.slug !== guide.slug && g.category === guide.category).slice(0, 4);
+const pageTitle = `${title} | ${siteConfig.name[lang]}`;
+const pageDescription = `${detail.slice(0, 145)} ${ui.location}`;
+const nearbyPlace = nearby[guide.slug as keyof typeof nearby];
+const mapUrl = nearbyPlace ? nearbyMap(nearbyPlace.query) : siteConfig.mapsUrl;
+const mapLabel = nearbyPlace ? nearbyCopy(nearbyPlace.name, lang) : siteConfig.name[lang];
+const management = {
+  en: { title: 'About Pai Canyon and its management', text: 'Kong Lan (Pai Canyon) is a natural erosion landscape and a much-loved Pai viewpoint. Thailand’s Forest Recreation Management Office lists the Mae Hong Son branch of Regional Forest Resource Management Office 1 as the lead agency for its forest recreation development project, supported by Mae Hong Son provincial bodies and Thung Yao Subdistrict Administrative Organization. Current onsite access and safety instructions take priority.', source: 'Forest Recreation Management Office — Kong Lan project' },
+  th: { title: 'เกี่ยวกับปายแคนยอนและหน่วยงานที่เกี่ยวข้อง', text: 'กองแลน (ปายแคนยอน) เป็นภูมิประเทศที่เกิดจากการกัดเซาะตามธรรมชาติและเป็นจุดชมวิวสำคัญของอำเภอปาย สำนักจัดการป่านันทนาการระบุสำนักจัดการทรัพยากรป่าไม้ที่ 1 สาขาแม่ฮ่องสอนเป็นหน่วยงานหลักของโครงการพัฒนาพื้นที่ป่าเพื่อการเรียนรู้และนันทนาการ โดยมีหน่วยงานจังหวัดและองค์การบริหารส่วนตำบลทุ่งยาวสนับสนุน การเข้าชมให้ยึดประกาศหน้างานล่าสุด', source: 'สำนักจัดการป่านันทนาการ — โครงการกองแลน' },
+  zh: { title: '关于拜县大峡谷及管理单位', text: 'Kong Lan（Pai Canyon）是雨水与风化侵蚀形成的天然红土地貌，也是拜县重要观景点。泰国林业部门的森林休闲项目资料列明：第1区域森林资源管理办公室夜丰颂分支为该项目主要负责机构，夜丰颂府有关部门及 Thung Yao 乡行政组织为协作单位。实际通行和安全管理应遵守现场最新告示。', source: '泰国森林休闲管理办公室：Kong Lan 项目资料' },
+}[lang];
+const extraLabels = {
+  en: ['History and character', 'What to observe', 'Photo and walking advice'],
+  th: ['ประวัติและลักษณะพื้นที่', 'จุดน่าสังเกต', 'แนวทางถ่ายภาพและเดินชม'],
+  zh: ['历史背景与场所特色', '值得观察的重点', '步行与摄影建议'],
+}[lang];
+const messages = { ...m, guide: { ...m.guide, faqs: [{ q: ui.q1, a: ui.a1 }, { q: ui.q2, a: ui.a2 }, { q: ui.q3, a: ui.a3 }] } };
+const faqs: Array<{ q: string; a: string }> = messages.guide.faqs;
+---
+<BaseLayout lang={lang} title={pageTitle} description={pageDescription} messages={messages} canonicalPath={`/${lang}/guides/${guide.slug}/`} altSlug={`guides/${guide.slug}`}>
+  <Header lang={lang} messages={m} simple />
+  <main class="pt-28 pb-16">
+    <article class="mx-auto max-w-5xl px-5">
+      <nav aria-label="Breadcrumb" class="text-sm text-ink/65 mb-8"><a href={`/${lang}/`} class="text-gold hover:underline">{siteConfig.name[lang]}</a> / <a href={`/${lang}/guides/`} class="text-gold hover:underline">{ui.hub}</a> / {title}</nav>
+      <header class="rounded-3xl bg-sand p-7 md:p-12 border border-gold/25">
+        <p class="text-gold text-sm font-semibold tracking-wide">{ui.category[guide.category]} · Pai, Mae Hong Son</p>
+        <h1 class="font-display text-teak text-3xl md:text-5xl font-semibold mt-3">{title}</h1>
+        <p class="text-lg text-ink/80 leading-relaxed mt-6 max-w-3xl">{detail}</p>
+        <div class="mt-7 flex flex-wrap gap-3"><a class="rounded-full bg-gold text-teak font-semibold px-6 py-3 hover:bg-goldBright" href={mapUrl} target="_blank" rel="noopener noreferrer">{mapLabel} · Google Maps ↗</a><a class="rounded-full border border-gold/50 px-6 py-3 text-teak" href={`/${lang}/guides/`}>{ui.hub}</a></div>
+      </header>
+      <section class="mt-10 grid md:grid-cols-[1fr_1.1fr] gap-7 items-center rounded-3xl bg-sand/70 p-7 md:p-10 border border-gold/20">
+        <img src="/gallery/pai-canyon-5.jpg" alt={`${siteConfig.name[lang]} landscape`} loading="lazy" class="w-full aspect-[4/3] object-cover rounded-2xl" />
+        <div><h2 class="font-display text-2xl md:text-3xl text-teak">{management.title}</h2><p class="mt-4 leading-relaxed text-ink/80">{management.text}</p><a class="mt-4 inline-block text-sm text-gold hover:underline" href="https://www.forest.go.th/recreation/โครงการพัฒนาพื้นที่ป่า-10/" target="_blank" rel="noopener noreferrer">{management.source} ↗</a></div>
+      </section>
+      {nearbyPlace && <section class="mt-10 grid md:grid-cols-2 gap-7">
+        <div class="rounded-2xl border border-gold/25 p-7"><h2 class="font-display text-2xl text-teak">{extraLabels[0]}</h2><p class="mt-4 text-ink/80 leading-relaxed">{nearbyCopy(nearbyPlace.history, lang)}</p></div>
+        <div class="rounded-2xl border border-gold/25 p-7"><h2 class="font-display text-2xl text-teak">{extraLabels[1]}</h2><p class="mt-4 text-ink/80 leading-relaxed">{nearbyCopy(nearbyPlace.observe, lang)}</p><a href={mapUrl} target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-gold hover:underline">{mapLabel} · Google Maps ↗</a></div>
+      </section>}
+      <section class="mt-12">
+        <h2 class="font-display text-2xl text-teak">{ui.facts}</h2>
+        <div class="grid md:grid-cols-3 gap-4 mt-5">
+          {[ui.location, ui.access, ui.time].map((item) => <div class="rounded-2xl border border-gold/25 bg-white/60 p-5 text-ink/80">{item}</div>)}
+        </div>
+        <p class="mt-4 rounded-xl bg-amber-50 border border-amber-200 p-4 text-ink/85">⚠ {ui.safety}</p>
+      </section>
+      <section class="mt-12 grid md:grid-cols-2 gap-8 items-start">
+        <div><h2 class="font-display text-2xl text-teak">{ui.overview}</h2><p class="leading-relaxed mt-4 text-ink/80">{detail}</p><h3 class="font-display text-xl text-teak mt-8">{ui.practical}</h3><p class="leading-relaxed mt-3 text-ink/80">{ui.practicalText}</p></div>
+        <figure class="overflow-hidden rounded-2xl bg-sand"><img loading="lazy" src="/gallery/pai-canyon-2.jpg" alt={`${siteConfig.name[lang]} — ${title}`} class="w-full aspect-[4/3] object-cover"/><figcaption class="p-4 text-sm text-ink/65">{ui.photosNote}</figcaption></figure>
+      </section>
+      <section class="mt-12"><h2 class="font-display text-2xl text-teak">{ui.plan}</h2><ol class="mt-5 grid md:grid-cols-3 gap-4">{ui.steps.map((step, i) => <li class="rounded-2xl bg-sand p-6"><span class="text-gold font-display text-3xl">{String(i + 1).padStart(2, '0')}</span><p class="mt-3 text-ink/80 leading-relaxed">{step}</p></li>)}</ol></section>
+      <section class="mt-12"><h2 class="font-display text-2xl text-teak">{ui.photos}</h2><div class="grid grid-cols-2 md:grid-cols-3 gap-3 mt-5">{[3, 7, 11].map((n) => <img loading="lazy" src={`/gallery/pai-canyon-${n}.jpg`} alt={`${siteConfig.name[lang]} landscape ${n}`} class="rounded-xl w-full aspect-[4/3] object-cover" />)}</div><p class="mt-3 text-sm text-ink/65">{ui.photosNote}</p></section>
+      <section class="mt-12 max-w-3xl"><h2 class="font-display text-2xl text-teak">{ui.faq}</h2><div class="space-y-3 mt-5">{faqs.map((f) => <details class="border border-gold/25 rounded-xl p-5"><summary class="font-semibold text-teak cursor-pointer">{f.q}</summary><p class="mt-3 text-ink/80">{f.a}</p></details>)}</div></section>
+      <section class="mt-12"><h2 class="font-display text-2xl text-teak">{ui.related}</h2><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-5">{related.map((g) => <a class="rounded-xl p-5 border border-gold/25 text-teak hover:border-gold hover:shadow-md" href={`/${lang}/guides/${g.slug}/`}>{localized(g.title, lang)} →</a>)}</div></section>
+      <p class="mt-12"><a class="text-gold hover:underline" href={`/${lang}/`}>← {ui.home}</a></p>
+    </article>
+  </main>
+  <Footer lang={lang} messages={m} />
+  <MobileBar messages={m} />
+</BaseLayout>

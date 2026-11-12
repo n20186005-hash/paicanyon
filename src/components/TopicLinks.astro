@@ -1,6 +1,7 @@
 ---
 import { TOPIC_KEYS } from '../lib/topics';
 import type { Lang } from '../i18n/ui';
+import { guideUi } from '../lib/expandedGuides';
 
 interface Props {
   lang: Lang;
@@ -30,6 +31,9 @@ const topics = messages.topics;
           </a>
         );
       })}
+    </div>
+    <div class="mt-7 text-center">
+      <a href={`/${lang}/guides/`} class="inline-flex rounded-full border border-gold/50 px-6 py-3 font-semibold text-teak hover:bg-white/60">{guideUi[lang].hub} · 31 →</a>
     </div>
   </div>
 </section>

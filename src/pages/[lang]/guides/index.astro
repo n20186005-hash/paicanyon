@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { siteConfig } from '../../../config';
+import { languagesList, messagesFor, type Lang } from '../../../i18n/ui';
+import { expandedGuides, localized, guideUi } from '../../../lib/expandedGuides';
+export function getStaticPaths() { return languagesList.map((lang) => ({ params: { lang } })); }
+const lang = Astro.params.lang as Lang;
+const ui = guideUi[lang];
+const m = messagesFor(lang);
+---
+<BaseLayout lang={lang} title={`${ui.hub} | ${siteConfig.name[lang]}`} description={`${ui.hub} — ${ui.overview}. ${ui.location}`} messages={m} canonicalPath={`/${lang}/guides/`} altSlug="guides">
+  <Header lang={lang} messages={m} simple />
+  <main class="pt-32 pb-20 mx-auto max-w-6xl px-5"><h1 class="font-display text-teak text-4xl md:text-5xl">{ui.hub}</h1><p class="mt-4 text-lg text-ink/75">{ui.overview}</p>
+    {(['visit', 'trail', 'itinerary'] as const).map((category) => <section class="mt-12"><h2 class="font-display text-2xl text-teak mb-5">{ui.category[category]}</h2><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">{expandedGuides.filter((g) => g.category === category).map((g) => <a class="rounded-2xl border border-gold/25 p-6 bg-sand/50 hover:border-gold hover:shadow-md" href={`/${lang}/guides/${g.slug}/`}><h3 class="font-display text-xl text-teak">{localized(g.title, lang)}</h3><p class="mt-3 text-sm text-ink/75 leading-relaxed">{localized(g.detail, lang)}</p><span class="inline-block mt-4 text-gold">→</span></a>)}</div></section>)}
+  </main><Footer lang={lang} messages={m} />
+</BaseLayout>
